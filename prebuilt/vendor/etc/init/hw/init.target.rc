@@ -60,6 +60,10 @@ on fs
     restorecon_recursive /mnt/vendor/persist
     mkdir /mnt/vendor/persist/data 0700 system system
 
+    # ZRAM setup
+    write /sys/block/zram0/comp_algorithm lz4
+    write /proc/sys/vm/page-cluster 0
+
 on post-fs
     start vendor.qseecomd
     exec - system system -- /vendor/bin/init.qti.qseecomd.sh
