@@ -20,6 +20,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
+    aaudio.mmap_exclusive_policy=2 \
+    aaudio.mmap_policy=2 \
     af.fast_track_multiplier=2 \
     vendor.audio.hal.boot.timeout.ms=20000 \
     vendor.audio_hal.period_size=240 \
