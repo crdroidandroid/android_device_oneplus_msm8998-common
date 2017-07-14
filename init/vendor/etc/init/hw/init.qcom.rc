@@ -51,6 +51,7 @@ on init
 
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
+    setprop sys.usb.ffs.aio_compat 1
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
