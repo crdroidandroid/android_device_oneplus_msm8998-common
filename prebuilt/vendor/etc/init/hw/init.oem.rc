@@ -261,14 +261,6 @@ on property:sys.fastcharger=true
 on property:sys.fastcharger=false
     write /sys/class/power_supply/battery/charging_enabled 0
 
-#kenshen@framework, 2017/09/18, align AOSP other OEMs
-# bugreport is triggered by holding down volume down, volume up and power
-service bugreport /system/bin/dumpstate -d -p -B -z \
-        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
-    class main
-    disabled
-    oneshot
-
 #lifei@oneplus.media, 2016/02/14,  add service for CTS and engineer app
 #service oem_audio_device /system/bin/chcon u:object_r:oem_audio_device:s0 /dev/snd
 #    class late_start
