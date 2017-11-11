@@ -117,6 +117,9 @@ persist.media.treble_omx=true
 ro.nfc.port=I2C
 persist.nfc.smartcard.config=SIM1,eSE1
 
+# OTG support
+persist.sys.oem.otg_support=true
+
 # Perf
 ro.sys.fw.bg_apps_limit=60
 ro.vendor.extension_library=libqti-perfd-client.so
