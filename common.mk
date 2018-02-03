@@ -22,6 +22,8 @@
 # definition file).
 #
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
+
 $(call inherit-product, vendor/oneplus/msm8998-common/msm8998-common-vendor.mk)
 
 # Setup dalvik vm configs
