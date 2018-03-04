@@ -83,7 +83,7 @@ void init_target_properties()
         if (!strncmp(device.c_str(), "16859", 5)) {
             // Oneplus 5
             property_set("ro.display.series", "OnePlus 5");
-            property_set("ro.sf.lcd_density", "480");
+            property_set("ro.sf.lcd_density", "420");
             unknownDevice = false;
         }
         else if (!strncmp(device.c_str(), "17801", 5)) {
