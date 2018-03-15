@@ -151,7 +151,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Data
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.netmgrd.qos.enable=true \
     persist.radio.aosp_usr_pref_sel=true \
     persist.vendor.data.mode=concurrent \
     ro.vendor.use_data_netmgrd=true
@@ -287,19 +286,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.wfc_avail_ovr=1 \
     persist.radio.calls.on.ims=1
-
-# RmNet Data
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.rmnet.data.enable=true \
-    persist.data.wda.enable=true \
-    persist.data.df.dl_mode=5 \
-    persist.data.df.ul_mode=5 \
-    persist.data.df.agg.dl_pkt=10 \
-    persist.data.df.agg.dl_size=4096 \
-    persist.data.df.mux_count=8 \
-    persist.data.df.iwlan_mux=9 \
-    persist.data.df.dev_name=rmnet_usb0 \
-    persist.vendor.data.iwlan.enable=true
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
