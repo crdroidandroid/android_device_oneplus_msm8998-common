@@ -242,10 +242,6 @@ on boot
     chown system system /persist/speccfg/submask
     chown system system /persist/speccfg/partition
 
-on property:sys.boot_completed=1
-    # Enable ZRAM on boot_completed
-    swapon_all /vendor/etc/fstab.qcom
-
 service dashd /sbin/dashd
     class core
     #critical
