@@ -90,11 +90,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.feature=1
 
-# Core control
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.core_ctl_min_cpu=2 \
-    ro.vendor.qti.core_ctl_max_cpu=4
-
 # Data
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.use_data_netmgrd=true \
