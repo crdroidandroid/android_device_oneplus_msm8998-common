@@ -58,6 +58,7 @@ vendor.audio.spkr_prot.tx.sampling_rate=48000
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 vendor.voice.path.for.pcm.voip=true
+af.resampler.quality=7
 
 # Bluetooth
 bluetooth.device.class_of_device=90,2,12
