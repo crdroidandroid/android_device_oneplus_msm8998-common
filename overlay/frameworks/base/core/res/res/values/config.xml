@@ -645,4 +645,7 @@
 
     <!-- Whether device ignores the RSSNR signal implementation -->
     <bool name="config_ignoreRssnrSignalLevel">true</bool>
+
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_supportSmartPixels">true</bool>
 </resources>
