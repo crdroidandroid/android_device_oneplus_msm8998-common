@@ -187,6 +187,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.hw_mbn_update=0 \
     persist.radio.sw_mbn_update=0 \
     persist.radio.start_ota_daemon=0 \
+    persist.vendor.ims.dropset_feature=0 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.data_con_rprt=1 \
     persist.vendor.radio.data_ltd_sys_ind=1 \
