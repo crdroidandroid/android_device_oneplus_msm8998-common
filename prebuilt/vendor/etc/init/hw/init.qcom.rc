@@ -506,6 +506,9 @@ on property:sys.boot_completed=1
     chown media audio /sys/kernel/wdsp0/boot
     chown media audio /sys/kernel/wcd_cpe0/fw_name
 
+    write /data/misc/camera/client_package_name "com.oneplus.camera"
+    chmod 0444 /data/misc/camera/client_package_name
+
 on property:persist.vendor.radio.atfwd.start=false
     stop vendor.atfwd
 
