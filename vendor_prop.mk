@@ -101,7 +101,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.dpm.feature=11
+    persist.vendor.dpm.feature=9
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -114,6 +114,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=420 \
+    debug.sf.disable_backpressure=1 \
     debug.sf.hw=1 \
     debug.gralloc.enable_fb_ubwc=1 \
     debug.gralloc.gfx_ubwc_disable=0 \
@@ -214,7 +215,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.videopause.mode=1 \
     persist.radio.sap_silent_pin=1 \
     persist.radio.always_send_plmn=true \
-    persist.rcs.supported=1 \
+    persist.rcs.supported=0 \
     persist.dbg.ims_volte_enable=1 \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
