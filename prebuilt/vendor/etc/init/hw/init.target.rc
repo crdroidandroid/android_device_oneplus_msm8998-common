@@ -149,7 +149,6 @@ on property:init.svc.vendor.per_mgr=running
     start vendor.per_proxy
 
 on property:sys.shutdown.requested=*
-    stop vendor.cnss-daemon
     stop vendor.per_proxy
 
 on charger
