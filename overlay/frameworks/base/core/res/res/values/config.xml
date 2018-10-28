@@ -63,7 +63,9 @@
     <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
     <integer name="config_autoBrightnessLightSensorRate">500</integer>
 
-    <!-- Minimum screen brightness allowed by the power manager. -->
+    <!-- Screen brightness used to dim the screen when the user activity
+         timeout expires.  May be less than the minimum allowed brightness setting
+         that can be set by the user. -->
     <integer name="config_screenBrightnessDim">6</integer>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
@@ -73,12 +75,6 @@
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
     <integer name="config_screenBrightnessSettingDefault">46</integer>
-
-    <!--<bool name="config_deviceHasVariableButtonBrightness">true</bool>-->
-
-    <!-- If enabled, capacitive keys will only light up when pressed.
-         Otherwise, the buttons will light up whenever the user interacts with the device -->
-    <!--<bool name="config_buttonLightOnKeypressOnly">true</bool>-->
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
@@ -295,7 +291,7 @@
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
          May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDoze">17</integer>
+    <integer name="config_screenBrightnessDoze">10</integer>
 
     <!-- If true, the doze component is not started until after the screen has been
           turned off and the screen off animation has been performed. -->
@@ -427,4 +423,7 @@
 
     <!-- Enable 802.11ac for Wifi hotspot (SAP) -->
     <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">true</bool>
+
+    <!-- Allow automatic adjusting of the screen brightness while dozing in low power state. -->
+    <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
 </resources>
