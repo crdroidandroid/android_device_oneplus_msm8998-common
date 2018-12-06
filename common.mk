@@ -180,7 +180,7 @@ PRODUCT_PACKAGES += \
     libvulkan
 
 PRODUCT_PACKAGES += \
-    vendor.display.config@1.0
+    vendor.display.config@1.7
 
 # Doze
 PRODUCT_PACKAGES += \
