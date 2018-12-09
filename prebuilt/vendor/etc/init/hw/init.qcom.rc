@@ -374,10 +374,9 @@ on post-fs-data
     mkdir /data/vendor/fm 0770 system system
     chmod 0770 /data/vendor/fm
 
-    #Create PERFD deamon related dirs
-    mkdir /data/vendor/perfd 0770 root system
-    chmod 2770 /data/vendor/perfd
-    rm /data/vendor/perfd/default_values
+    # Create perfd related dirs
+    mkdir /data/system/perfd 0770 root system
+    chmod 2770 /data/system/perfd
 
     #Create IOP  deamon related dirs
     mkdir /data/vendor/iop 0700 root system
@@ -949,10 +948,15 @@ service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
 #    user root
 #    oneshot
 
-service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
+service vendor.qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     class late_start
     user root
-    group root system wakelock graphics
+    disabled
+    oneshot
+
+service vendor.qcom-power /vendor/bin/init.qcom.power.sh
+    class main
+    user root
     disabled
     oneshot
 
@@ -976,7 +980,7 @@ service wifi-crda /vendor/bin/init.crda.sh
    oneshot
 
 on property:sys.boot_completed=1
-    start qcom-post-boot
+    start vendor.qcom-post-boot
     start qti-testscripts
 
 on property:ro.vendor.ril.mbn_copy_completed=1
