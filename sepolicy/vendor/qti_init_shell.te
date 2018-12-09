@@ -14,3 +14,5 @@ allow qti_init_shell debugfs_tracing_debug:file { rw_file_perms };
 set_prop(qti_init_shell, ctl_start_prop)
 set_prop(qti_init_shell, diag_prop)
 set_prop(qti_init_shell, system_prop)
+set_prop(qti_init_shell, debug_prop)
+set_prop(qti_init_shell, post_boot_prop)

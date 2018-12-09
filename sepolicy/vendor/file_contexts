@@ -59,7 +59,17 @@
 /sys/devices/virtual/graphics/fb0/srgb                          u:object_r:sysfs_livedisplay:s0
 
 /sys/devices/soc/8c0000.qcom,msm-cam/video4linux(/.*)?          u:object_r:sysfs_graphics:s0
+/sys/devices/soc/caa0000.qcom,jpeg/video4linux/(/.*)?           u:object_r:sysfs_graphics:s0
+/sys/devices/soc/caa4000.qcom,fd/video4linux/(/.*)?             u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb0(/.*)?                         u:object_r:sysfs_graphics:s0
+
+# Power HAL
+/vendor/bin/hw/android\.hardware\.power@1\.2-service\.oneplus5  u:object_r:hal_power_default_exec:s0
+/vendor/bin/hw/android\.hardware\.power@1\.2-service\.oneplus5-libperfmgr u:object_r:hal_power_default_exec:s0
+
+/sys/devices/soc/c1b5000.i2c/i2c-7/7-0008/c1b5000.i2c:qcom,smb138x@8:qcom,smb138x-parallel-slave@1000/power_supply/parallel(/.*)? u:object_r:sysfs_vadc_dev:s0
+
+/persist/battery(/.*)?                                        u:object_r:persist_battery_file:s0
 
 # Power supply
 /sys/devices/soc/.*ssusb/power_supply/usb(/.*)?                 u:object_r:sysfs_usb_supply:s0

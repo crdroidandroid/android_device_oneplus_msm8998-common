@@ -1,1 +1,2 @@
 allow healthd sysfs:file { r_file_perms };
+allow healthd sysfs_vadc_dev:file rw_file_perms;

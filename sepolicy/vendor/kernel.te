@@ -1,1 +1,2 @@
 allow kernel self:capability { dac_override dac_read_search };
+allow kernel debugfs_wlan:dir search;
