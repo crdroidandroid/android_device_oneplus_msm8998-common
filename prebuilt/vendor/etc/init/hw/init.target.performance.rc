@@ -121,6 +121,10 @@ on property:sys.boot_completed=1
     # CPU is configured, re-enable thermal core control
     write /sys/module/msm_thermal/core_control/enabled 1
 
+    # Enable input boost configuration
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1036800 4:1056000"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 450
+
     # Setup power retention
     write /sys/module/lpm_levels/system/pwr/cpu0/ret/idle_enabled N
     write /sys/module/lpm_levels/system/pwr/cpu1/ret/idle_enabled N
