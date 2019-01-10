@@ -46,4 +46,7 @@
     <string-array name="longshot_scenemodes">
         <item>placeholder</item>
     </string-array>
+
+    <!-- Enable support for bokeh mode -->
+    <bool name="support_bokeh_mode">true</bool>
 </resources>
