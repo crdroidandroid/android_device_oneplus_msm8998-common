@@ -49,4 +49,7 @@
 
     <!-- Enable support for image stabilization -->
     <bool name="support_dis">false</bool>
+
+    <!-- Enable support for bokeh mode -->
+    <bool name="support_bokeh_mode">true</bool>
 </resources>
