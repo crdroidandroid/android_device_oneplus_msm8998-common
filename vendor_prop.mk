@@ -157,7 +157,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.smoothstreaming=true \
     persist.mm.enable.prefetch=true \
     vidc.enc.dcvs.extra-buff-count=2 \
-    persist.media.treble_omx=true
+    persist.media.treble_omx=true \
+    vendor.vidc.debug.level=1 \
+    vendor.swvdec.log.level=1
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
