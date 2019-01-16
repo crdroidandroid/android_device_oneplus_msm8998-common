@@ -256,6 +256,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.dev_name=rmnet_usb0 \
     persist.data.iwlan.enable=true
 
+# SDM
+PRODUCT_PROPERTY_OVERRIDES += \
+    sdm.debug.disable_skip_validate=1 \
+    sdm.perf_hint_window=50
+
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.sensors.dev_ori=true \
