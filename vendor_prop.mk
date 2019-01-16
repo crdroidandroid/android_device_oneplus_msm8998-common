@@ -198,7 +198,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_3="" \
     ril.subscription.types=NV,RUIM \
     ro.telephony.default_network=22,20 \
-    telephony.lteOnCdmaDevice=1 \
+    telephony.lteOnCdmaDevice=1,1 \
     keyguard.no_require_sim=true \
     ro.com.android.dataroaming=true \
     persist.sys.oem_smooth=1 \
@@ -237,7 +237,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.wfc_avail_ovr=1 \
-    persist.radio.calls.on.ims=1
+    persist.radio.calls.on.ims=1 \
+    persist.radio.efssync=true \
+    persist.vendor.radio.bar_fake_gcell=1 \
+    persist.vendor.data.iwlan.enable=true \
+    persist.vendor.radio.arfcn_test_mode=3
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
