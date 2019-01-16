@@ -78,8 +78,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.bt.a2dp_offload_cap=false \
     qcom.bluetooth.soc=cherokee \
     ro.bluetooth.a4wp=false \
-    ro.bluetooth.emb_wp_mode=true \
-    ro.bluetooth.wipower=true
+    ro.bluetooth.emb_wp_mode=false \
+    ro.bluetooth.wipower=false
 
 # Cabl
 PRODUCT_PROPERTY_OVERRIDES += \
