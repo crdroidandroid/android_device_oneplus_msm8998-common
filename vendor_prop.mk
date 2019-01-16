@@ -33,7 +33,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.dirac.ignore_error=1 \
     tunnel.audio.encode=true \
     nxpWechatDebugEnable=1 \
-    persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
+    persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24 \
+    persist.vendor.audio.hac.enable=false
 
 # Audio new
 PRODUCT_PROPERTY_OVERRIDES += \
