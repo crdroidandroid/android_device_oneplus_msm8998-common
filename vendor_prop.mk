@@ -254,7 +254,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.efssync=true \
     persist.vendor.radio.bar_fake_gcell=1 \
     persist.vendor.data.iwlan.enable=true \
-    persist.vendor.radio.arfcn_test_mode=3
+    persist.vendor.radio.arfcn_test_mode=3 \
+    vendor.service.qti.ims.enabled=1
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
