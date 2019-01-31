@@ -81,6 +81,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.emb_wp_mode=false \
     ro.bluetooth.wipower=false
 
+# Build
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.skip.treble.check = true
+
 # Cabl
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.cabl=0
