@@ -1,4 +1,5 @@
-// Copyright (C) 2018 The LineageOS Project
+//
+// Copyright (C) 2019 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,9 +13,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-subdirs = [
-    "light",
-    "livedisplay",
-    "touch",
-    "trust",
-]
+cc_binary {
+    name: "vendor.lineage.trust@1.0-service.oneplus_msm8998",
+    init_rc: ["vendor.lineage.trust@1.0-service.oneplus_msm8998.rc"],
+    defaults: ["hidl_defaults"],
+    relative_install_path: "hw",
+    proprietary: true,
+    srcs: [
+        "UsbRestrict.cpp",
+        "service.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "libbinder",
+        "libhidlbase",
+        "libhidltransport",
+        "libutils",
+        "vendor.lineage.trust@1.0",
+    ],
+}
