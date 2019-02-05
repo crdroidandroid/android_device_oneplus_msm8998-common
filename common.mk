@@ -429,10 +429,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.oneplus_msm8998
 
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service.oneplus_msm8998
-
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic

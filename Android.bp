@@ -16,5 +16,4 @@ subdirs = [
     "light",
     "livedisplay",
     "touch",
-    "trust",
 ]
