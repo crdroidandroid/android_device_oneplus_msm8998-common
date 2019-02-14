@@ -637,4 +637,7 @@
 
     <!-- Enable video pause workaround when enabling/disabling the camera. -->
     <bool name="config_useVideoPauseWorkaround">true</bool>
+
+    <!-- Whether to enable OP5/T cam hack -->
+    <bool name="config_enableOPcamhack">true</bool>
 </resources>
