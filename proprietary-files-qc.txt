@@ -918,7 +918,7 @@ vendor/lib64/libOmxG711Dec.so
 vendor/lib64/libOmxQcelp13Dec.so
 vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
--vendor/lib64/libgpustats.so
+vendor/lib64/libgpustats.so
 vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libstagefright_soft_qtiflacdec.so
 vendor/lib64/libvpphvx.so
@@ -944,7 +944,7 @@ vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxVpp.so
 vendor/lib/libOmxWmaDec.so
 vendor/lib/libdsd2pcm.so
--vendor/lib/libgpustats.so
+vendor/lib/libgpustats.so
 vendor/lib/libmm-color-convertor.so
 vendor/lib/libvpphvx.so
 vendor/lib/libvpplibrary.so
