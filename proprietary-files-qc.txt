@@ -817,7 +817,9 @@ vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libqtikeymaster4.so
 
 # Listen
+vendor/lib/libmulawdec.so
 vendor/lib/hw/sound_trigger.primary.msm8998.so
+vendor/lib64/libmulawdec.so
 vendor/lib64/hw/sound_trigger.primary.msm8998.so
 vendor/lib/libsmwrapper.so
 
