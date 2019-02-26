@@ -773,6 +773,12 @@ vendor/lib/libsdm-diag.so
 vendor/lib/libsdmextension.so|3104df6a013e53b972227ed132aa683ec7303746
 vendor/lib/libtinyxml2_1.so
 vendor/lib/vendor.display.color@1.0.so
+vendor/lib/vendor.display.color@1.1.so
+vendor/lib/vendor.display.color@1.2.so
+vendor/lib/vendor.display.config@1.0.so
+vendor/lib/vendor.display.config@1.1.so
+system/lib/vendor.display.config@1.3.so:vendor/lib/vendor.display.config@1.3.so
+system/lib/vendor.display.config@1.4.so:vendor/lib/vendor.display.config@1.4.so
 vendor/lib/vendor.display.postproc@1.0.so
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/libqseed3.so
@@ -782,6 +788,13 @@ vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdmextension.so|c4a416cb8c0f5dc87bee8494d70247cf049224b9
 vendor/lib64/libtinyxml2_1.so
 vendor/lib64/vendor.display.color@1.0.so
+vendor/lib64/vendor.display.color@1.1.so
+vendor/lib64/vendor.display.color@1.2.so
+vendor/lib64/vendor.display.config@1.0.so
+vendor/lib64/vendor.display.config@1.1.so
+system/lib64/vendor.display.config@1.3.so:vendor/lib64/vendor.display.config@1.3.so
+system/lib64/vendor.display.config@1.4.so:vendor/lib64/vendor.display.config@1.4.so
+
 vendor/lib64/vendor.display.postproc@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
