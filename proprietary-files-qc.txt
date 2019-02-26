@@ -508,6 +508,7 @@ vendor/lib64/com.quicinc.cne.api@1.1.so
 vendor/lib64/com.quicinc.cne.constants@1.0.so
 vendor/lib64/com.quicinc.cne.constants@2.0.so
 vendor/lib64/com.quicinc.cne.constants@2.1.so
+system/lib64/com.quicinc.cne.server@1.0.so:vendor/lib64/com.quicinc.cne.server@1.0.so
 vendor/lib64/com.quicinc.cne.server@2.0.so
 vendor/lib64/com.quicinc.cne.server@2.1.so
 vendor/lib64/com.quicinc.cne.server@2.2.so
