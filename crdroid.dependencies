@@ -1,0 +1,12 @@
+[
+  {
+    "repository": "crdroidandroid/android_device_oppo_common",
+    "target_path": "device/oppo/common",
+    "branch": "9.0"
+  },
+  {
+    "repository": "crdroidandroid/android_kernel_oneplus_msm8998",
+    "target_path": "kernel/oneplus/msm8998",
+    "branch": "9.0"
+  }
+]
