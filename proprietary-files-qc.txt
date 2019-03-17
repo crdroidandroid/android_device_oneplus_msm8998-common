@@ -843,7 +843,6 @@ lib64/libmmosal.so
 lib64/vendor.qti.hardware.vpp@1.1.so
 -vendor/lib/libgpustats.so
 vendor/lib/libOmxVpp.so
-vendor/lib/libmm-omxcore.so
 vendor/lib/libvpplibrary.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libmm-color-convertor.so
@@ -869,7 +868,6 @@ vendor/lib/vendor.qti.hardware.vpp@1.1.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
 vendor/lib64/libOmxVpp.so
-vendor/lib64/libmm-omxcore.so
 vendor/lib64/libvpplibrary.so
 vendor/lib64/libI420colorconvert.so
 vendor/lib64/libmm-color-convertor.so
