@@ -90,7 +90,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.camera.aux.packagelist=com.oneplus.camera,org.lineageos.snap,com.google.android.Pixel2ModUrnyx05 \
     persist.camera.mobicat=2 \
     persist.camera.stats.debugexif=3080192 \
-    persist.ts.rtmakeup=false
+    persist.ts.rtmakeup=false \
+    persist.vendor.camera.tintless.skip=1
 
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
