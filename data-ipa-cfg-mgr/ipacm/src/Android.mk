@@ -28,7 +28,7 @@ LOCAL_CFLAGS += -DFEATURE_IPACM_RESTART
 LOCAL_CFLAGS += -DFEATURE_ETH_BRIDGE_LE
 
 LOCAL_CFLAGS += -DFEATURE_IPACM_HAL -Wall -Werror -Wno-error=macro-redefined
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+ifneq (,$(filter userdebug, $(TARGET_BUILD_VARIANT)))
 LOCAL_CFLAGS += -DDEBUG
 endif
 
@@ -98,7 +98,6 @@ include $(CLEAR_VARS)
 LOCAL_MODULE       := $1
 LOCAL_SRC_FILES    := $1
 LOCAL_MODULE_CLASS := ipacm
-LOCAL_MODULE_TAGS  := debug
 LOCAL_MODULE_PATH  := $(TARGET_OUT_ETC)
 include $(BUILD_PREBUILT)
 
