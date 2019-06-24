@@ -451,14 +451,15 @@ void AgpsStateMachine::setAPN(char* apn, unsigned int len){
 
     if (NULL != mAPN) {
         delete mAPN;
-        mAPN  = NULL;
     }
 
-    if (NULL == apn || len <= 0 || len > MAX_APN_LEN || strlen(apn) != len) {
+    if (apn == NULL || len <= 0) {
         LOC_LOGD("Invalid apn len (%d) or null apn", len);
         mAPN = NULL;
         mAPNLen = 0;
-    } else {
+    }
+
+    if (NULL != apn) {
         mAPN = new char[len+1];
         if (NULL != mAPN) {
             memcpy(mAPN, apn, len);

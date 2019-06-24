@@ -27,7 +27,7 @@
 #include "Gnss.h"
 #include <LocationUtil.h>
 
-typedef const GnssInterface* (getLocationInterface)();
+typedef void* (getLocationInterface)();
 
 namespace android {
 namespace hardware {
@@ -84,7 +84,7 @@ GnssAPIClient* Gnss::getApi() {
     return mApi;
 }
 
-const GnssInterface* Gnss::getGnssInterface() {
+GnssInterface* Gnss::getGnssInterface() {
     static bool getGnssInterfaceFailed = false;
     if (nullptr == mGnssInterface && !getGnssInterfaceFailed) {
         LOC_LOGD("%s]: loading libgnss.so::getGnssInterface ...", __func__);
@@ -105,7 +105,7 @@ const GnssInterface* Gnss::getGnssInterface() {
         if (NULL == getter) {
             getGnssInterfaceFailed = true;
         } else {
-            mGnssInterface = (const GnssInterface*)(*getter)();
+            mGnssInterface = (GnssInterface*)(*getter)();
         }
     }
     return mGnssInterface;
@@ -234,7 +234,7 @@ Return<bool> Gnss::injectLocation(double latitudeDegrees,
                                   double longitudeDegrees,
                                   float accuracyMeters)  {
     ENTRY_LOG_CALLFLOW();
-    const GnssInterface* gnssInterface = getGnssInterface();
+    GnssInterface* gnssInterface = getGnssInterface();
     if (nullptr != gnssInterface) {
         gnssInterface->injectLocation(latitudeDegrees, longitudeDegrees, accuracyMeters);
         return true;
@@ -246,7 +246,7 @@ Return<bool> Gnss::injectLocation(double latitudeDegrees,
 Return<bool> Gnss::injectTime(int64_t timeMs, int64_t timeReferenceMs,
                               int32_t uncertaintyMs) {
     ENTRY_LOG_CALLFLOW();
-    const GnssInterface* gnssInterface = getGnssInterface();
+    GnssInterface* gnssInterface = getGnssInterface();
     if (nullptr != gnssInterface) {
         gnssInterface->injectTime(timeMs, timeReferenceMs, uncertaintyMs);
         return true;
@@ -326,9 +326,9 @@ Return<sp<V1_0::IAGnssRil>> Gnss::getExtensionAGnssRil() {
     return mGnssRil;
 }
 
-V1_0::IGnss* HIDL_FETCH_IGnss(const char* hal) {
+IGnss* HIDL_FETCH_IGnss(const char* hal) {
     ENTRY_LOG_CALLFLOW();
-    V1_0::IGnss* iface = nullptr;
+    IGnss* iface = nullptr;
     iface = new Gnss();
     if (iface == nullptr) {
         LOC_LOGE("%s]: failed to get %s", __FUNCTION__, hal);

@@ -9,7 +9,6 @@ include $(CLEAR_VARS)
 
 ## Libs
 LOCAL_SHARED_LIBRARIES := \
-    libdl \
     libutils \
     libcutils \
     liblog
