@@ -103,10 +103,6 @@ public:
     inline void sendMsg(const LocMsg* msg) const {
         mMsgTask->sendMsg(msg);
     }
-    static bool needReport(const UlpLocation& ulpLocation,
-                           enum loc_sess_status status,
-                           LocPosTechMask techMask);
-
     void addAdapter(LocAdapterBase* adapter);
     void removeAdapter(LocAdapterBase* adapter);
 
