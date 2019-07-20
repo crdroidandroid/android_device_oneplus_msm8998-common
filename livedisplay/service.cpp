@@ -27,6 +27,7 @@
 
 #define SDM_DISP_LIB "libsdm-disp-vndapis.so"
 
+using ::vendor::lineage::livedisplay::V2_0::IDisplayModes;
 using ::vendor::lineage::livedisplay::V2_0::implementation::DisplayModes;
 using ::vendor::lineage::livedisplay::V2_0::IPictureAdjustment;
 using ::vendor::lineage::livedisplay::V2_0::implementation::PictureAdjustment;
@@ -38,8 +39,9 @@ int main() {
     int32_t (*disp_api_deinit)(uint64_t, uint32_t) = nullptr;
     uint64_t cookie = 0;
 
-    android::sp<DisplayModes> dm;
+    android::sp<IDisplayModes> dm;
     android::sp<PictureAdjustment> pa;
+    uint8_t services = 0;
 
     android::status_t status = android::OK;
 
@@ -82,6 +84,9 @@ int main() {
             << "Can not create an instance of LiveDisplay HAL DisplayModes Iface, exiting.";
         goto shutdown;
     }
+    if (DisplayModes::isSupported()) {
+        services++;
+    }
 
     // PictureAdjustment
     pa = new PictureAdjustment(libHandle, cookie);
@@ -90,13 +95,16 @@ int main() {
             << "Can not create an instance of LiveDisplay HAL PictureAdjustment Iface, exiting.";
         goto shutdown;
     }
+    if (pa->isSupported()) {
+        services++;
+    }
 
-    if (!dm->isSupported() && !pa->isSupported()) {
-        // Backend isn't ready yet, so restart and try again
+    // Shutdown if there are no services
+    if (services == 0) {
         goto shutdown;
     }
 
-    android::hardware::configureRpcThreadpool(1, true /*callerWillJoin*/);
+    android::hardware::configureRpcThreadpool(services, true /*callerWillJoin*/);
 
     // DisplayModes service
     if (DisplayModes::isSupported()) {
