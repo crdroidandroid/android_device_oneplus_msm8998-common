@@ -1,4 +1,4 @@
-on post-fs-data
+on init
     chown system graphics /sys/devices/virtual/graphics/fb0/adobe_rgb
     chown system graphics /sys/devices/virtual/graphics/fb0/srgb
     chown system graphics /sys/devices/virtual/graphics/fb0/dci_p3
