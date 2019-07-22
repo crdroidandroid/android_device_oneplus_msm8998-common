@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "LineageHW-PictureAdjustmentService"
-
 #include <dlfcn.h>
 
 #include "Constants.h"
@@ -46,31 +44,41 @@ PictureAdjustment::PictureAdjustment(void* libHandle, uint64_t cookie) {
     disp_api_set_global_pa_config =
         reinterpret_cast<int32_t (*)(uint64_t, uint32_t, uint32_t, void*)>(
             dlsym(mLibHandle, "disp_api_set_global_pa_config"));
-    mDefaultPictureAdjustment = HSIC{};
+    memset(&mDefaultPictureAdjustment, 0, sizeof(HSIC));
 }
 
 bool PictureAdjustment::isSupported() {
     sdm_feature_version version{};
     hsic_ranges r{};
     uint32_t flags = 0;
+    static int supported = -1;
+
+    if (supported >= 0) {
+        goto out;
+    }
 
     if (disp_api_get_feature_version == nullptr ||
         disp_api_get_feature_version(mCookie, PICTURE_ADJUSTMENT_FEATURE, &version, &flags) != 0) {
-        return false;
+        supported = 0;
+        goto out;
     }
 
     if (version.x <= 0 && version.y <= 0 && version.z <= 0) {
-        return false;
+        supported = 0;
+        goto out;
     }
 
     if (disp_api_get_global_pa_range == nullptr ||
         disp_api_get_global_pa_range(mCookie, 0, &r) != 0) {
-        return false;
+        supported = 0;
+        goto out;
     }
 
-    return r.hue.max != 0 && r.hue.min != 0 && r.saturation.max != 0.f &&
-             r.saturation.min != 0.f && r.intensity.max != 0.f && r.intensity.min != 0.f &&
-             r.contrast.max != 0.f && r.contrast.min != 0.f;
+    supported = r.hue.max != 0 && r.hue.min != 0 && r.saturation.max != 0.f &&
+                r.saturation.min != 0.f && r.intensity.max != 0.f && r.intensity.min != 0.f &&
+                r.contrast.max != 0.f && r.contrast.min != 0.f;
+out:
+    return supported;
 }
 
 HSIC PictureAdjustment::getPictureAdjustmentInternal() {
@@ -159,7 +167,8 @@ Return<void> PictureAdjustment::getContrastRange(getContrastRange_cb _hidl_cb) {
     return Void();
 }
 
-Return<void> PictureAdjustment::getSaturationThresholdRange(getSaturationThresholdRange_cb _hidl_cb) {
+Return<void> PictureAdjustment::getSaturationThresholdRange(
+    getSaturationThresholdRange_cb _hidl_cb) {
     FloatRange range{};
     hsic_ranges r{};
 
@@ -180,7 +189,8 @@ Return<void> PictureAdjustment::getPictureAdjustment(getPictureAdjustment_cb _hi
     return Void();
 }
 
-Return<void> PictureAdjustment::getDefaultPictureAdjustment(getDefaultPictureAdjustment_cb _hidl_cb) {
+Return<void> PictureAdjustment::getDefaultPictureAdjustment(
+    getDefaultPictureAdjustment_cb _hidl_cb) {
     _hidl_cb(mDefaultPictureAdjustment);
     return Void();
 }

@@ -17,8 +17,6 @@
 #ifndef VENDOR_LINEAGE_LIVEDISPLAY_V2_0_PICTUREADJUSTMENT_H
 #define VENDOR_LINEAGE_LIVEDISPLAY_V2_0_PICTUREADJUSTMENT_H
 
-#include <hidl/MQDescriptor.h>
-#include <hidl/Status.h>
 #include <vendor/lineage/livedisplay/2.0/IPictureAdjustment.h>
 
 namespace vendor {
@@ -27,10 +25,6 @@ namespace livedisplay {
 namespace V2_0 {
 namespace implementation {
 
-using ::android::hardware::hidl_array;
-using ::android::hardware::hidl_memory;
-using ::android::hardware::hidl_string;
-using ::android::hardware::hidl_vec;
 using ::android::hardware::Return;
 using ::android::hardware::Void;
 using ::android::sp;
