@@ -44,6 +44,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.fluence.voicerec=true \
     persist.vendor.audio.fluence.speaker=true \
     vendor.audio.tunnel.encode=false \
+    ro.af.client_heap_size_kbyte=7168 \
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
     persist.vendor.audio.ras.enabled=false \
     vendor.audio.offload.buffer.size.kb=32 \
@@ -60,6 +61,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.parser.ip.buffer.size=0 \
     vendor.audio.flac.sw.decoder.24bit=true \
     persist.vendor.bt.a2dp_offload_cap=false \
+    persist.vendor.bt.enable.splita2dp=false \
     vendor.audio.use.sw.alac.decoder=true \
     vendor.audio.use.sw.ape.decoder=true \
     vendor.audio.hw.aac.encoder=true \
@@ -83,7 +85,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Cabl
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.cabl=0
+    ro.qualcomm.cabl=2
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -134,6 +136,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.latch_unsignaled=1 \
+    debug.gralloc.enable_fb_ubwc=1 \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
     persist.debug.wfd.enable=1 \
@@ -160,7 +163,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.enable-http=true \
     media.stagefright.enable-aac=true \
     media.stagefright.enable-qcp=true \
+    media.stagefright.enable-fma2dp=true \
     media.stagefright.enable-scan=true \
+    media.stagefright.audio.deep=true \
     mmp.enable.3g2=true \
     media.aac_51_output_enabled=true \
     mm.enable.smoothstreaming=true \
@@ -236,7 +241,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.radio.bar_fake_gcell=1 \
-    persist.vendor.radio.arfcn_test_mode=3
+    persist.vendor.radio.arfcn_test_mode=3 \
+    persist.backup.ntpServer=0.pool.ntp.org
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -263,6 +269,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Timeservice
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.timed.enable=true \
     persist.vendor.delta_time.enable=true
 
 # Oiface
