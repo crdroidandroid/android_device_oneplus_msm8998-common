@@ -87,6 +87,9 @@ BOARD_USES_QCOM_HARDWARE := true
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
+# ARCore
+TARGET_INCLUDE_STOCK_ARCORE := true
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 
