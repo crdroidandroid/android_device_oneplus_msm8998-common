@@ -489,6 +489,8 @@ PRODUCT_PACKAGES += \
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
+PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
+
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2019-10-01
