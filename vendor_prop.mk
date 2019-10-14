@@ -210,6 +210,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.smoothstreaming=true \
     persist.mm.enable.prefetch=true \
     vidc.enc.dcvs.extra-buff-count=2 \
+    vendor.vidc.enc.disable.pq=true \
     persist.media.treble_omx=true
 
 # Perf
