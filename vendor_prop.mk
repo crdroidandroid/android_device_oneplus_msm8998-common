@@ -66,6 +66,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.hw.aac.encoder=true \
     vendor.fm.a2dp.conc.disabled=true \
     vendor.audio.noisy.broadcast.delay=600 \
+    vendor.audio.spkr_prot.tx.sampling_rate=48000 \
+    vendor.audio.volume.headset.gain.depcal=true \
     ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_steps=11
 
