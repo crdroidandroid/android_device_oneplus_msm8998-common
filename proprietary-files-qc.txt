@@ -54,26 +54,29 @@ vendor/lib/rfsa/adsp/libvpp_frc.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 
 # Audio
-lib64/libldacBT_enc.so:vendor/lib64/libldacBT_enc.so
-lib64/libldacBT_abr.so:vendor/lib64/libldacBT_abr.so
-vendor/lib/libacdb-fts.so
-vendor/lib/libacdbloader.so
-vendor/lib/libacdbrtac.so
-vendor/lib/libadiertac.so
 vendor/lib/libadm.so
-vendor/lib/libaudcal.so
-vendor/lib/libqtigef.so
+vendor/lib/libacdb-fts.so|d35f14942bffff568899474fe50c3d0af2f8aae3
+vendor/lib/libacdbloader.so|7ce468a82529bc6f4a0b01a37edce9c35a6aebf8
+vendor/lib/libacdbrtac.so|cee53e7abebacf8ce9cebc5bc55cd237a09e6d84
+vendor/lib/libadiertac.so|f9e40b5005b215d30c84bd660b46e250f1d2be11
+vendor/lib/libaudcal.so|f118e565fd640c250c41140af495dd54a9d9d2fd
+vendor/lib/libqtigef.so|a6972c32f806679cf063005477925f174da24f0c
+vendor/lib64/libacdb-fts.so|8379a2c7d0f5282eb79feeca6aa1fde8e54611a1
+vendor/lib64/libacdbloader.so|e53edbf416ee06024ef4570bf140069890ca29d4
+vendor/lib64/libacdbrtac.so|5b51cceb312e1d4c3aa42f8bd1ac6859d630fbe5
+vendor/lib64/libadiertac.so|d269232bb052926dcf27b075eb2ec00cafe9d666
+vendor/lib64/libaudcal.so|10179518426d54c8d638ad1b310f86b0d2754214
+vendor/lib/libaudioalsa.so|6fe8d894f3001ec832a702b88a8043346718da2b
+vendor/lib/libaudioparsers.so|43da8538b0bf29f6eaf1b0224a1d9a9704170480
+vendor/lib64/libaudioalsa.so|a192b115e5230354e161065ab7a4f97a21adf956
+vendor/lib64/libaudioparsers.so|235e2c40298ba328fd79613d013ee2584e4de5f7
+
+# Audio (Sound effects)
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
-vendor/lib64/libacdb-fts.so
-vendor/lib64/libacdbloader.so
-vendor/lib64/libacdbrtac.so
-vendor/lib64/libadiertac.so
-vendor/lib64/libaudcal.so
 vendor/lib64/libeffectsconfig.so
-vendor/lib64/libqtigef.so
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcvirt.so
@@ -102,6 +105,8 @@ vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # Bluetooth (Audio)
+lib64/libldacBT_enc.so:vendor/lib64/libldacBT_enc.so
+lib64/libldacBT_abr.so:vendor/lib64/libldacBT_abr.so
 -lib/vendor.qti.hardware.fm@1.0.so
 -lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
