@@ -4,8 +4,8 @@ on init
     mount cgroup none /sys/fs/cgroup/freezer  freezer
     chmod 777 /sys/fs/cgroup/freezer
 
-    mkdir /sys/fs/cgroup/net_cls 
-    chmod 777 /sys/fs/cgroup/net_cls 
+    mkdir /sys/fs/cgroup/net_cls
+    chmod 777 /sys/fs/cgroup/net_cls
     mount cgroup  none /sys/fs/cgroup/net_cls net_cls
     chmod 777 /sys/fs/cgroup/net_cls/tasks
     mkdir /sys/fs/cgroup/net_cls/background 0777
@@ -100,7 +100,7 @@ on boot
     chmod 0666 /dev/qseecom
     # liuyan 2017/7/27 add for goodix fp
     chmod 0666 /dev/goodix_fp
-    
+
     # NFC, ruanbanmao add for 15801 nfc. 2015/10/19
     setprop ro.nfc.port "I2C"
     chmod 0666 /dev/nq-nci
@@ -158,12 +158,12 @@ on boot
     chown system system /sys/class/leds/red/duty_pcts
     chown system system /sys/class/leds/blue/duty_pcts
     chown system system /sys/class/leds/green/duty_pcts
-    chmod 660 /sys/class/leds/red/ramp_step_ms
-    chmod 660 /sys/class/leds/green/ramp_step_ms
-    chmod 660 /sys/class/leds/blue/ramp_step_ms
-    chmod 660 /sys/class/leds/red/duty_pcts
-    chmod 660 /sys/class/leds/green/duty_pcts
-    chmod 660 /sys/class/leds/blue/duty_pcts
+    chmod 666 /sys/class/leds/red/ramp_step_ms
+    chmod 666 /sys/class/leds/green/ramp_step_ms
+    chmod 666 /sys/class/leds/blue/ramp_step_ms
+    chmod 666 /sys/class/leds/red/duty_pcts
+    chmod 666 /sys/class/leds/green/duty_pcts
+    chmod 666 /sys/class/leds/blue/duty_pcts
     chmod 666 /sys/class/leds/red/brightness
     chmod 666 /sys/class/leds/green/brightness
     chmod 666 /sys/class/leds/blue/brightness
