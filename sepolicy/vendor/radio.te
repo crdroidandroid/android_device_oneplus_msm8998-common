@@ -1,1 +1,4 @@
+dontaudit radio adb_data_file:dir getattr;
+dontaudit radio adb_data_file:file getattr;
+dontaudit radio vendor_file:file read;
 get_prop(radio, qcom_ims_prop)
