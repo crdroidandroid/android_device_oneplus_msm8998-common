@@ -17,6 +17,9 @@
 /dev/dash                                                       u:object_r:dash_device:s0
 /vendor/xbin/dashd                                              u:object_r:dashd_exec:s0
 
+# DPM
+/system/bin/dpmd                                                u:object_r:dpmd_exec:s0
+
 # DRM
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.drmkey@1\.0-service    u:object_r:hal_drm_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.hdcpkey@1\.0-service   u:object_r:hal_hdcpkey_default_exec:s0
