@@ -143,8 +143,8 @@
         <device name="SND_DEVICE_IN_AANC_HANDSET_MIC" acdb_id="104"/>
         <device name="SND_DEVICE_IN_VOICE_FLUENCE_DMIC_AANC" acdb_id="105"/>
         <device name="SND_DEVICE_IN_QUAD_MIC" acdb_id="46"/>
-        <device name="SND_DEVICE_IN_HANDSET_STEREO_DMIC" acdb_id="34"/>
-        <device name="SND_DEVICE_IN_SPEAKER_STEREO_DMIC" acdb_id="35"/>
+        <device name="SND_DEVICE_IN_HANDSET_DMIC_STEREO" acdb_id="34"/>
+        <device name="SND_DEVICE_IN_SPEAKER_DMIC_STEREO" acdb_id="35"/>
         <device name="SND_DEVICE_IN_SPEAKER_STEREO_DMIC_OTHER" acdb_id="35"/>
         <device name="SND_DEVICE_IN_CAPTURE_VI_FEEDBACK" acdb_id="102"/>
         <device name="SND_DEVICE_IN_CAPTURE_VI_FEEDBACK_MONO_1" acdb_id="102"/>
@@ -448,13 +448,13 @@
                         <mic_info mic_device_id="builtin_mic_4"
                             channel_mapping="AUDIO_MICROPHONE_CHANNEL_MAPPING_PROCESSED"/>
                     </snd_dev>
-                    <snd_dev in_snd_device="SND_DEVICE_IN_HANDSET_STEREO_DMIC">
+                    <snd_dev in_snd_device="SND_DEVICE_IN_HANDSET_DMIC_STEREO">
                         <mic_info mic_device_id="builtin_mic_1"
                             channel_mapping="AUDIO_MICROPHONE_CHANNEL_MAPPING_PROCESSED"/>
                         <mic_info mic_device_id="builtin_mic_2"
                             channel_mapping="AUDIO_MICROPHONE_CHANNEL_MAPPING_PROCESSED"/>
                     </snd_dev>
-                    <snd_dev in_snd_device="SND_DEVICE_IN_SPEAKER_STEREO_DMIC">
+                    <snd_dev in_snd_device="SND_DEVICE_IN_SPEAKER_DMIC_STEREO">
                         <mic_info mic_device_id="builtin_mic_1"
                             channel_mapping="AUDIO_MICROPHONE_CHANNEL_MAPPING_PROCESSED"/>
                         <mic_info mic_device_id="builtin_mic_2"
