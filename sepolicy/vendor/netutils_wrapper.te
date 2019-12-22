@@ -1,0 +1,1 @@
+allow netutils_wrapper netmgrd_exec:file { r_file_perms execute execute_no_trans };

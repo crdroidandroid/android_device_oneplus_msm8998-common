@@ -1,2 +1,2 @@
-allow netmgrd system_file:file { r_file_perms execute };
+allow netmgrd netmgrd_exec:file { r_file_perms execute execute_no_trans };
 set_prop(netmgrd, diag_prop)
