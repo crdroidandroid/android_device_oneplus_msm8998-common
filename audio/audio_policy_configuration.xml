@@ -245,8 +245,8 @@
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_MONO,AUDIO_CHANNEL_OUT_STEREO"/>
                 </devicePort>
                 <devicePort tagName="In Call-Voice" type="AUDIO_DEVICE_IN_VOICE_CALL" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000,16000,48000"
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT,AUDIO_FORMAT_AMR_NB,AUDIO_FORMAT_AMR_WB,AUDIO_FORMAT_QCELP,AUDIO_FORMAT_EVRC,AUDIO_FORMAT_EVRCB,AUDIO_FORMAT_EVRCWB,AUDIO_FORMAT_EVRCNW"
+                             samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO,AUDIO_CHANNEL_IN_FRONT_BACK"/>
                 </devicePort>
                 <!-- USB Outputs -->
