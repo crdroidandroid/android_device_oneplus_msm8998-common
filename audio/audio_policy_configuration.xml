@@ -329,8 +329,8 @@
 
         </module>
 
-        <!-- A2DP Audio HAL -->
-        <xi:include href="a2dp_audio_policy_configuration.xml"/>
+        <!-- A2DP Input Audio HAL -->
+        <xi:include href="a2dp_in_audio_policy_configuration.xml"/>
 
         <!-- Bluetooth Audio HAL -->
         <xi:include href="bluetooth_audio_policy_configuration.xml"/>
