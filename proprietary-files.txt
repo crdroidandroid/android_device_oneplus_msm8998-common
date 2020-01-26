@@ -16,6 +16,7 @@ vendor/lib64/vendor.oneplus.hardware.ifaa@2.0.so
 -framework/vendor.oneplus.camera.CameraHIDL-V1.0-java.jar
 vendor/bin/hw/vendor.oneplus.camera.CameraHIDL@1.0-service
 vendor/etc/init/vendor.oneplus.camera.CameraHIDL@1.0-service.rc
+vendor/lib64/vendor.oneplus.camera.CameraHIDL@1.0.so
 lib/vendor.oneplus.camera.CameraHIDL@1.0.so
 lib/vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper.so
 lib64/vendor.oneplus.camera.CameraHIDL@1.0.so
