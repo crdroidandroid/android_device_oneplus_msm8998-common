@@ -404,6 +404,10 @@ PRODUCT_BOOT_JARS += \
     ims-ext-common_system \
     telephony-ext
 
+# Recorder
+PRODUCT_PACKAGES += \
+    Recorder
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp_policy/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \

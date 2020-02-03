@@ -656,9 +656,6 @@
     <!-- Whether the display blanks itself when transitioning from a doze to a non-doze state -->
     <bool name="config_displayBlanksAfterDoze">true</bool>
 
-    <!-- Whether to use in-built Screen Record service -->
-    <bool name="config_showScreenRecord">true</bool>
-
     <!-- Whether device ignores the RSSNR signal implementation -->
     <bool name="config_ignoreRssnrSignalLevel">true</bool>
 
