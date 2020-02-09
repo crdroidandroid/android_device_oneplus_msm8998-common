@@ -12,6 +12,16 @@ vendor/bin/hw/vendor.oneplus.hardware.ifaa@2.0-service
 vendor/etc/init/vendor.oneplus.hardware.ifaa@2.0-service.rc
 vendor/lib64/vendor.oneplus.hardware.ifaa@2.0.so
 
+# Camera
+-framework/vendor.oneplus.camera.CameraHIDL-V1.0-java.jar
+vendor/bin/hw/vendor.oneplus.camera.CameraHIDL@1.0-service
+vendor/etc/init/vendor.oneplus.camera.CameraHIDL@1.0-service.rc
+vendor/lib64/vendor.oneplus.camera.CameraHIDL@1.0.so
+lib/vendor.oneplus.camera.CameraHIDL@1.0.so
+lib/vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper.so
+lib64/vendor.oneplus.camera.CameraHIDL@1.0.so
+lib64/vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper.so
+
 # DASH
 vendor/xbin/dashd
 
