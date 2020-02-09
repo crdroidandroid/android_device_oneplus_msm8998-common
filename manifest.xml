@@ -465,6 +465,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.oneplus.camera.CameraHIDL</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IOnePlusCameraProvider</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.oneplus.fingerprint.extension</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -479,15 +488,6 @@
         <version>1.0</version>
         <interface>
             <name>IOneplusDrmKey</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.oneplus.hardware.hdcpkey</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IOneplusHdcpKey</name>
             <instance>default</instance>
         </interface>
     </hal>
