@@ -660,4 +660,7 @@
 
     <!-- Smart charging -->
     <bool name="config_smartChargingAvailable">true</bool>
+
+    <!-- Whether device has physical tri state switch -->
+    <bool name="config_hasAlertSlider">true</bool>
 </resources>
