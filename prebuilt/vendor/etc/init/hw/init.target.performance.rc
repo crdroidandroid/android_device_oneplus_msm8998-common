@@ -73,13 +73,10 @@ on property:sys.boot_completed=1
     # Disable boot time fs tuning
     write /sys/block/sda/queue/read_ahead_kb 128
     write /sys/block/sda/queue/nr_requests 128
-    write /sys/block/sda/queue/iostats 1
     write /sys/block/sdf/queue/read_ahead_kb 128
     write /sys/block/sdf/queue/nr_requests 128
-    write /sys/block/sdf/queue/iostats 1
     write /sys/block/sde/queue/read_ahead_kb 128
     write /sys/block/sde/queue/nr_requests 128
-    write /sys/block/sde/queue/iostats 1
 
     # Enable UFS powersaving
     write /sys/devices/soc/1da4000.ufshc/clkgate_enable 1
@@ -202,8 +199,8 @@ on property:sys.boot_completed=1
     write /proc/sys/kernel/sched_restrict_cluster_spill 1
     write /proc/sys/kernel/sched_prefer_sync_wakee_to_waker 1
 
-    # Set BFQ I/O scheduler
-    setprop sys.io.scheduler "bfq"
+    # Set CFQ I/O scheduler
+    setprop sys.io.scheduler "cfq"
 
     # Is IOP even still a thing?
     start vendor.iop
