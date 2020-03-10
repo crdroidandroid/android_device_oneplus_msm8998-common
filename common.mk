@@ -200,6 +200,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.2-service.clearkey \
     android.hardware.drm@1.2-service.widevine
 
+# FOD Animations
+PRODUCT_PACKAGES += \
+    crDroidFODAnimations
+
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service \
