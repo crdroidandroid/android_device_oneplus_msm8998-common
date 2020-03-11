@@ -216,6 +216,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mmp.enable.3g2=true \
     media.aac_51_output_enabled=true \
     mm.enable.sec.smoothstreaming=true \
+    vendor.mm.enable.qcom_parser=16760831 \
     persist.mm.enable.prefetch=true \
     vidc.enc.dcvs.extra-buff-count=2 \
     persist.media.treble_omx=true \
