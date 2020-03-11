@@ -1,4 +1,5 @@
 type diag_prop, property_type;
 type thermal_engine_prop, property_type;
+type vendor_fp_prop, property_type;
 type vendor_nfc_prop, property_type;
 type wifi_active_prop, property_type;
