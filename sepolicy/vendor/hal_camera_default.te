@@ -14,3 +14,5 @@ allow hal_camera_default sysfs:file { r_file_perms };
 
 get_prop(hal_camera_default, vendor_system_prop)
 set_prop(hal_camera_default, diag_prop)
+
+allow hal_camera_default persist_camera_prop:property_service set;
