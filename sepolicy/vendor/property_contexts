@@ -8,3 +8,5 @@ camera.on                              u:object_r:persist_camera_prop:s0
 vendor.camera.hal1.packagelist         u:object_r:persist_camera_prop:s0
 
 vendor.display.mode                    u:object_r:vendor_display_prop:s0
+
+wifi.active                            u:object_r:wifi_active_prop:s0
