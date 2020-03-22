@@ -173,6 +173,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/config
 
+# GPS
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.overlay.izat.optin=rro
+
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610 \
@@ -216,12 +220,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mmp.enable.3g2=true \
     media.aac_51_output_enabled=true \
     mm.enable.sec.smoothstreaming=true \
-    vendor.mm.enable.qcom_parser=16760831 \
+    vendor.mm.enable.qcom_parser=67092479 \
     persist.mm.enable.prefetch=true \
     vidc.enc.dcvs.extra-buff-count=2 \
     persist.media.treble_omx=true \
     vendor.vidc.debug.level=1 \
-    vendor.swvdec.log.level=1
+    vendor.swvdec.log.level=1 \
+    vendor.vidc.enc.disable.pq=true
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -309,6 +314,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.iwlan_mux=9 \
     persist.data.df.dev_name=rmnet_usb0 \
     persist.vendor.data.iwlan.enable=true
+
+# Sdcard
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.fuse_sdcard=true
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
