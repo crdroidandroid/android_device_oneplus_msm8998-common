@@ -368,6 +368,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libjson
 
+# QTI
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect \
+    libvndfwk_detect_jni.qti \
+    libvndfwk_detect_jni.qti.vendor
+
 # RCS
 PRODUCT_PACKAGES += \
     rcs_service_aidl \
