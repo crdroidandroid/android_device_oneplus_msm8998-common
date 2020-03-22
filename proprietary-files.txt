@@ -3,10 +3,7 @@ vendor/etc/firmware/tfa98xx.cnt:vendor/firmware/tfa98xx.cnt
 
 # Alipay
 -priv-app/IFAAService/IFAAService.apk
-lib/libteeclientjni.so
 lib/vendor.oneplus.hardware.ifaa@2.0.so
-lib64/libteeclientjni.so
-lib64/libteeclientjniv2.so
 lib64/vendor.oneplus.hardware.ifaa@2.0.so
 vendor/bin/hw/vendor.oneplus.hardware.ifaa@2.0-service
 vendor/etc/init/vendor.oneplus.hardware.ifaa@2.0-service.rc
@@ -22,16 +19,19 @@ lib/vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper.so
 lib64/vendor.oneplus.camera.CameraHIDL@1.0.so
 lib64/vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper.so
 
-# DASH
+# Dash
 vendor/xbin/dashd
+
+# Display calib
+vendor/etc/qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml
+vendor/etc/qdcm_calib_data_samsung_s6e3fa6_1080p_cmd_mode_dsi_panel.xml
 
 # DRM
 vendor/etc/init/vendor.oneplus.hardware.drmkey@1.0-service.rc
-vendor/etc/init/vendor.oneplus.hardware.hdcpkey@1.0-service.rc
 vendor/bin/hw/vendor.oneplus.hardware.drmkey@1.0-service
-vendor/bin/hw/vendor.oneplus.hardware.hdcpkey@1.0-service
+vendor/lib/libDrmKry.so
+vendor/lib64/libDrmKry.so
 vendor/lib64/vendor.oneplus.hardware.drmkey@1.0.so
-vendor/lib64/vendor.oneplus.hardware.hdcpkey@1.0.so
 
 # Graphics firmware
 vendor/firmware/a225p5_pm4.fw
@@ -62,6 +62,8 @@ vendor/firmware/a540_zap.b01
 vendor/firmware/a540_zap.b02
 vendor/firmware/a540_zap.elf
 vendor/firmware/a540_zap.mdt
+vendor/firmware/a630_gmu.bin
+vendor/firmware/a630_sqe.fw
 vendor/firmware/leia_pfp_470.fw
 vendor/firmware/leia_pm4_470.fw
 
@@ -74,8 +76,9 @@ vendor/firmware/ipa_fws.b04
 vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
 
-# NFC firmware
+# NFC
 vendor/lib/libpn553_fw.so
+vendor/lib64/libchrome.so
 
 # Radio - factory
 -framework/vendor.oneplus.hardware.param-V1.0-java.jar
