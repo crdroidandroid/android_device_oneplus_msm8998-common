@@ -161,6 +161,10 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     services-ext
 
+# CryptfsHW
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
+
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Launcher3QuickStep \
