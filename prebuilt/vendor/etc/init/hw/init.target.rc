@@ -30,7 +30,10 @@
 import /vendor/etc/init/hw/init.target.performance.rc
 
 on early-init
-    symlink /data/vendor/tombstones /tombstones
+    mkdir /firmware 0771 system system
+    mkdir /bt_firmware 0771 system system
+    symlink /data/tombstones /tombstones
+    mkdir /dsp 0771 media media
     write /proc/sys/kernel/sched_boost 1
 
 on init
@@ -62,7 +65,7 @@ on post-fs
     write /dev/ipa 1
 
 on post-fs-data
-    mkdir /data/vendor/tombstones 0771 system system
+    mkdir /data/tombstones 0771 system system
     mkdir /tombstones/modem 0771 system system
     mkdir /tombstones/lpass 0771 system system
     mkdir /tombstones/wcnss 0771 system system
@@ -73,8 +76,7 @@ on post-fs-data
 # For cpusets initialize for Silver Only first and then Silver + Gold
 # Silver Only configuration cannot work with 0-7
 on boot
-    start rmt_storage
-    start rfs_access
+    start vendor.rmt_storage
     write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/foreground/cpus 0-3
     write /dev/cpuset/foreground/boost/cpus 0-3
@@ -121,7 +123,6 @@ on boot
    insmod /system/lib/modules/msm-vidc-table-gov.ko
 
 #Load WLAN driver
-on property:wlan.driver.status=ok
    insmod /vendor/lib/modules/qca_cld3_wlan.ko
 
 #USB controller configuration
@@ -129,6 +130,7 @@ on property:wlan.driver.status=ok
     setprop vendor.usb.rmnet.func.name "gsi"
     setprop vendor.usb.rmnet.inst.name "rmnet"
     setprop vendor.usb.dpl.inst.name "dpl"
+    setprop vendor.usb.qdss.inst.name "qdss"
     setprop sys.usb.configfs 1
 
 #Peripheral manager
@@ -194,10 +196,6 @@ on property:vendor.sys.listeners.registered=*
     setprop sys.keymaster.loaded ${vendor.sys.listeners.registered}
     setprop vendor.sys.keymaster.loaded ${vendor.sys.listeners.registered}
 
-#service mpdecision /system/vendor/bin/mpdecision --avg_comp
-#   user root
-#   disabled
-#
 #service qosmgrd /system/bin/qosmgr /system/etc/qosmgr_rules.xml
 #   user system
 #   group system
@@ -297,23 +295,6 @@ service audiod /system/vendor/bin/audiod
 #    chown system drmrpc /sys/devices/f9966000.i2c/i2c-1/1-0020/secure_touch_enable
 #    chown system drmrpc /sys/devices/f9966000.i2c/i2c-1/1-0020/secure_touch
 #
-#
-#
-## imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
-    class main
-    user radio
-    socket ims_qmid stream 0660 system radio
-    group radio log diag
-
-# imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
-    class main
-    user radio
-    socket ims_datad stream 0660 system radio
-    group radio wifi inet log diag
-    disabled
-#
 #service mdm_helper /system/bin/mdm_helper
 #    class core
 #    onrestart setprop ro.service.mdm_helper_restarted "true"
@@ -370,9 +351,6 @@ service vendor.pd_mapper /vendor/bin/pd-mapper
 #   group gps system oem_2901 diag log inet net_raw
 #   disabled
 
-on property:vendor.ims.QMI_DAEMON_STATUS=1
-    start vendor.imsdatadaemon
-
 on property:vold.decrypt=trigger_restart_framework
    start cnss_diag
 
@@ -381,19 +359,6 @@ service cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
    user system
    group system wifi inet sdcard_rw media_rw diag
    oneshot
-
-service vendor.ims_rtp_daemon /vendor/bin/ims_rtp_daemon
-   class main
-    user radio
-    group radio vendor_qti_diag inet log
-
-service vendor.imsrcsservice /vendor/bin/imsrcsd
-   class main
-   user radio
-   group radio diag inet log wakelock
-
-on property:vendor.ims.DATA_DAEMON_STATUS=1
-    restart vendor.ims_rtp_daemon
 
 service ppd /vendor/bin/mm-pp-dpps
     class late_start
