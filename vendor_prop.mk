@@ -60,7 +60,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.spkr_prot.tx.sampling_rate=48000 \
     vendor.audio.parser.ip.buffer.size=0 \
     vendor.audio.flac.sw.decoder.24bit=true \
-    persist.vendor.bt.enable.splita2dp=false \
     vendor.audio.use.sw.alac.decoder=true \
     vendor.audio.use.sw.ape.decoder=true \
     vendor.audio.hw.aac.encoder=true \
@@ -104,7 +103,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.feature.record_play_concurency.enable=false \
     vendor.audio.feature.src_trkn.enable=true \
     vendor.audio.feature.spkr_prot.enable=true \
-    vendor.audio.feature.ssrec.enable=false \
+    vendor.audio.feature.ssrec.enable=true \
     vendor.audio.feature.usb_offload.enable=true \
     vendor.audio.feature.usb_offload_burst_mode.enable=false \
     vendor.audio.feature.usb_offload_sidetone_volume.enable=false \
@@ -112,7 +111,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.feature.vbat.enable=true \
     vendor.audio.feature.wsa.enable=false \
     vendor.audio.feature.audiozoom.enable=false \
-    vendor.audio.feature.snd_mon.enable=false
+    vendor.audio.feature.snd_mon.enable=true
 
 # Battery
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -125,9 +124,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.bluetooth.a2dp_offload.disabled=false \
     persist.vendor.bluetooth.a4wp=false \
     persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
     ro.bluetooth.a2dp_offload.supported=true \
+    ro.vendor.bluetooth.wipower=false \
     vendor.bluetooth.emb_wp_mode=false \
-    vendor.bluetooth.wipower=false
     vendor.qcom.bluetooth.soc=cherokee
 
 # Cabl
