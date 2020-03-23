@@ -1234,7 +1234,7 @@ product/lib64/vendor.qti.ims.rcsconfig@1.0.so
 product/lib64/vendor.qti.ims.rcsconfig@1.1.so
 product/lib64/vendor.qti.imsrtpservice@2.0.so
 product/lib64/vendor.qti.imsrtpservice@2.1.so
--product/priv-app/ims/ims.apk
+-product/priv-app/ims/ims.apk|bd32366296caf44cf2171a464b788004bed58156
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
