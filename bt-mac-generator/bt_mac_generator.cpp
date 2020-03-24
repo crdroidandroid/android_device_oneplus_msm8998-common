@@ -167,8 +167,8 @@ void get_mac_from_nv() {
 
     if (stat(BDADDR_PATH, &st) == 0) {
         chmod(BDADDR_PATH, S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH);
-        property_set("ro.bt.bdaddr_path", BDADDR_PATH);
-        property_set("persist.service.bdroid.bdaddr", BDADDR_PATH);
+        property_set("ro.vendor.bt.bdaddr_path", BDADDR_PATH);
+        property_set("persist.vendor.service.bdroid.bdaddr", BDADDR_PATH);
     }
 }
 
