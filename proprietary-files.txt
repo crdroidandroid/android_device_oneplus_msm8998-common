@@ -25,6 +25,7 @@ vendor/xbin/dashd
 # Display calib
 vendor/etc/qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml
 vendor/etc/qdcm_calib_data_samsung_s6e3fa6_1080p_cmd_mode_dsi_panel.xml
+vendor/etc/qdcm_calib_data_samsung_s6e3fc1_cmd_mode_dsi_panel.xml|dc362ab09d4cd60f948c120c62b688fce539b40a
 
 # DRM
 vendor/etc/init/vendor.oneplus.hardware.drmkey@1.0-service.rc
