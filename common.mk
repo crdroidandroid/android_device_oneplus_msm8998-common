@@ -140,7 +140,9 @@ PRODUCT_PACKAGES += \
     libbthost_if \
     bt-mac-generator \
     audio.bluetooth.default \
-    android.hardware.bluetooth.audio@2.0-impl
+    android.hardware.bluetooth.audio@2.0-impl \
+    vendor.qti.hardware.bluetooth_audio@2.0 \
+    vendor.qti.hardware.bluetooth_dun@1.0
 
 # Camera
 PRODUCT_PACKAGES += \
