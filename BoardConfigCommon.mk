@@ -22,6 +22,8 @@
 # definition file).
 #
 
+BUILD_BROKEN_DUP_RULES := true
+
 # Inherit from oppo-common
 -include device/oppo/common/BoardConfigCommon.mk
 
@@ -194,10 +196,6 @@ TARGET_PROVIDES_KEYMASTER := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
-
-# NFC
-BOARD_NFC_CHIPSET := pn553
-TARGET_USES_NQ_NFC := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864

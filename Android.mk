@@ -43,6 +43,16 @@ $(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
 
+NXP_LIBS := libnxpnfc_nci_jni.so
+NXP_SYMLINKS := $(addprefix $(TARGET_OUT_APPS)/NxpNfcNci/lib/arm64/,$(notdir $(NXP_LIBS)))
+$(NXP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "NxpNfcNci lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /system/lib64/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(NXP_SYMLINKS)
+
 RFS_MSM_ADSP_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/msm/adsp/
 $(RFS_MSM_ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating RFS MSM ADSP folder structure: $@"

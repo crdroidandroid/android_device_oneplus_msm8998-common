@@ -213,9 +213,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.camera.notify_nfc=1 \
     ro.hardware.nfc_nci=nqx.default \
     ro.nfc.port=I2C \
-    persist.nfc.smartcard.config=SIM1,eSE1
+    persist.nfc.smartcard.config=SIM1,eSE1 \
+    ro.boot.product.hardware.sku=ese \
+    persist.vendor.nfc.delayese=true
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
