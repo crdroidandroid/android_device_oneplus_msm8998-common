@@ -122,7 +122,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     bt.max.hfpclient.connections=1 \
     persist.vendor.bluetooth.a4wp=false \
     persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac \
-    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
     ro.vendor.bluetooth.wipower=false \
     vendor.bluetooth.emb_wp_mode=false \
     vendor.qcom.bluetooth.soc=cherokee
