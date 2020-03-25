@@ -106,6 +106,9 @@ on boot
     chmod 0666 /dev/nq-nci
     chown nfc nfc /dev/nq-nci
 
+    chmod 0666 /dev/pn553
+    chown nfc nfc /dev/pn553
+
     chmod 0666 /dev/p73
     chown secure_element secure_element /dev/p73
 
