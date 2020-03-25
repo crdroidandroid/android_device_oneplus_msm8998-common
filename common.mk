@@ -49,6 +49,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
+    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
@@ -293,6 +294,11 @@ PRODUCT_PACKAGES += \
     libregistermsext \
     mediametrics
 
+# Misc
+PRODUCT_PACKAGES += \
+    libchrome.vendor \
+    libp61-jcop-kit
+
 # Netutils
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
@@ -301,29 +307,20 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0-impl \
+    android.hardware.nfc@1.2-service \
+    android.hardware.secure_element@1.1-service \
     com.android.nfc_extras \
-    com.nxp.nfc.nq \
-    com.nxp.nfc.nq.xml \
-    libnqnfc-nci \
-    libnqp61-jcop-kit \
-    nfc_nci.nqx.default \
-    NQNfcNci \
-    nqnfcee_access.xml \
-    nqnfcse_access.xml \
-    Tag \
-    vendor.nxp.hardware.nfc@1.1-service
+    NfcNci \
+    SecureElement \
+    Tag
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libese-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libese-nxp.conf \
     $(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-nxp_RF.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp_RF.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-nxp_RF.conf:$(TARGET_COPY_OUT_VENDOR)/libnfc-nxp_RF.conf \
     $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
-
-# NFC - Secure Element
-PRODUCT_PACKAGES += \
-    android.hardware.secure_element@1.0-service \
-    SecureElement
 
 # OEM Unlock reporting
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \

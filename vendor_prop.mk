@@ -211,12 +211,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vidc.enc.dcvs.extra-buff-count=2 \
     persist.media.treble_omx=true
 
-# NFC
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.nfc_nci=nqx.default \
-    ro.nfc.port=I2C \
-    persist.nfc.smartcard.config=SIM1,eSE1
-
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.fw.bg_apps_limit=60 \

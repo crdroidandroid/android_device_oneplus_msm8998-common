@@ -114,9 +114,11 @@ on boot
     chmod 0666 /dev/goodix_fp
     
     #NFC, ruanbanmao add for 15801 nfc. 2015/10/19
-    setprop ro.nfc.port "I2C"
     chmod 0666 /dev/nq-nci
     chown nfc nfc /dev/nq-nci
+
+    chmod 0666 /dev/pn553
+    chown nfc nfc /dev/pn553
 
     chmod 0666 /dev/p73
     chown secure_element secure_element /dev/p73
