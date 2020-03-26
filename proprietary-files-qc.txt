@@ -78,20 +78,6 @@ vendor/lib64/libaudioconfigstore.so
 vendor/lib64/libaudioparsers.so
 vendor/lib64/libqtigef.so
 
-# Audio extensions
-vendor/lib/libbatterylistener.so
-vendor/lib/libcomprcapture.so
-vendor/lib/libexthwplugin.so
-vendor/lib/libhdmipassthru.so
-vendor/lib/libsndmonitor.so
-vendor/lib/libspkrprot.so
-vendor/lib64/libbatterylistener.so
-vendor/lib64/libcomprcapture.so
-vendor/lib64/libexthwplugin.so
-vendor/lib64/libhdmipassthru.so
-vendor/lib64/libsndmonitor.so
-vendor/lib64/libspkrprot.so
-
 # Audio FX modules
 etc/permissions/audiosphere.xml
 framework/audiosphere.jar
@@ -1413,6 +1399,7 @@ vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so
 vendor/lib/libhdcp1prov.so
 vendor/lib/libhdcp2p2prov.so
 vendor/lib/libhdcpsrm.so
+vendor/lib/libhdmipassthru.so
 vendor/lib/libmm-hdcpmgr.so
 vendor/lib/libmmosal_proprietary.so
 vendor/lib/libwfdcommonutils_proprietary.so
@@ -1423,6 +1410,7 @@ vendor/lib/libwfdmodulehdcpsession.so
 vendor/lib64/libhdcp1prov.so
 vendor/lib64/libhdcp2p2prov.so
 vendor/lib64/libhdcpsrm.so
+vendor/lib64/libhdmipassthru.so
 vendor/lib64/libmm-hdcpmgr.so
 vendor/lib64/libmmosal_proprietary.so
 vendor/lib64/libwfdhdcpcp.so
