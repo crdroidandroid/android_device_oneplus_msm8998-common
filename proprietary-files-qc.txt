@@ -15,6 +15,7 @@ vendor/lib/libadsp_default_listener.so
 vendor/lib/libadsp_hvx_callback_skel.so
 vendor/lib/libadsp_hvx_stub.so
 vendor/lib/libadsprpc.so
+vendor/lib/libcdsp_default_listener.so
 vendor/lib/libcdsprpc.so
 vendor/lib/libfastcrc.so
 vendor/lib/libfastcvadsp_stub.so
@@ -24,6 +25,7 @@ vendor/lib/libmdsprpc.so
 vendor/lib/libsdsprpc.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
+vendor/lib64/libcdsp_default_listener.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libfastcrc.so
 vendor/lib64/libfastcvadsp_stub.so
@@ -65,7 +67,9 @@ vendor/lib/libaudioalsa.so
 vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudioconfigstore.so
 vendor/lib/libaudioparsers.so
+vendor/lib/libdrc.so
 vendor/lib/libqtigef.so
+vendor/lib/libssrec.so
 vendor/lib/libsurround_3mic_proc.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
@@ -76,6 +80,7 @@ vendor/lib64/libaudioalsa.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudioconfigstore.so
 vendor/lib64/libaudioparsers.so
+vendor/lib64/libssrec.so
 vendor/lib64/libqtigef.so
 
 # Audio FX modules
@@ -139,7 +144,6 @@ vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib/btaudio_offload_if.so
-vendor/lib/libbluetooth_audio_session.so
 vendor/lib/libbluetooth_audio_session_qti.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib/vendor.qti.hardware.btconfigstore@1.0.so
@@ -149,7 +153,6 @@ vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib64/btaudio_offload_if.so
-vendor/lib64/libbluetooth_audio_session.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so
@@ -259,6 +262,7 @@ vendor/lib/libscveObjectTracker.so
 vendor/lib/libscveObjectTracker_stub.so
 vendor/lib/libscveObjectSegmentation.so
 vendor/lib/libscveObjectSegmentation_stub.so
+vendor/lib/libseemore.so
 vendor/lib/libstblur_capture_api.so
 vendor/lib/libSTDualCamCaptureBokeh.so
 vendor/lib/libSTDualCamPreviewBokeh.so
@@ -288,6 +292,7 @@ vendor/lib64/libscveObjectTracker.so
 vendor/lib64/libscveObjectTracker_stub.so
 vendor/lib64/libscveObjectSegmentation.so
 vendor/lib64/libscveObjectSegmentation_stub.so
+vendor/lib64/libseemore.so
 vendor/lib64/libUBWC.so
 vendor/lib64/libvideoutils.so
 
@@ -738,6 +743,8 @@ vendor/bin/xtwifi-inet-agent
 vendor/etc/init/init.qdmastats.rc
 vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml
 vendor/lib/hw/vendor.qti.gnss@3.0-impl.so
+vendor/lib/libaoa.so
+vendor/lib/libdataitems.so
 vendor/lib/libgarden.so
 vendor/lib/libgdtap.so
 vendor/lib/libizat_client_api.so
@@ -747,6 +754,8 @@ vendor/lib/libizat_core.so
 vendor/lib/liblocationservice_glue.so
 vendor/lib/liblocationservice.so
 vendor/lib/libqdma_file_agent.so
+vendor/lib/libslimclient.so
+vendor/lib/libxtadapter.so
 vendor/lib/vendor.qti.gnss@1.0.so
 vendor/lib/vendor.qti.gnss@1.1.so
 vendor/lib/vendor.qti.gnss@1.2.so
@@ -755,6 +764,8 @@ vendor/lib/vendor.qti.gnss@2.1.so
 vendor/lib/vendor.qti.gnss@3.0-service.so
 vendor/lib/vendor.qti.gnss@3.0.so
 vendor/lib64/hw/vendor.qti.gnss@3.0-impl.so
+vendor/lib64/libaoa.so
+vendor/lib64/libdataitems.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libgarden.so
 vendor/lib64/libgarden_haltests_e2e.so
@@ -858,19 +869,20 @@ vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
 # Improvetouch
 vendor/bin/hbtp_daemon
-vendor/etc/hbtp/hbtpcfg.dat
 vendor/etc/hbtp/hbtpcfg2.dat
+vendor/etc/hbtp/hbtpcfg.dat
+vendor/etc/hbtp/loader.cfg
+vendor/etc/hbtp/qtc800h_8998_660.bin
 vendor/etc/hbtp/qtc800h.bin
 vendor/etc/hbtp/qtc800s_dsp.bin
-vendor/etc/hbtp/qtc800h_8998_660.bin
 vendor/lib/libhbtpclient.so
 vendor/lib/libhbtpfrmwk.so
 vendor/lib/libhbtpdsp.so
 vendor/lib/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so
 vendor/lib/vendor.qti.hardware.improvetouch.touchcompanion@1.0.so
 vendor/lib64/libhbtpclient.so
-vendor/lib64/libhbtpfrmwk.so
 vendor/lib64/libhbtpdsp.so
+vendor/lib64/libhbtpfrmwk.so
 vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so
 vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0.so
 
@@ -889,11 +901,11 @@ vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libqtikeymaster4.so
 
 # Listen
-vendor/lib/libmulawdec.so
 vendor/lib/hw/sound_trigger.primary.msm8998.so
-vendor/lib64/libmulawdec.so
-vendor/lib64/hw/sound_trigger.primary.msm8998.so
+vendor/lib/libmulawdec.so
 vendor/lib/libsmwrapper.so
+vendor/lib64/hw/sound_trigger.primary.msm8998.so
+vendor/lib64/libmulawdec.so
 
 # Media
 product/lib64/vendor.qti.hardware.vpp@1.1.so
@@ -925,6 +937,7 @@ vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxVpp.so
 vendor/lib/libOmxWmaDec.so
+vendor/lib/libdsd2pcm.so
 -vendor/lib/libgpustats.so
 vendor/lib/libmm-color-convertor.so
 vendor/lib/libvpphvx.so
@@ -966,6 +979,7 @@ vendor/lib64/libperipheral_client.so
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
 vendor/bin/mm-pp-dpps
+vendor/lib/libdisp-aba.so
 vendor/lib64/libdisp-aba.so
 
 # PowerOffAlarm
@@ -1421,6 +1435,10 @@ vendor/lib64/hw/vr.msm8998.so
 
 # Misc
 vendor/etc/graphite_ipc_platform_info.xml
+vendor/lib/libgcs.so
+vendor/lib/libgcs-calwrapper.so
+vendor/lib/libgcs-ipc.so
+vendor/lib/libgcs-osal.so
 vendor/lib64/libgcs.so
 vendor/lib64/libgcs-calwrapper.so
 vendor/lib64/libgcs-ipc.so
