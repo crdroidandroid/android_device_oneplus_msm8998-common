@@ -614,6 +614,8 @@ vendor/lib64/vendor.qti.latency@2.0.so
 # DPM
 bin/dpm
 framework/dpm.jar
+framework/tcmclient.jar
+framework/tcmiface.jar
 product/etc/dpm/dpm.conf
 product/etc/init/dpmd.rc
 product/etc/permissions/com.qti.dpmframework.xml
