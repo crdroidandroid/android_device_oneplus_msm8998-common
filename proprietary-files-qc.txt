@@ -69,7 +69,6 @@ vendor/lib/libaudioconfigstore.so
 vendor/lib/libaudioparsers.so
 vendor/lib/libdrc.so
 vendor/lib/libqtigef.so
-vendor/lib/libssrec.so
 vendor/lib/libsurround_3mic_proc.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
@@ -80,7 +79,6 @@ vendor/lib64/libaudioalsa.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudioconfigstore.so
 vendor/lib64/libaudioparsers.so
-vendor/lib64/libssrec.so
 vendor/lib64/libqtigef.so
 
 # Audio FX modules
