@@ -23,7 +23,6 @@
 #
 
 $(call inherit-product, vendor/oneplus/msm8998-common/msm8998-common-vendor.mk)
-$(call inherit-product, vendor/addons/onepluscamera/config.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o.mk)
 
 # Overlays
