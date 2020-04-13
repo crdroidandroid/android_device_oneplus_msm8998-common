@@ -88,7 +88,6 @@ vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
-vendor/lib64/libeffectsconfig.so
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcvirt.so
@@ -121,20 +120,15 @@ etc/bluetooth/interop_database.conf
 lib/libbluetooth_qti.so
 lib/libbt-logClient.so
 lib/libbtconfigstore.so
-lib/libldacBT_abr.so
-lib/libldacBT_enc.so
 lib64/libbluetooth_qti.so
 lib64/libbt-logClient.so
 lib64/libbtconfigstore.so
-lib64/libldacBT_abr.so
-lib64/libldacBT_enc.so
 product/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 product/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 product/lib/vendor.qti.hardware.btconfigstore@1.0.so
 product/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
 product/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 product/lib64/vendor.qti.hardware.btconfigstore@1.0.so
-vendor/bin/btconfig
 vendor/bin/ftmdaemon
 vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib/hw/audio.bluetooth_qti.default.so
@@ -610,8 +604,6 @@ vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
 vendor/lib64/vendor.qti.latency@2.0.so
 
 # DPM
-bin/dpm
-framework/dpm.jar
 framework/tcmclient.jar
 framework/tcmiface.jar
 product/etc/dpm/dpm.conf
@@ -939,7 +931,6 @@ vendor/lib/libOmxApeDecSw.so
 vendor/lib/libOmxDsdDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxG711Dec.so
-vendor/lib/libOmxG711Enc.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxVpp.so
@@ -963,7 +954,6 @@ vendor/lib64/libOmxApeDec.so
 vendor/lib64/libOmxApeDecSw.so
 vendor/lib64/libOmxEvrcDec.so
 vendor/lib64/libOmxG711Dec.so
-vendor/lib64/libOmxG711Enc.so
 vendor/lib64/libOmxQcelp13Dec.so
 vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
@@ -1068,14 +1058,10 @@ vendor/etc/init/vendor.qti.rmt_storage.rc
 vendor/etc/init/vendor.qti.tftp.rc
 etc/permissions/qcnvitems.xml:product/etc/permissions/qcnvitems.xml
 product/etc/permissions/qcrilhook.xml
-product/etc/permissions/qti_telephony_utils.xml
-product/etc/permissions/qti_telephony_hidl_wrapper.xml
 product/etc/permissions/telephonyservice.xml
 framework/qcnvitems.jar:product/framework/qcnvitems.jar
 product/framework/qcrilhook.jar
 product/framework/qti-telephony-common.jar
-product/framework/qti-telephony-hidl-wrapper.jar
-product/framework/qti-telephony-utils.jar
 product/framework/QtiTelephonyServicelibrary.jar
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/qti
@@ -1157,13 +1143,11 @@ vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml
-product/etc/permissions/ims_ext_common.xml
 product/framework/com.qualcomm.qti.imscmservice-V2.0-java.jar
 product/framework/com.qualcomm.qti.imscmservice-V2.1-java.jar
 product/framework/com.qualcomm.qti.imscmservice-V2.2-java.jar
 product/framework/com.qualcomm.qti.uceservice-V2.0-java.jar
 product/framework/com.qualcomm.qti.uceservice-V2.1-java.jar
-product/framework/ims-ext-common.jar
 product/framework/vendor.qti.ims.callinfo-V1.0-java.jar
 product/framework/vendor.qti.ims.rcsconfig-V1.0-java.jar
 product/framework/vendor.qti.ims.rcsconfig-V1.1-java.jar
@@ -1429,7 +1413,6 @@ lib64/libmmrtpencoder.so
 lib64/libmmparser_lite.so
 lib64/libwfdclient.so
 lib64/libwfdnative.so
-lib64/libwfds.so
 -priv-app/WfdService/WfdService.apk
 vendor/bin/hdcp1prov
 vendor/bin/hdcp2p2prov
@@ -1455,10 +1438,6 @@ vendor/lib64/libhdmipassthru.so
 vendor/lib64/libmm-hdcpmgr.so
 vendor/lib64/libmmosal_proprietary.so
 vendor/lib64/libwfdhdcpcp.so
-
-# VR
-vendor/lib/hw/vr.msm8998.so
-vendor/lib64/hw/vr.msm8998.so
 
 # Misc
 vendor/etc/graphite_ipc_platform_info.xml
