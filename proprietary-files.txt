@@ -30,9 +30,9 @@ vendor/etc/qdcm_calib_data_samsung_s6e3fc1_cmd_mode_dsi_panel.xml|dc362ab09d4cd6
 # DRM
 vendor/etc/init/vendor.oneplus.hardware.drmkey@1.0-service.rc
 vendor/bin/hw/vendor.oneplus.hardware.drmkey@1.0-service
-vendor/lib/libDrmKry.so
 vendor/lib64/libDrmKry.so
 vendor/lib64/vendor.oneplus.hardware.drmkey@1.0.so
+vendor/lib/libDrmKry.so
 
 # Graphics firmware
 vendor/firmware/a225p5_pm4.fw

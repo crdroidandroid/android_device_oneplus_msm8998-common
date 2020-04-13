@@ -32,7 +32,7 @@ fi
 . "$HELPER"
 
 # Default to NOT sanitizing the vendor folder before extraction
-CLEAN_VENDOR=false
+CLEAN_VENDOR=true
 
 while [ "$1" != "" ]; do
     case $1 in
@@ -89,7 +89,8 @@ function fix_product_path () {
 }
 
 fix_product_path product/etc/permissions/qcnvitems.xml
-fix_product_path vendor/etc/permissions/vendor.qti.hardware.factory.xml
+fix_product_path product/etc/permissions/vendor.qti.hardware.factory.xml
+fix_product_path product/etc/permissions/vendor-qti-hardware-sensorscalibrate.xml
 
 #
 # Fix xml version
