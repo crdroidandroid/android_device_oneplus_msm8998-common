@@ -1,0 +1,2 @@
+# Stop Facebook Spam
+dontaudit untrusted_app_27 proc:file  { getattr open read };
