@@ -124,3 +124,9 @@ etc/firmware/mbn_ota/mbn_ota.txt:vendor/firmware/mbn_ota/mbn_ota.txt
 # Sensors
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sensor_def_qcomdev.conf
+
+# Wifi
+vendor/bin/hw/vendor.oneplus.hardware.wifi@1.0-service
+vendor/etc/init/vendor.oneplus.hardware.wifi@1.0-service.rc
+vendor/lib64/vendor.oneplus.hardware.wifi@1.0.so
+vendor/lib64/vendor.oneplus.hardware.wifi@1.1.so
