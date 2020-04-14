@@ -30,7 +30,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.min.duration.secs=30 \
     persist.dirac.acs.controller=qem \
     ro.dirac.acs.storeSettings=1 \
-    ro.dirac.ignore_error=1 \
+    ro.dirac.acs.ignore_error=1 \
     tunnel.audio.encode=true \
     nxpWechatDebugEnable=1 \
     persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24 \
@@ -69,7 +69,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.fm.a2dp.conc.disabled=true \
     vendor.audio.noisy.broadcast.delay=600 \
     ro.config.media_vol_steps=25 \
-    ro.config.vc_call_vol_steps=11
+    ro.config.vc_call_vol_steps=6
 
 # Audio dynamic feature flags
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -127,6 +127,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac \
     ro.vendor.bluetooth.wipower=false \
     vendor.bluetooth.emb_wp_mode=false \
+    vendor.hw.fm.init=0 \
     vendor.qcom.bluetooth.soc=cherokee
 
 # Cabl
@@ -231,13 +232,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.swvdec.log.level=1 \
     vendor.vidc.enc.disable.pq=true
 
+# Network
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.netmon.linger=5000
+
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.notify_nfc=1 \
     ro.hardware.nfc_nci=nqx.default \
     ro.nfc.port=I2C \
     persist.nfc.smartcard.config=SIM1,eSE1 \
-    ro.boot.product.hardware.sku=ese
+    ro.boot.product.hardware.sku=ese \
+    persist.vendor.nfc.delayese=true
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -283,10 +289,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=1 \
     ro.telephony.iwlan_operation_mode=legacy \
     keyguard.no_require_sim=true \
-    ro.com.android.dataroaming=true \
+    ro.com.android.dataroaming=false \
     persist.sys.oem_smooth=1 \
     persist.radio.VT_CAM_INTERFACE=1 \
-    persist.radio.efssync=true \
+    persist.vendor.radio.efssync=true \
     persist.radio.multisim.config=dsds \
     persist.radio.enhance_ecall=true \
     persist.radio.hw_mbn_update=0 \
