@@ -1362,7 +1362,9 @@ vendor/lib/libcppf.so
 # Wi-Fi
 vendor/bin/cnss_diag
 vendor/bin/cnss-daemon
+vendor/bin/fstman
 vendor/bin/wifilearner
+vendor/etc/init/vendor.qti.hardware.fstman@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc
 vendor/etc/wifi/aoa_cldb_falcon.bin
 vendor/etc/wifi/aoa_cldb_swl14.bin

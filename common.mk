@@ -349,6 +349,7 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.0-impl:64 \
     android.hardware.nfc@1.0:64 \
     android.hardware.nfc@1.1:64 \
     android.hardware.nfc@1.2:64 \
@@ -533,6 +534,7 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
+    vendor.qti.hardware.fstman@1.0.vendor \
     vendor.qti.hardware.wifi.hostapd@1.0.vendor \
     vendor.qti.hardware.wifi.hostapd@1.1.vendor \
     vendor.qti.hardware.wifi.supplicant@2.0.vendor \
