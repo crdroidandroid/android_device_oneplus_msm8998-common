@@ -14,6 +14,8 @@
 /(vendor|system/vendor)/bin/bt-mac-generator                    u:object_r:bt_mac_generator_exec:s0
 
 # Camera
+/mnt/vendor/persist/camera(/.*)?                                u:object_r:persist_camera_file:s0
+/mnt/vendor/persist/dual_camera_calibration(/.*)?               u:object_r:persist_camera_file:s0
 /(product|system/product)/(lib|lib64)/vendor\.qti\.hardware\.camera\.device@1\.0\.so   u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.camera\.CameraHIDL@1\.0-service    u:object_r:hal_cameraHIDL_default_exec:s0
 
@@ -58,6 +60,9 @@
 /vendor/usr/keylayout/synaptics.kl                              u:object_r:vendor_keylayout_file:s0
 /vendor/usr/keylayout/synaptics_s3320.kl                        u:object_r:vendor_keylayout_file:s0
 
+# NFC
+/(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element@1\.1-service                                     u:object_r:hal_secure_element_default_exec:s0
+
 # Param
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.param@1\.0-service    u:object_r:hal_param_default_exec:s0
 
@@ -93,5 +98,9 @@
 
 # Wifi
 /(vendor|system/vendor)/bin/wifi-mac-generator                  u:object_r:wifi_mac_generator_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.wifi@1\.0-service                                       u:object_r:hal_wifi_default_exec:s0
+/data/vendor/oemnvitems/4678_0                                  u:object_r:wifi_nv_data_file:s0
+/data/vendor/oemnvitems/4678_1                                  u:object_r:wifi_nv_data_file:s0
+
 
 /dev/stune(/.*)?                                                u:object_r:cgroup:s0

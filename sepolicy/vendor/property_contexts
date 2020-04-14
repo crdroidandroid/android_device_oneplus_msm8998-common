@@ -4,9 +4,19 @@ persist.vendor.oem.dump                u:object_r:diag_prop:s0
 vendor.oem.device.imeicache0           u:object_r:radio_prop:s0
 vendor.oem.device.imeicache1           u:object_r:radio_prop:s0
 
+# Camera
 camera.on                              u:object_r:persist_camera_prop:s0
 vendor.camera.hal1.packagelist         u:object_r:persist_camera_prop:s0
 
+# Display
+persist.vendor.color.matrix            u:object_r:vendor_display_prop:s0
 vendor.display.mode                    u:object_r:vendor_display_prop:s0
 
+# NFC
+persist.vendor.nfc.                    u:object_r:vendor_nfc_prop:s0
+persist.vendor.oem.nfc.                u:object_r:vendor_nfc_prop:s0
+ro.vendor.nfc.notify_tp                u:object_r:vendor_nfc_prop:s0
+vendor.oem.nfc.                        u:object_r:vendor_nfc_prop:s0
+
+# Wifi
 wifi.active                            u:object_r:wifi_active_prop:s0

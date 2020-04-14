@@ -1,2 +1,3 @@
 type diag_prop, property_type;
+type vendor_nfc_prop, property_type;
 type wifi_active_prop, property_type;

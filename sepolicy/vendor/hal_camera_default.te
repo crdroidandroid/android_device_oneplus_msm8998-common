@@ -8,6 +8,9 @@ typeattribute hal_camera_default data_between_core_and_vendor_violators;
 allow hal_camera_default camera_data_file:dir { search };
 allow hal_camera_default camera_data_file:file { r_file_perms };
 
+allow hal_camera_default persist_camera_file:dir w_dir_perms;
+allow hal_camera_default persist_camera_file:file create_file_perms;
+
 allow hal_camera_default mnt_vendor_file:file { rw_file_perms setattr };
 
 allow hal_camera_default sysfs:file { r_file_perms };
