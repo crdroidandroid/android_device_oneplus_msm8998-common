@@ -1,2 +1,2 @@
-allow cnd diag_device:chr_file { rw_file_perms };
-set_prop(cnd, diag_prop)
+diag_use(cnd)
+binder_call(cnd, radio)
