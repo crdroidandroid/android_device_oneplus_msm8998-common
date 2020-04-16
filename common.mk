@@ -96,26 +96,15 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.1-impl \
     android.hardware.bluetooth.audio@2.0-impl \
     audio.a2dp.default \
-    audio.primary.msm8998 \
     audio.r_submix.default \
     audio.usb.default \
     audio_amplifier.msm8998 \
-    liba2dpoffload \
     libaudio-resampler \
     libaudioroute \
-    libbatterylistener \
-    libcirrusspkrprot \
-    libcomprcapture \
     libeffectsconfig \
-    libexthwplugin \
-    libhdmiedid \
-    libhfp \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libsndmonitor \
-    libspkrprot \
-    libssrec \
     libvolumelistener \
     tinymix \
     libtinycompress \
