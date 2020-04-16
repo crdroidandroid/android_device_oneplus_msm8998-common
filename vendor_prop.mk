@@ -68,8 +68,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.hw.aac.encoder=true \
     vendor.fm.a2dp.conc.disabled=true \
     vendor.audio.noisy.broadcast.delay=600 \
-    ro.config.media_vol_steps=25 \
-    ro.config.vc_call_vol_steps=6
+    ro.config.alarm_vol_default=10 \
+    ro.config.alarm_vol_steps=16 \
+    ro.config.media_vol_default=7 \
+    ro.config.media_vol_steps=18 \
+    ro.config.vc_call_vol_default=6 \
+    ro.config.vc_call_vol_steps=8
 
 # Audio dynamic feature flags
 PRODUCT_PROPERTY_OVERRIDES += \
