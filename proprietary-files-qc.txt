@@ -151,8 +151,8 @@ vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Bluetooth (aptX)
-lib64/libaptX_encoder.so
-lib64/libaptXHD_encoder.so
+lib64/libaptX_encoder.so:product/lib64/libaptX_encoder.so
+lib64/libaptXHD_encoder.so:product/lib64/libaptXHD_encoder.so
 
 # Camera
 framework/com.qualcomm.qti.camera.jar
