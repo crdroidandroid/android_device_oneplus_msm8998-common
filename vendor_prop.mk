@@ -296,6 +296,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.iwlan_operation_mode=legacy \
     telephony.lteOnCdmaDevice=1 \
     persist.rcs.supported=0 \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true \
     persist.sys.oem_smooth=1 \
     persist.radio.multisim.config=dsds \
     persist.vendor.ims.dropset_feature=0 \
@@ -320,7 +321,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.radio.start_ota_daemon=0 \
     persist.vendor.radio.sw_mbn_update=0 \
-    persist.vendor.radio.uicc_se_enabled=false
+    persist.vendor.radio.uicc_se_enabled=false \
+    persist.vendor.radio.aosp_usr_pref_sel=true
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
