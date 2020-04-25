@@ -152,6 +152,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.core_ctl_min_cpu=2 \
     ro.vendor.qti.core_ctl_max_cpu=4
 
+# Dalvik
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat64.enabled=true
+
 # Data
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.aosp_usr_pref_sel=true \
