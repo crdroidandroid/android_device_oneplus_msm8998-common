@@ -135,6 +135,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
 
+# Dalvik
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat64.enabled=true
+
 # Data
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.mode=concurrent \
