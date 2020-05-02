@@ -139,14 +139,11 @@ vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # Bluetooth (Audio)
-product/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 product/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 product/lib/vendor.qti.hardware.btconfigstore@1.0.so
-product/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
 product/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 product/lib64/vendor.qti.hardware.btconfigstore@1.0.so
 vendor/bin/ftmdaemon
-vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib/hw/audio.bluetooth_qti.default.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
@@ -1015,6 +1012,9 @@ vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 product/lib/libdiag_system.so
 product/lib64/libdiag_system.so
 vendor/bin/irsc_util
+vendor/bin/mlid
+vendor/bin/ssgqmigd
+vendor/bin/ssgtzd
 etc/permissions/qti_permissions.xml:vendor/etc/permissions/qti_permissions.xml
 etc/permissions/qti_libpermissions.xml:vendor/etc/permissions/qti_libpermissions.xml
 vendor/bin/pd-mapper
@@ -1022,7 +1022,9 @@ vendor/lib/libdiag.so
 -vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
 vendor/lib/libidl.so
+vendor/lib/libminksocket.so
 vendor/lib/libminkdescriptor.so
+vendor/lib/libqcbor.so
 vendor/lib/libqcci_legacy.so
 vendor/lib/libqdi.so
 vendor/lib/libqdp.so
@@ -1038,7 +1040,9 @@ vendor/lib64/libdiag.so
 -vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libidl.so
+vendor/lib64/libminksocket.so
 vendor/lib64/libminkdescriptor.so
+vendor/lib64/libqcbor.so
 vendor/lib64/libqcci_legacy.so
 vendor/lib64/libqdi.so
 vendor/lib64/libqdp.so
