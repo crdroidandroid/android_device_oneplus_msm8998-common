@@ -117,6 +117,8 @@ vendor/lib64/vendor.oneplus.hardware.param@1.0.so
 
 # Radio - MBN
 etc/firmware/mbn_ota/mbn_ota.txt:vendor/firmware/mbn_ota/mbn_ota.txt
+etc/firmware/tp/fw_synaptics_17801.img
+etc/firmware/tp/fw_synaptics_16859.img
 
 # Sensors
 vendor/etc/sensors/hals.conf
