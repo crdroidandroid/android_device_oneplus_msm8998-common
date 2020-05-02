@@ -299,6 +299,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.fflag.override.settings_network_and_internet_v2=true \
     persist.sys.oem_smooth=1 \
     persist.radio.multisim.config=dsds \
+    persist.vendor.ims.disableADBLogs=1 \
     persist.vendor.ims.dropset_feature=0 \
     persist.vendor.radio.add_power_save=1 \
     persist.vendor.radio.always_send_plmn=true \
