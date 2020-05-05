@@ -419,11 +419,11 @@ on post-fs-data
     #Start move_wifi_data service.
     start vendor.move_wifi_data
 
-service nqnfcinfo /system/vendor/bin/nqnfcinfo
-    class late_start
-    group nfc
-    user system
-    oneshot
+#service nqnfcinfo /system/vendor/bin/nqnfcinfo
+#    class late_start
+#    group nfc
+#    user system
+#    oneshot
 
 service iop /system/vendor/bin/iop
     class main
@@ -594,11 +594,11 @@ service vendor.qmuxd /system/vendor/bin/qmuxd
     group radio audio bluetooth gps nfc diag
     disabled
 
-service vendor.sensors /vendor/bin/sscrpcd sensorspd
-    class early_hal
-    user system
-    group system wakelock
-    capabilities BLOCK_SUSPEND
+#service vendor.sensors /vendor/bin/sscrpcd sensorspd
+#    class early_hal
+#    user system
+#    group system wakelock
+#    capabilities BLOCK_SUSPEND
 
 service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
@@ -710,12 +710,12 @@ service iprenew_wigig0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service ptt_socket_app /system/vendor/bin/ptt_socket_app -d
-    class main
-    user wifi
-    group wifi system inet net_admin
-    capabilities NET_ADMIN
-    oneshot
+#service ptt_socket_app /system/vendor/bin/ptt_socket_app -d
+#    class main
+#    user wifi
+#    group wifi system inet net_admin
+#    capabilities NET_ADMIN
+#    oneshot
 
 service ptt_ffbm /system/vendor/bin/ptt_socket_app -f -d
     user root
@@ -839,10 +839,10 @@ on property:sys.boot_completed=1
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
 
-service qvop-daemon /vendor/bin/qvop-daemon
-    class late_start
-    user system
-    group system drmrpc
+#service qvop-daemon /vendor/bin/qvop-daemon
+#    class late_start
+#    user system
+#    group system drmrpc
 
 service vendor.atfwd /vendor/bin/ATFWD-daemon
     class late_start
@@ -1007,15 +1007,15 @@ service vendor.LKCore-rel /vendor/bin/LKCore
     user system
     group system log diag
 
-service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
-    class late_start
-    user system
-    group system
+#service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
+#    class late_start
+#    user system
+#    group system
 
-service esepmdaemon /system/vendor/bin/esepmdaemon
-    class core
-    user system
-    group nfc
+#service esepmdaemon /system/vendor/bin/esepmdaemon
+#    class core
+#    user system
+#    group nfc
 
 on charger
     mkdir /dev/usb-ffs 0770 shell shell
@@ -1067,10 +1067,10 @@ on property:vendor.rild.libpath=*
 on property:ro.vendor.radio.noril=*
     setprop ro.radio.noril ${ro.vendor.radio.noril}
 
-service seemp_healthd /vendor/bin/seemp_healthd
-    class late_start
-    user system
-    group system
+#service seemp_healthd /vendor/bin/seemp_healthd
+#    class late_start
+#    user system
+#    group system
 
 service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core
@@ -1092,21 +1092,21 @@ service vendor.hbtp /vendor/bin/hbtp_daemon
      capabilities SYS_NICE
      disabled
 
-service chre /vendor/bin/chre
-    class late_start
-    user system
-    group system
-    socket chre seqpacket 0660 root system
-    shutdown critical
+#service chre /vendor/bin/chre
+#    class late_start
+#    user system
+#    group system
+#    socket chre seqpacket 0660 root system
+#    shutdown critical
 
-on property:vendor.chre.enabled=0
-   stop chre
+#on property:vendor.chre.enabled=0
+#   stop chre
 
-service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
-    class main
-    disabled
-    oneshot
-    keycodes 114 115 116
+#service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
+#    class main
+#    disabled
+#    oneshot
+#    keycodes 114 115 116
 
 #Set GPU Opengles version
 on property:vendor.opengles.version=*

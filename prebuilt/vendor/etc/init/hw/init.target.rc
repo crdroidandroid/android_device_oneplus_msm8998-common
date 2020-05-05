@@ -187,10 +187,10 @@ service vendor.qseecomd /vendor/bin/qseecomd
    user root
    group root
 
-service spdaemon /vendor/bin/spdaemon
-   class core
-   user system
-   group system
+#service spdaemon /vendor/bin/spdaemon
+#   class core
+#   user system
+#   group system
 
 on property:vendor.sys.listeners.registered=*
     setprop sys.keymaster.loaded ${vendor.sys.listeners.registered}
@@ -230,10 +230,10 @@ service hbtp /system/vendor/bin/hbtp_daemon
     group system
     disabled
 
-service audiod /system/vendor/bin/audiod
-   class late_start
-   user system
-   group system
+#service audiod /system/vendor/bin/audiod
+#   class late_start
+#   user system
+#   group system
 
 #service usf_tester /system/vendor/bin/usf_tester
 #    user system
