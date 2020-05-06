@@ -1,2 +1,5 @@
 r_dir_file(rmt_storage, sysfs_data)
 r_dir_file(rmt_storage, sysfs_ssr)
+
+# Allow rmt_storage to read and write to oem_block_device
+allow rmt_storage oem_block_device:blk_file rw_file_perms;
