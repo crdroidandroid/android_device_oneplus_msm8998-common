@@ -3,6 +3,10 @@ attribute hal_cameraHIDL;
 attribute hal_cameraHIDL_client;
 attribute hal_cameraHIDL_server;
 
+attribute hal_hdcpkey;
+attribute hal_hdcpkey_client;
+attribute hal_hdcpkey_server;
+
 attribute hal_ifaa;
 attribute hal_ifaa_client;
 attribute hal_ifaa_server;

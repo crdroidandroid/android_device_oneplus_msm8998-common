@@ -1,1 +1,7 @@
 dontaudit kernel self:capability { dac_override dac_read_search };
+
+# Allow kernel to read and write to oem_block_device
+allow kernel oem_block_device:blk_file rw_file_perms;
+
+# Allow kernel to read and write to param_block_device
+allow kernel param_block_device:blk_file rw_file_perms;
