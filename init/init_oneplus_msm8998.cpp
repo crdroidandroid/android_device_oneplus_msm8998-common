@@ -82,11 +82,13 @@ void init_target_properties()
 
         if (!strncmp(device.c_str(), "16859", 5)) {
             // Oneplus 5
+            LOG(INFO) << "Device: OnePlus 5";
             property_set("ro.display.series", "OnePlus 5");
             unknownDevice = false;
         }
         else if (!strncmp(device.c_str(), "17801", 5)) {
             // Oneplus 5T
+            LOG(INFO) << "Device: OnePlus 5T";
             property_set("ro.display.series", "OnePlus 5T");
             unknownDevice = false;
         }
@@ -98,6 +100,7 @@ void init_target_properties()
     }
 
     if (unknownDevice) {
+        LOG(INFO) << "Device: UNKNOWN";
         property_set("ro.display.series", "UNKNOWN");
     }
 }
@@ -109,9 +112,11 @@ void init_fingerprint_properties()
     if (ReadFileToString(SENSOR_VERSION_FILE, &sensor_version)) {
         LOG(INFO) << "Loading Fingerprint HAL for sensor version " << sensor_version;
         if (Trim(sensor_version) == "1" || Trim(sensor_version) == "2") {
+            LOG(INFO) << "Fingerprint sensor: fpc";
             property_set("ro.hardware.fingerprint", "fpc");
         }
         else if (Trim(sensor_version) == "3") {
+            LOG(INFO) << "Fingerprint sensor: goodix";
             property_set("ro.hardware.fingerprint", "goodix");
         }
         else {
