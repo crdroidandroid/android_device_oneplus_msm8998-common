@@ -2,11 +2,11 @@
 vendor/etc/firmware/tfa98xx.cnt:vendor/firmware/tfa98xx.cnt
 
 # Alipay
--priv-app/IFAAService/IFAAService.apk
-lib/vendor.oneplus.hardware.ifaa@2.0.so
-lib64/vendor.oneplus.hardware.ifaa@2.0.so
-vendor/bin/hw/vendor.oneplus.hardware.ifaa@2.0-service
-vendor/etc/init/vendor.oneplus.hardware.ifaa@2.0-service.rc
+-priv-app/IFAAService/IFAAService.apk|9b33bb59459c202b7e9777cc763febc7ef0d58a1
+lib/vendor.oneplus.hardware.ifaa@2.0.so|cd173bbf247678e7c77704d6a029b1f2c7f24e6e
+lib64/vendor.oneplus.hardware.ifaa@2.0.so|1e7a4ede1c9f63e455c01eaebe9955d3a9489f9a
+vendor/bin/hw/vendor.oneplus.hardware.ifaa@2.0-service|8da3a50f2e2514aadef0c359fb23c08f383073ac
+vendor/etc/init/vendor.oneplus.hardware.ifaa@2.0-service.rc|8b9abf69a7853d812c733e938c69e8ab94b4be58
 vendor/lib64/vendor.oneplus.hardware.ifaa@2.0.so
 
 # Camera
