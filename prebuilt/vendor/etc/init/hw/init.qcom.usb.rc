@@ -1,4 +1,4 @@
-# Copyright (c) 2011-2016, 2018 The Linux Foundation. All rights reserved.
+# Copyright (c) 2011-2016, 2018-2019 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -132,6 +132,9 @@ on property:persist.vendor.usb.config=*
 on boot && property:ro.boot.usbconfigfs=true
         setprop sys.usb.configfs 1
 
+on property:vendor.usb.configfs=1 && property:sys.usb.configfs=0
+        setprop sys.usb.configfs 1
+
 # Following are the parameters required for usb functionality. They provide configurable options like
 # product_id/vendor id and allows specifying required functions:
 #
@@ -208,7 +211,7 @@ on property:sys.usb.config=diag,adb && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
     write /sys/class/android_usb/android0/idVendor 05C6
-    write /sys/class/android_usb/android0/idProduct 676C #VENDOR_EDIT Anderson@, 2016/10/07, modify from 901D to 676C
+    write /sys/class/android_usb/android0/idProduct 676C #modify from 901D to 676C
     write /sys/class/android_usb/android0/f_diag/clients diag
     write /sys/class/android_usb/android0/functions diag,adb
     write /sys/class/android_usb/android0/enable 1
@@ -849,7 +852,7 @@ on property:sys.usb.config=rndis
 on property:sys.usb.config=rndis,none && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
-    write /sys/class/android_usb/android0/idVendor 2A70 #VENDOR_EDIT Anderson@, 2016/10/07, modify from 05C6 to 2A70
+    write /sys/class/android_usb/android0/idVendor 2A70 # modify from 05C6 to 2A70
     write /sys/class/android_usb/android0/idProduct F00E
     write /sys/class/android_usb/android0/f_rndis/wceis 1
     write /sys/class/android_usb/android0/functions rndis
@@ -862,7 +865,7 @@ on property:sys.usb.config=rndis,adb && property:sys.usb.configfs=0
 on property:sys.usb.config=rndis,none,adb && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
-    write /sys/class/android_usb/android0/idVendor 2A70 #VENDOR_EDIT Anderson@, 2016/10/07, modify from 05C6 to 2A70
+    write /sys/class/android_usb/android0/idVendor 2A70 # modify from 05C6 to 2A70
     write /sys/class/android_usb/android0/idProduct 9024
     write /sys/class/android_usb/android0/f_rndis/wceis 1
     write /sys/class/android_usb/android0/functions rndis,adb
@@ -1046,7 +1049,7 @@ on property:sys.usb.config=rndis,diag,diag_mdm,diag_qsc,adb && property:sys.usb.
 on property:sys.usb.config=ptp && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
-    write /sys/class/android_usb/android0/idVendor 2A70 #VENDOR_EDIT Anderson@, 2016/10/07, modify from 05C6 to 2A70
+    write /sys/class/android_usb/android0/idVendor 2A70 # modify from 05C6 to 2A70
     write /sys/class/android_usb/android0/idProduct 904D
     write /sys/class/android_usb/android0/functions ptp
     write /sys/class/android_usb/android0/enable 1
@@ -1055,7 +1058,7 @@ on property:sys.usb.config=ptp && property:sys.usb.configfs=0
 on property:sys.usb.config=ptp,adb && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
-    write /sys/class/android_usb/android0/idVendor 2A70 #VENDOR_EDIT Anderson@, 2016/10/07, modify from 05C6 to 2A70
+    write /sys/class/android_usb/android0/idVendor 2A70 # modify from 05C6 to 2A70
     write /sys/class/android_usb/android0/idProduct 904E
     write /sys/class/android_usb/android0/functions ptp,adb
     write /sys/class/android_usb/android0/enable 1
@@ -1065,7 +1068,7 @@ on property:sys.usb.config=ptp,adb && property:sys.usb.configfs=0
 on property:sys.usb.config=mtp && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
-    write /sys/class/android_usb/android0/idVendor 2A70 #VENDOR_EDIT Anderson@, 2016/10/07, modify from 05C6 to 2A7
+    write /sys/class/android_usb/android0/idVendor 2A70 # modify from 05C6 to 2A7
     write /sys/class/android_usb/android0/idProduct F003
     write /sys/class/android_usb/android0/functions mtp
     write /sys/class/android_usb/android0/enable 1
@@ -1074,8 +1077,8 @@ on property:sys.usb.config=mtp && property:sys.usb.configfs=0
 on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
-    write /sys/class/android_usb/android0/idVendor 2A70 #VENDOR_EDIT Anderson@, 2016/10/07, modify from 05C6 to 2A7
-    write /sys/class/android_usb/android0/idProduct 9011 #VENDOR_EDIT Anderson@, 2016/10/07, modify from 9039 to 9011
+    write /sys/class/android_usb/android0/idVendor 2A70 # modify from 05C6 to 2A7
+    write /sys/class/android_usb/android0/idProduct 9011 # modify from 9039 to 9011
 
     write /sys/class/android_usb/android0/functions mtp,adb
     write /sys/class/android_usb/android0/enable 1
