@@ -215,6 +215,12 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(PLATFORM_PATH)
 TARGET_RIL_VARIANT := caf
 PROTOBUF_SUPPORTED := true
 
+# Root
+BOARD_ROOT_EXTRA_SYMLINKS += /vendor/dsp:/dsp
+BOARD_ROOT_EXTRA_SYMLINKS += /vendor/bt_firmware:/bt_firmware
+BOARD_ROOT_EXTRA_SYMLINKS += /vendor/firmware_mnt:/firmware
+BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/persist:/persist
+
 # SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
 
