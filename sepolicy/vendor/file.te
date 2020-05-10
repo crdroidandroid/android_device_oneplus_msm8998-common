@@ -5,4 +5,5 @@ type proc_touchpanel, fs_type, proc_type;
 type sysfs_fpc, fs_type, sysfs_type;
 type sysfs_project_info, fs_type, sysfs_type;
 type sysfs_wifi, fs_type, sysfs_type;
+type thermal_data_file, data_file_type, file_type;
 type wifi_nv_data_file, file_type, data_file_type;

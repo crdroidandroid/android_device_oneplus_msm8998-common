@@ -20,5 +20,10 @@ persist.vendor.oem.nfc.                u:object_r:vendor_nfc_prop:s0
 ro.vendor.nfc.notify_tp                u:object_r:vendor_nfc_prop:s0
 vendor.oem.nfc.                        u:object_r:vendor_nfc_prop:s0
 
+# Thermal
+persist.sys.thermal.                   u:object_r:thermal_engine_prop:s0
+sys.thermal.                           u:object_r:thermal_engine_prop:s0
+vendor.sys.thermal.                    u:object_r:thermal_engine_prop:s0
+
 # Wifi
 wifi.active                            u:object_r:wifi_active_prop:s0
