@@ -169,7 +169,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.dpm.feature=9
+    persist.vendor.dpm.feature=0
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
