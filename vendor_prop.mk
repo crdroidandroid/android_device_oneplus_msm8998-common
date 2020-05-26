@@ -322,8 +322,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.radio.start_ota_daemon=0 \
     persist.vendor.radio.sw_mbn_update=0 \
-    persist.vendor.radio.uicc_se_enabled=false \
-    persist.vendor.radio.aosp_usr_pref_sel=true
+    persist.vendor.radio.uicc_se_enabled=false
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
