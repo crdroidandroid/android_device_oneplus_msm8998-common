@@ -328,6 +328,10 @@ PRODUCT_PACKAGES += \
     libchrome.vendor \
     libp61-jcop-kit
 
+# Native Public Libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
 # Netutils
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
