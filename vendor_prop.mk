@@ -21,7 +21,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=2 \
-    vendor.audio_hal.period_size=192 \
+    vendor.audio_hal.period_size=240 \
     audio.offload.video=true \
     audio.sys.noisy.broadcast.delay=600 \
     audio.sys.offload.pstimeout.secs=3 \
@@ -37,7 +37,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio new
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.audio_hal.period_size=192 \
     ro.vendor.audio.sdk.fluencetype=fluencepro \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=true \
