@@ -14,3 +14,6 @@ allow hal_param_default param_block_device:blk_file rw_file_perms;
 
 # Allow hal_param_default to read and write to param_device
 allow hal_param_default param_device:chr_file rw_file_perms;
+
+# Allow hal_param_default to read files in sysfs_project_info
+r_dir_file(hal_param_default, sysfs_project_info)
