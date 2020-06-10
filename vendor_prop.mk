@@ -300,6 +300,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.oem_smooth=1 \
     persist.radio.multisim.config=dsds \
     persist.vendor.ims.dropset_feature=0 \
+    persist.vendor.radio.5g_mode_pref=0 \
     persist.vendor.radio.add_power_save=1 \
     persist.vendor.radio.always_send_plmn=true \
     persist.vendor.radio.aosp_usr_pref_sel=true \
@@ -311,6 +312,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.data_ltd_sys_ind=1 \
     persist.vendor.radio.efssync=true \
     persist.vendor.radio.enableadvancedscan=true \
+    persist.vendor.radio.enhance_ecall=true \
     persist.vendor.radio.flexmap_type=none \
     persist.vendor.radio.force_on_dc=true \
     persist.vendor.radio.hw_mbn_update=0 \
@@ -321,8 +323,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.radio.start_ota_daemon=0 \
     persist.vendor.radio.sw_mbn_update=0 \
-    persist.vendor.radio.uicc_se_enabled=false \
-    persist.vendor.radio.aosp_usr_pref_sel=true
+    persist.vendor.radio.uicc_se_enabled=false
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
