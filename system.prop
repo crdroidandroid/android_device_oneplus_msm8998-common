@@ -5,3 +5,6 @@ persist.vendor.bt.a2dp.aac_whitelist=false
 ro.bluetooth.library_name=libbluetooth_qti.so
 vendor.bluetooth.soc=cherokee
 vendor.qcom.bluetooth.soc=cherokee
+
+# Zygote
+persist.device_config.runtime_native.usap_pool_enabled=true
