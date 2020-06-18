@@ -17,7 +17,9 @@
 #define LOG_TAG "LineageHW-SunlightEnhancementService"
 
 #include "SunlightEnhancement.h"
+
 #include <android-base/logging.h>
+
 #include <fstream>
 
 namespace vendor {
@@ -26,8 +28,7 @@ namespace livedisplay {
 namespace V2_0 {
 namespace implementation {
 
-static constexpr const char* kHbmPath =
-    "/sys/class/graphics/fb0/hbm";
+static constexpr const char* kHbmPath = "/sys/class/graphics/fb0/hbm";
 
 bool SunlightEnhancement::isSupported() {
     return true;
