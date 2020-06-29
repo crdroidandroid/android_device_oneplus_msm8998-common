@@ -1,4 +1,4 @@
-/* Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2020 The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -9,7 +9,7 @@
  *       copyright notice, this list of conditions and the following
  *       disclaimer in the documentation and/or other materials provided
  *       with the distribution.
- *     * Neither the name of The Linux Foundation, nor the names of its
+ *     * Neither the name of The Linux Foundation nor the names of its
  *       contributors may be used to endorse or promote products derived
  *       from this software without specific prior written permission.
  *
@@ -24,34 +24,64 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
  */
 
-#ifndef LOCATION_UTIL_H
-#define LOCATION_UTIL_H
+#ifndef WIFI_DB_PROV_H
+#define WIFI_DB_PROV_H
 
-#include <android/hardware/gnss/1.0/types.h>
-#include <LocationAPI.h>
-#include <GnssDebug.h>
+#include <functional>
+#include <vector>
+#include <string>
+#include <DBCommon.h>
 
-namespace android {
-namespace hardware {
-namespace gnss {
-namespace V1_1 {
-namespace implementation {
+using namespace std;
 
-void convertGnssLocation(Location& in, V1_0::GnssLocation& out);
-void convertGnssLocation(const V1_0::GnssLocation& in, Location& out);
-void convertGnssConstellationType(GnssSvType& in, V1_0::GnssConstellationType& out);
-void convertGnssSvid(GnssSv& in, int16_t& out);
-void convertGnssSvid(GnssMeasurementsData& in, int16_t& out);
-void convertGnssEphemerisType(GnssEphemerisType& in, GnssDebug::SatelliteEphemerisType& out);
-void convertGnssEphemerisSource(GnssEphemerisSource& in, GnssDebug::SatelliteEphemerisSource& out);
-void convertGnssEphemerisHealth(GnssEphemerisHealth& in, GnssDebug::SatelliteEphemerisHealth& out);
+namespace nlp_api
+{
 
-}  // namespace implementation
-}  // namespace V1_1
-}  // namespace gnss
-}  // namespace hardware
-}  // namespace android
-#endif // LOCATION_UTIL_H
+/******************************************************************************
+WiFiDBReceiver
+******************************************************************************/
+
+class WiFiDBProvider
+{
+public:
+    virtual void requestAPObsLocData() = 0;
+    virtual ~WiFiDBProvider() { };
+};
+
+/******************************************************************************
+ResponseListener
+******************************************************************************/
+struct ApScan {
+    string macAddress;
+    float rssi;
+    uint64_t deltaTime;
+    string ssid;
+    uint16_t channelNumber;
+};
+
+typedef vector<unique_ptr<ApScan>> ApScanList;
+
+struct APObsLocData {
+    Location location;
+    CellInfo cellInfo;
+    uint64_t scanTimestamp;
+    ApScanList ApScanList;
+};
+
+typedef vector<unique_ptr<APObsLocData>> APObsLocDataList;
+
+typedef function<void(
+    unique_ptr<APObsLocDataList> ap_obs_list,
+    ApBsListStatus ap_status
+)> ApObsLocDataAvailable;
+
+struct WiFiDBProviderResponseListener {
+    ApObsLocDataAvailable onApObsLocDataAvailable;
+    ServiceRequest onServiceRequest;
+};
+
+} // namespace nlp_api
+
+#endif /* WIFI_DB_PROV_H */

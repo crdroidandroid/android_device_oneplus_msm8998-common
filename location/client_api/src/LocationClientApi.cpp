@@ -202,9 +202,6 @@ bool LocationClientApi::startPositionSession(
     if (engReportCallbacks.gnssMeasurementsCallback) {
         callbacksOption.gnssMeasurementsCb = [](::GnssMeasurementsNotification n) {};
     }
-    if (engReportCallbacks.gnssSvPolyCallback) {
-        callbacksOption.gnssSvPolynomialCb = [](::GnssSvPolynomial n) {};
-    }
     mApiImpl->updateCallbacks(callbacksOption);
 
     // options
@@ -487,7 +484,7 @@ void LocationClientApi::getGnssEnergyConsumed(
                                         responseCallback);
     } else {
         if (responseCallback) {
-            responseCallback(LOCATION_RESPONSE_NOT_SUPPORTED);
+            responseCallback(LOCATION_RESPONSE_PARAM_INVALID);
         }
     }
 }
@@ -501,10 +498,9 @@ void LocationClientApi::updateLocationSystemInfoListener(
             locSystemInfoCallback, responseCallback);
     } else {
         if (responseCallback) {
-            responseCallback(LOCATION_RESPONSE_NOT_SUPPORTED);
+            responseCallback(LOCATION_RESPONSE_PARAM_INVALID);
         }
     }
 }
 
 } // namespace location_client
-
