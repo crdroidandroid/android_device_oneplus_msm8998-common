@@ -105,13 +105,24 @@ void GnssAPIClient::initLocationOptions()
     mTrackingOptions.mode = GNSS_SUPL_MODE_STANDALONE;
 }
 
+void GnssAPIClient::setFlpCallbacks() {
+    LOC_LOGd("Going to set Flp Callbacks...");
+    LocationCallbacks locationCallbacks;
+    memset(&locationCallbacks, 0, sizeof(LocationCallbacks));
+    locationCallbacks.size = sizeof(LocationCallbacks);
+
+    locationCallbacks.trackingCb = [this](Location location) {
+        onTrackingCb(location);
+    };
+    locAPISetCallbacks(locationCallbacks);
+}
+
 void GnssAPIClient::setCallbacks()
 {
     LocationCallbacks locationCallbacks;
     memset(&locationCallbacks, 0, sizeof(LocationCallbacks));
     locationCallbacks.size = sizeof(LocationCallbacks);
 
-    locationCallbacks.trackingCb = nullptr;
     locationCallbacks.trackingCb = [this](Location location) {
         onTrackingCb(location);
     };
@@ -134,12 +145,10 @@ void GnssAPIClient::setCallbacks()
         }
     }
 
-    locationCallbacks.gnssSvCb = nullptr;
     locationCallbacks.gnssSvCb = [this](GnssSvNotification gnssSvNotification) {
         onGnssSvCb(gnssSvNotification);
     };
 
-    locationCallbacks.gnssNmeaCb = nullptr;
     locationCallbacks.gnssNmeaCb = [this](GnssNmeaNotification gnssNmeaNotification) {
         onGnssNmeaCb(gnssNmeaNotification);
     };
@@ -175,6 +184,12 @@ void GnssAPIClient::gnssUpdateCallbacks_2_0(const sp<V2_0::IGnssCallback>& gpsCb
 
     if (mGnssCbIface_2_0 != nullptr) {
         setCallbacks();
+    }
+}
+
+void GnssAPIClient::gnssUpdateFlpCallbacks() {
+    if (mGnssCbIface_2_0 != nullptr || mGnssCbIface != nullptr) {
+        setFlpCallbacks();
     }
 }
 
@@ -678,7 +693,7 @@ static void convertGnssSvStatus(GnssSvNotification& in, V1_0::IGnssCallback::Gns
         out.numSvs = static_cast<uint32_t>(V1_0::GnssMax::SVS_COUNT);
     }
     for (size_t i = 0; i < out.numSvs; i++) {
-        out.gnssSvList[i].svid = in.gnssSvs[i].svId;
+        convertGnssSvid(in.gnssSvs[i], out.gnssSvList[i].svid);
         convertGnssConstellationType(in.gnssSvs[i].type, out.gnssSvList[i].constellation);
         out.gnssSvList[i].cN0Dbhz = in.gnssSvs[i].cN0Dbhz;
         out.gnssSvList[i].elevationDegrees = in.gnssSvs[i].elevation;
@@ -701,7 +716,7 @@ static void convertGnssSvStatus(GnssSvNotification& in,
 {
     out.resize(in.count);
     for (size_t i = 0; i < in.count; i++) {
-        out[i].v1_0.svid = in.gnssSvs[i].svId;
+        convertGnssSvid(in.gnssSvs[i], out[i].v1_0.svid);
         out[i].v1_0.cN0Dbhz = in.gnssSvs[i].cN0Dbhz;
         out[i].v1_0.elevationDegrees = in.gnssSvs[i].elevation;
         out[i].v1_0.azimuthDegrees = in.gnssSvs[i].azimuth;
