@@ -153,6 +153,7 @@ PRODUCT_PACKAGES += \
     bt_configstore.conf \
     bt-mac-generator \
     libbt-vendor \
+    libbthost_if \
     vendor.qti.hardware.bluetooth_audio@2.0 \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
     vendor.qti.hardware.bluetooth_dun@1.0.vendor \
