@@ -1398,12 +1398,14 @@ vendor/bin/fstman
 vendor/bin/wifilearner
 vendor/etc/init/vendor.qti.hardware.fstman@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc
+vendor/etc/wifi/WCNSS_qcom_cfg_cta.ini
 vendor/etc/wifi/aoa_cldb_falcon.bin
 vendor/etc/wifi/aoa_cldb_swl14.bin
+vendor/etc/wifi/fstman.ini
+vendor/etc/wifi/sar-vendor-cmd.xml
 vendor/lib64/libaoa.so
 vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
 vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so
-vendor/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
 vendor/lib/libaoa.so
 
 # Wi-Fi Display
