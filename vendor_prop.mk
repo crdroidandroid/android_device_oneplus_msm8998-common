@@ -21,6 +21,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=2 \
+    vendor.audio.hal.boot.timeout.ms=20000 \
     vendor.audio_hal.period_size=240 \
     audio.offload.video=true \
     audio.sys.noisy.broadcast.delay=600 \
