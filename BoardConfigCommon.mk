@@ -89,6 +89,7 @@ TARGET_KERNEL_CLANG_VERSION := 6364210
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
+TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
@@ -201,6 +202,9 @@ TARGET_USES_MKE2FS := true
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 TARGET_USES_INTERACTION_BOOST := true
+
+# Properties
+TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/recovery.fstab
