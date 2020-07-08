@@ -250,14 +250,8 @@ PRODUCT_PACKAGES += \
     libsynergy_loc_api
 
 # GPS Configurations
-PRODUCT_PACKAGES += \
-    apdr.conf \
-    flp.conf \
-    gps.conf \
-    izat.conf \
-    lowi.conf \
-    sap.conf \
-    xtwifi.conf
+PRODUCT_COPY_FILES += \
+   $(call find-copy-subdir-files,*,${LOCAL_PATH}/configs/gps,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 # Health
 PRODUCT_PACKAGES += \
