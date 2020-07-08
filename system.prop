@@ -1,8 +1,7 @@
-ro.bluetooth.a4wp=false
-ro.bluetooth.emb_wp_mode=false
-ro.bluetooth.wipower=false
-vendor.bluetooth.soc=cherokee
+# Bluetooth
+persist.bluetooth.bqr.event_mask=14
+persist.bluetooth.bqr.min_interval_ms=500
+persist.vendor.bt.a2dp.aac_whitelist=false
 ro.bluetooth.library_name=libbluetooth_qti.so
-persist.bluetooth.a2dp_offload.disabled=false
-persist.vendor.btstack.enable.splita2dp=true
-persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-aac
+vendor.bluetooth.soc=cherokee
+vendor.qcom.bluetooth.soc=cherokee
