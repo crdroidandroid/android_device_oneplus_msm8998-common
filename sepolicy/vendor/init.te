@@ -4,3 +4,6 @@ allow init sysfs_leds:lnk_file { r_file_perms };
 allow init sysfs_fpc:file { r_file_perms };
 allow init sysfs_data:file { r_file_perms };
 allow init sysfs_project_info:file { r_file_perms };
+
+allow init bt_firmware_file:filesystem getattr;
+allow init firmware_file:filesystem getattr;
