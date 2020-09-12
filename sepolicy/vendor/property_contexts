@@ -9,7 +9,6 @@ ro.vendor.bt.bdaddr_path               u:object_r:vendor_bluetooth_prop:s0
 
 # Camera
 camera.on                              u:object_r:persist_camera_prop:s0
-vendor.camera.hal1.packagelist         u:object_r:persist_camera_prop:s0
 
 # Display
 persist.vendor.color.matrix            u:object_r:vendor_display_prop:s0
