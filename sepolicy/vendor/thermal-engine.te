@@ -1,0 +1,9 @@
+allow thermal-engine self:capability { chown fowner };
+
+dontaudit thermal-engine self:capability dac_override;
+
+r_dir_file(thermal-engine, sysfs)
+r_dir_file(thermal-engine, sysfs_batteryinfo)
+r_dir_file(thermal-engine sysfs_devfreq)
+r_dir_file(thermal-engine sysfs_graphics)
+r_dir_file(thermal-engine sysfs_thermal)

@@ -1,0 +1,6 @@
+allow secure_element nxpese_hwservice:hwservice_manager { find };
+allow secure_element nxpnfc_hwservice:hwservice_manager { find };
+
+allow secure_element nfc_service:service_manager { find };
+
+get_prop(secure_element, vendor_nfc_prop)
