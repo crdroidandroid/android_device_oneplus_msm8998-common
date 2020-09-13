@@ -32,7 +32,7 @@ fi
 . "$HELPER"
 
 # Default to NOT sanitizing the vendor folder before extraction
-CLEAN_VENDOR=false
+CLEAN_VENDOR=true
 
 while [ "$1" != "" ]; do
     case $1 in
@@ -69,19 +69,6 @@ fi
 COMMON_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
 
 #
-# Fix camera etc path
-#
-function fix_camera_etc_path () {
-    sed -i \
-        's/\/system\/etc\//\/vendor\/etc\//g' \
-        "$COMMON_BLOB_ROOT"/"$1"
-}
-
-fix_camera_etc_path vendor/lib/libmmcamera_imglib.so
-fix_camera_etc_path vendor/lib/libmmcamera_interface.so
-fix_camera_etc_path vendor/lib/libopcamera_native_modules.so
-
-#
 # Fix framework path
 #
 function fix_framework_path () {
@@ -93,9 +80,28 @@ function fix_framework_path () {
 fix_framework_path vendor/etc/permissions/com.fingerprints.extension.xml
 
 #
-# Correct android.hidl.manager@1.0-java jar name
+# Fix product path
 #
-sed -i "s|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java|g" \
-    "$COMMON_BLOB_ROOT"/vendor/etc/permissions/qti_libpermissions.xml
+function fix_product_path () {
+    sed -i \
+        's/\/system\/framework\//\/system\/product\/framework\//g' \
+        "$COMMON_BLOB_ROOT"/"$1"
+}
+
+fix_product_path product/etc/permissions/qcnvitems.xml
+fix_product_path product/etc/permissions/vendor.qti.hardware.factory.xml
+fix_product_path product/etc/permissions/vendor-qti-hardware-sensorscalibrate.xml
+
+#
+# Fix xml version
+#
+function fix_xml_version () {
+    sed -i \
+        's/xml version="2.0"/xml version="1.0"/' \
+        "$COMMON_BLOB_ROOT"/"$1"
+}
+
+fix_xml_version product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
+fix_xml_version product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml
 
 "$MY_DIR"/setup-makefiles.sh
