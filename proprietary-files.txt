@@ -77,7 +77,7 @@ vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
 
 # NFC
--app/NxpNfcNci/NxpNfcNci.apk
+-app/NxpNfcNci/NxpNfcNci.apk||83b5d03159e1b3dfd1bce92f9bbcfede2e9f0a5d
 -app/NxpSecureElement/NxpSecureElement.apk
 etc/nfcee_access.xml
 etc/permissions/com.nxp.nfc.xml
