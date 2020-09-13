@@ -10,3 +10,4 @@ allow bt_mac_generator vendor_bt_data_file:dir { rw_dir_perms };
 allow bt_mac_generator vendor_bt_data_file:file { create_file_perms };
 
 set_prop(bt_mac_generator, bluetooth_prop)
+set_prop(bt_mac_generator, vendor_bluetooth_prop)

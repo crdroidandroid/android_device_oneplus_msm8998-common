@@ -1,1 +1,3 @@
-set_prop(cnd, diag_prop)
+diag_use(cnd)
+binder_call(cnd, radio)
+get_prop(cnd, wifi_prop)

@@ -1,2 +1,7 @@
 allow nfc nfc_vendor_data_file:dir { rw_dir_perms };
 allow nfc nfc_vendor_data_file:file { create_file_perms rw_file_perms };
+
+allow nfc nxpese_hwservice:hwservice_manager { find };
+allow nfc nxpnfc_hwservice:hwservice_manager { find };
+
+get_prop(nfc, vendor_nfc_prop)

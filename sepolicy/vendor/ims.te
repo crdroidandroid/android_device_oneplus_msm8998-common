@@ -1,1 +1,1 @@
-set_prop(ims, diag_prop)
+diag_use(ims)
