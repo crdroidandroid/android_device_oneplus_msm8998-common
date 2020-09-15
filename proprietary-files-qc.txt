@@ -592,7 +592,9 @@ vendor/lib/vendor.qti.latency@2.0.so
 # DPM
 framework/tcmclient.jar
 framework/tcmiface.jar
+product/bin/dpmd|90cdd79b564456cef2a0c011afab3896463df5e4
 product/etc/dpm/dpm.conf
+product/etc/init/dpmd.rc
 product/etc/permissions/com.qti.dpmframework.xml
 product/etc/permissions/dpmapi.xml
 product/framework/dpmapi.jar
