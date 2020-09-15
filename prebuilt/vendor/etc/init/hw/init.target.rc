@@ -31,6 +31,9 @@ import /vendor/etc/init/hw/init.target.performance.rc
 
 on early-init
     symlink /data/vendor/tombstones /tombstones
+    mkdir /firmware 0771 system system
+    mkdir /bt_firmware 0771 system system
+    mkdir /dsp 0771 media media
     write /proc/sys/kernel/sched_boost 1
 
 on init
@@ -69,7 +72,7 @@ on post-fs-data
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
     mkdir /data/vendor/hbtp 0750 system system
-    #mkdir /data/misc/qvr 0770 system system
+    mkdir /data/misc/qvr 0770 system system
 
 # For cpusets initialize for Silver Only first and then Silver + Gold
 # Silver Only configuration cannot work with 0-7
@@ -117,6 +120,7 @@ on boot
     setprop vendor.usb.rmnet.func.name "gsi"
     setprop vendor.usb.rmnet.inst.name "rmnet"
     setprop vendor.usb.dpl.inst.name "dpl"
+    setprop vendor.usb.qdss.inst.name "qdss"
     setprop sys.usb.configfs 1
 
 #Peripheral manager
@@ -202,6 +206,12 @@ on property:init.svc.zygote=running
 
 on property:init.svc.zygote=restarting
     stop ppd
+
+service energy-awareness /vendor/bin/energy-awareness
+    class main
+    user root
+    group system
+    oneshot
 
 service dashd /vendor/xbin/dashd
      class core
