@@ -2,12 +2,15 @@
 vendor/etc/firmware/tfa98xx.cnt:vendor/firmware/tfa98xx.cnt
 
 # Alipay
--priv-app/IFAAService/IFAAService.apk
-lib/vendor.oneplus.hardware.ifaa@2.0.so
-lib64/vendor.oneplus.hardware.ifaa@2.0.so
-vendor/bin/hw/vendor.oneplus.hardware.ifaa@2.0-service
-vendor/etc/init/vendor.oneplus.hardware.ifaa@2.0-service.rc
-vendor/lib64/vendor.oneplus.hardware.ifaa@2.0.so
+-priv-app/IFAAService/IFAAService.apk|9b33bb59459c202b7e9777cc763febc7ef0d58a1
+lib/libteeclientjni.so|da490d23cde054e3b99ee6790d1faf26a20854a3
+lib/vendor.oneplus.hardware.ifaa@2.0.so|cd173bbf247678e7c77704d6a029b1f2c7f24e6e
+lib64/libteeclientjni.so|ff9b8aaa30bbc3106a2eb00bda843c37de5acc0b
+lib64/libteeclientjniv2.so|6ddc5ffb3075d6d65e6f4437f66461892f300636
+lib64/vendor.oneplus.hardware.ifaa@2.0.so|1e7a4ede1c9f63e455c01eaebe9955d3a9489f9a
+vendor/bin/hw/vendor.oneplus.hardware.ifaa@2.0-service|8da3a50f2e2514aadef0c359fb23c08f383073ac
+vendor/etc/init/vendor.oneplus.hardware.ifaa@2.0-service.rc|17f485f5523372cc627503f36f1e84348233b777
+vendor/lib64/vendor.oneplus.hardware.ifaa@2.0.so|8b9abf69a7853d812c733e938c69e8ab94b4be58
 
 # Camera
 -framework/vendor.oneplus.camera.CameraHIDL-V1.0-java.jar
