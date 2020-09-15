@@ -476,11 +476,11 @@ service vendor.qcom-c_core-sh  /vendor/bin/init.qcom.class_core.sh
 service vendor.qcom-c_main-sh /vendor/bin/init.class_main.sh
     class main
     user root
+    group root system
     oneshot
 
 on property:vold.decrypt=trigger_restart_framework
     start vendor.qcom-c_main-sh
-    start wcnss-service
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
@@ -652,9 +652,6 @@ service vendor.wifi-crda /vendor/bin/init.crda.sh
    user root
    disabled
    oneshot
-
-on property:sys.boot_completed=1
-    start vendor.qcom-post-boot
 
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
