@@ -1,4 +1,4 @@
-# Copyright (c) 2012-2015, 2017-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2012-2015, 2017-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -55,6 +55,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/dpl_ctrl             0660   usb        usb
 /dev/ipa_odl_ctl          0660   radio      radio
 /dev/ipa_adpl             0660   system     oem_2905
+/dev/synx_device          0660   root       camera
+/dev/hab                  0666   system     system
 
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
@@ -155,6 +157,8 @@ firmware_directories /vendor/firmware_mnt/image/
 
 #QDSS
 /dev/byte-cntr            0660   system    oem_2902
+/dev/mhi_qdss             0660   system    oem_2902
+/sys/class/qdss_bridge/mhi_qdss  mode      0660     system   oem_2902
 
 #qg
 /dev/qg                   0660  system     system
@@ -221,8 +225,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/ttyGS0               0660   system     system
 /dev/i2c-5                0660   media       media
 /dev/avtimer              0660   system     audio
+/dev/spidev2.0            0660   system     audio
 /dev/aud_pasthru_adsp     0660   system     audio
-
 # DVB devices
 /dev/dvb/adapter0/demux*  0440   media       media
 /dev/dvb/adapter0/dvr*    0660   media       media
@@ -293,6 +297,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/bus/pci/drivers/wil6210* 0000:01:00.0/net/wigig0/queues/rx-0/rps_cpus 0660 system system
 /sys/bus/pci/drivers/wil6210* 0000:01:00.0/net/wigig0/gro_flush_timeout 0660 system system
 /sys/devices/virtual/net/bond0 queues/rx-0/rps_cpus 0660 system system
+/dev/wigig_sensing        0660   system     system
 
 #nfc permissions
 /dev/nfc-nci              0660    nfc         nfc
@@ -314,7 +319,9 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/ramdump*             0640   system     system
 
 # Fingerprint device
-/dev/qbt1000              0660   system     system
+/dev/qbt*                 0660   system     system
+/sys/class/fts/touch_aoi aoi_set 0660 root system
+/sys/class/fts/touch_aoi power_set 0660 root system
 
 #ImproveTouch device
 /dev/hbtp_input           0660   system     system
@@ -329,6 +336,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/block/platform/soc/c0c4000.sdhci/by-name/frp       0600   system     system
 /dev/block/platform/soc/1d84000.ufshc/by-name/frp       0600   system     system
 /dev/block/platform/soc/7c4000.sdhci/by-name/frp        0600   system     system
+/dev/block/platform/soc/4744000.sdhci/by-name/frp       0600   system     system
+/dev/block/platform/soc/4804000.ufshc/by-name/frp       0600   system     system
 
 # This is temporary while using SD card for initial bring-up
 /dev/block/platform/soc/8804000.sdhci/by-name/frp       0600   system     system
@@ -359,3 +368,33 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/system/memory/memory* state    0660 system system
 
 /sys/devices/virtual/hdcp/msm_hdcp  min_level_change 0664    system  graphics
+
+# sys-fs display
+/sys/class/graphics/fb*     hpd                      0664    system  graphics
+/sys/class/graphics/fb*     res_info                 0664    system  graphics
+/sys/class/graphics/fb*     vendor_name              0664    system  graphics
+/sys/class/graphics/fb*     product_description      0664    system  graphics
+/sys/class/graphics/fb*     video_mode               0664    system  graphics
+/sys/class/graphics/fb*     format_3d                0664    system  graphics
+/sys/class/graphics/fb*     s3d_mode                 0664    system  graphics
+/sys/class/graphics/fb*     dynamic_fps              0664    system  graphics
+/sys/class/graphics/fb*     msm_fb_dfps_mode         0664    system  graphics
+/sys/class/graphics/fb*     hdr_stream               0664    system  graphics
+/sys/class/graphics/fb*     cec/enable               0664    system  graphics
+/sys/class/graphics/fb*     cec/logical_addr         0664    system  graphics
+/sys/class/graphics/fb*     cec/rd_msg               0664    system  graphics
+/sys/class/graphics/fb*     pa                       0664    system  graphics
+/sys/class/graphics/fb*     cec/wr_msg               0600    system  graphics
+/sys/class/graphics/fb*     hdcp/tp                  0664    system  graphics
+/sys/class/graphics/fb*     hdcp2p2/min_level_change 0660    system  graphics
+/sys/class/graphics/fb*     hdmi_audio_cb            0600    audioserver audio
+
+/sys/class/graphics/fb*     lineptr_value            0664    system  graphics
+/sys/class/graphics/fb*     msm_fb_persist_mode      0664    system  graphics
+
+/sys/class/graphics/fb0     idle_time                0664    system  graphics
+/sys/class/graphics/fb0     dynamic_fps              0664    system  graphics
+/sys/class/graphics/fb0     dyn_pu                   0664    system  graphics
+/sys/class/graphics/fb0     modes                    0664    system  graphics
+/sys/class/graphics/fb0     mode                     0664    system  graphics
+/sys/class/graphics/fb0     msm_cmd_autorefresh_en   0664    system  graphics

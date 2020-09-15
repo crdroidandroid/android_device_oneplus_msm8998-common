@@ -1,8 +1,6 @@
 on init
     # Disable UFS powersaving
-    write /sys/devices/soc/1da4000.ufshc/clkscale_enable 0
     write /sys/devices/soc/1da4000.ufshc/clkgate_enable 0
-    write /sys/devices/soc/1da4000.ufshc/hibern8_on_idle_enable 0
 
     write /sys/module/lpm_levels/parameters/sleep_disabled Y
 
@@ -15,7 +13,7 @@ on init
 
     # Add a cpuset for the camera daemon
     mkdir /dev/cpuset/camera-daemon 0750 cameraserver cameraserver
-    write /dev/cpuset/camera-daemon/cpus 0-7
+    write /dev/cpuset/camera-daemon/cpus 0
     write /dev/cpuset/camera-daemon/mems 0
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
@@ -27,17 +25,21 @@ on boot
     write /dev/cpuset/foreground/cpus 0-3
     write /dev/cpuset/background/cpus 0-3
     write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3
+    write /dev/cpuset/camera-daemon/cpus 0-3
 
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-7
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
+    write /dev/cpuset/restricted/cpus 0-7
+    write /dev/cpuset/camera-daemon/cpus 0-7
+
+    write /sys/block/sda/queue/read_ahead_kb 512
 
 on charger
     # Enable UFS powersaving
-    write /sys/devices/soc/1da4000.ufshc/clkscale_enable 1
     write /sys/devices/soc/1da4000.ufshc/clkgate_enable 1
-    write /sys/devices/soc/1da4000.ufshc/hibern8_on_idle_enable 1
 
     write /sys/module/lpm_levels/parameters/sleep_disabled N
 
@@ -58,25 +60,27 @@ on charger
     write /sys/devices/system/cpu/cpu7/online 0
 
 on late-fs
-    # Enable boot time fs tuning (ro like system is on sda, rw like userdata is on sde)
+    # Enable boot time fs tuning (ro like system is on sde/f, rw like userdata is on sda)
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sda/queue/nr_requests 256
     write /sys/block/sda/queue/read_ahead_kb 2048
+    write /sys/block/sdf/queue/iostats 0
+    write /sys/block/sdf/queue/nr_requests 256
+    write /sys/block/sdf/queue/read_ahead_kb 2048
     write /sys/block/sde/queue/iostats 0
     write /sys/block/sde/queue/nr_requests 256
-    write /sys/block/sda/queue/read_ahead_kb 2048
+    write /sys/block/sde/queue/read_ahead_kb 2048
 
 on property:sys.boot_completed=1
     # Disable boot time fs tuning
-    write /sys/block/sde/queue/read_ahead_kb 1024
-    write /sys/block/sde/queue/nr_requests 128
-    write /sys/block/sde/queue/iostats 1
-    write /sys/block/sda/queue/read_ahead_kb 1024
+    write /sys/block/sda/queue/read_ahead_kb 128
     write /sys/block/sda/queue/nr_requests 128
-    write /sys/block/sda/queue/iostats 1
+    write /sys/block/sdf/queue/read_ahead_kb 128
+    write /sys/block/sdf/queue/nr_requests 128
+    write /sys/block/sde/queue/read_ahead_kb 128
+    write /sys/block/sde/queue/nr_requests 128
 
     # Enable UFS powersaving
-    write /sys/devices/soc/1da4000.ufshc/clkscale_enable 1
     write /sys/devices/soc/1da4000.ufshc/clkgate_enable 1
     write /sys/devices/soc/1da4000.ufshc/hibern8_on_idle_enable 1
 
@@ -129,8 +133,8 @@ on property:sys.boot_completed=1
     write /sys/module/msm_thermal/core_control/enabled 1
 
     # Enable input boost configuration
-    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800"
-    write /sys/module/cpu_boost/parameters/input_boost_ms 40
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1036800 4:1056000"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 450
 
     # Enable bus-dcvs
     write /sys/class/devfreq/soc:qcom,cpubw/governor "bw_hwmon"
@@ -179,15 +183,11 @@ on property:sys.boot_completed=1
     write /dev/cpuset/foreground/cpus 0-3,6-7
     write /dev/cpuset/background/cpus 0-1
     write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3
     write /dev/cpuset/camera-daemon/cpus 0-3
 
     # Disable sched boost
     write /proc/sys/kernel/sched_boost 0
-
-    # Enable Adaptive LMK
-    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
-    write /sys/module/lowmemorykiller/parameters/minfree "18432,23040,27648,51256,150296,200640"
-    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 162500
 
     # Set up big.LITTLE scheduler configuration
     write /proc/sys/kernel/sched_migration_fixup 1
@@ -207,3 +207,6 @@ on property:sys.boot_completed=1
 
     # Is IOP even still a thing?
     start vendor.iop
+
+    # QCOM post boot
+    start vendor.qcom-post-boot
