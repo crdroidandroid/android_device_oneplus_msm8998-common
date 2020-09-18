@@ -1340,7 +1340,7 @@ vendor/lib64/libthermalioctl.so
 -vendor/lib/libthermalclient.so
 
 # Time services
--vendor/app/TimeService/TimeService.apk;:timeservice_app_cert-legacy-um
+-vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
 -vendor/lib/libtime_genoff.so
