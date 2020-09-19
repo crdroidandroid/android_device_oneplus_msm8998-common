@@ -162,7 +162,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl \
     audio.bluetooth.default \
-    BluetoothQti \
     btconfig \
     bt-mac-generator \
     libbt-vendor \
