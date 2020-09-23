@@ -592,7 +592,7 @@ vendor/lib/vendor.qti.latency@2.0.so
 # DPM
 framework/tcmclient.jar
 framework/tcmiface.jar
-product/bin/dpmd|90cdd79b564456cef2a0c011afab3896463df5e4
+product/bin/dpmd|a70053cbaadbfdce93a85da4a9e55b096a75a83a
 product/etc/dpm/dpm.conf
 product/etc/init/dpmd.rc
 product/etc/permissions/com.qti.dpmframework.xml
@@ -1043,7 +1043,7 @@ product/etc/permissions/qcrilhook.xml
 product/etc/permissions/telephonyservice.xml
 product/framework/QtiTelephonyServicelibrary.jar
 product/framework/qcrilhook.jar
-product/framework/qti-telephony-common.jar|14e32b1cb0fdc9d7802414e95e41376499b51b11
+product/framework/qti-telephony-common.jar|180e59fb4d79e00612526c243b94711630940733
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd
@@ -1193,7 +1193,7 @@ product/lib/vendor.qti.ims.rcsconfig@1.0.so
 product/lib/vendor.qti.ims.rcsconfig@1.1.so
 product/lib/vendor.qti.imsrtpservice@2.0.so
 product/lib/vendor.qti.imsrtpservice@2.1.so
--product/priv-app/ims/ims.apk|7aff4613e75dfe90363409cf649e2a3e09469921
+-product/priv-app/ims/ims.apk|bd32366296caf44cf2171a464b788004bed58156
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
