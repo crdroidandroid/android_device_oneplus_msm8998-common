@@ -81,21 +81,6 @@ vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
 
 # NFC
--app/NxpNfcNci/NxpNfcNci.apk||83b5d03159e1b3dfd1bce92f9bbcfede2e9f0a5d
--app/NxpSecureElement/NxpSecureElement.apk
-etc/nfcee_access.xml
-etc/permissions/com.nxp.nfc.xml
--framework/com.nxp.nfc.jar
-lib64/libnxpnfc-nci.so
-lib64/libnxpnfc_nci_jni.so
-lib/libnxpnfc-nci.so
-lib/libnxpnfc_nci_jni.so
-vendor/bin/hw/android.hardware.nfc@1.2-service
-vendor/bin/hw/android.hardware.secure_element@1.1-service
-vendor/etc/init/android.hardware.nfc@1.2-service.rc
-vendor/etc/init/android.hardware.secure_element@1.1-service.rc
-vendor/lib64/hal_libnfc.so
-vendor/lib64/nfc_nci_nxp.so
 vendor/lib/libpn553_fw.so
 
 # NXP - ESE-Powermanager
@@ -104,9 +89,7 @@ product/lib/vendor.qti.esepowermanager@1.0.so
 vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
 vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
 vendor/lib64/ese_client.so
-vendor/lib64/ese_spi_nxp.so
 vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
-vendor/lib64/ls_client.so
 vendor/lib64/vendor.nxp.eventprocessor@1.0.so
 vendor/lib64/vendor.qti.esepowermanager@1.0.so
 vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
