@@ -484,10 +484,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
-# Vendor security patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lineage.build.vendor_security_patch=2019-10-01
-
 # Verity
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
 $(call inherit-product, build/target/product/verity.mk)
