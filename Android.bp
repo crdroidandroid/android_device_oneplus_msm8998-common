@@ -13,8 +13,4 @@
 // limitations under the License.
 
 soong_namespace {
-    imports: [
-        "vendor/qcom/opensource/commonsys/packages/apps/Bluetooth",
-        "vendor/qcom/opensource/commonsys/system/bt/conf",
-    ],
 }
