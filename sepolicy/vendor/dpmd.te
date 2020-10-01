@@ -1,2 +1,2 @@
-get_prop(dpmd, diag_prop)
-set_prop(dpmd, ctl_stop_prop)
+get_prop(vendor_dpmd, diag_prop)
+set_prop(vendor_dpmd, ctl_stop_prop)

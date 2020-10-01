@@ -1,2 +1,2 @@
 # Read vendor.camera.aux.packagelist prop
-allow snap_app persist_camera_prop:file { read open getattr };
+allow snap_app vendor_persist_camera_prop:file { read open getattr };
