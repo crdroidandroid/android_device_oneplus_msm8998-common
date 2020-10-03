@@ -15,3 +15,4 @@ allow hal_nfc_default nfc_data_file:dir { search };
 allow hal_nfc_default nfc_data_file:file { r_file_perms };
 
 get_prop(cameraserver, persist_camera_prop)
+get_prop(cameraserver, vendor_camera_prop)
