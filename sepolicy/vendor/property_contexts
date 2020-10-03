@@ -38,6 +38,9 @@ persist.vendor.oem.nfc.                u:object_r:vendor_nfc_prop:s0
 ro.vendor.nfc.notify_tp                u:object_r:vendor_nfc_prop:s0
 vendor.oem.nfc.                        u:object_r:vendor_nfc_prop:s0
 
+# QTI
+persist.vendor.qmi_log_on              u:object_r:cnd_vendor_prop:s0
+
 # RIL
 persist.sys.oem.region                 u:object_r:exported3_radio_prop:s0
 persist.sys.assert.panic               u:object_r:exported3_radio_prop:s0
