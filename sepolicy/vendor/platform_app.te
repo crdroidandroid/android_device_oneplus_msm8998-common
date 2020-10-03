@@ -1,2 +1,5 @@
 allow platform_app hal_ifaa_hwservice:hwservice_manager { find };
 binder_call(platform_app, hal_ifaa_default)
+
+# Allow platform app to access for camera prop
+get_prop(platform_app, vendor_camera_prop)
