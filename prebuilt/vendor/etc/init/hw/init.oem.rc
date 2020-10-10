@@ -142,10 +142,6 @@ on boot
     # shankai@bsp , 2017/12/29, Modify for rf_cable support
     chown system system /proc/rf_cable_config
 
-    # camera. enable mobicat
-    setprop persist.camera.mobicat 2
-    setprop persist.camera.stats.debugexif 3080192
-
     chown system system /sys/class/leds/led:torch_0/brightness
     chmod 666 /sys/class/leds/led:torch_0/brightness
     chown system system /sys/class/leds/led:torch_1/brightness
