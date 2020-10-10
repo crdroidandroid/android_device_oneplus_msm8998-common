@@ -19,3 +19,5 @@ r_dir_file(hal_camera_default, sysfs_net);
 
 # Allow camera hal access for camera prop
 set_prop(hal_camera_default, vendor_camera_prop)
+
+get_prop(hal_camera_default, diag_prop)

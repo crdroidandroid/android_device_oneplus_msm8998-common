@@ -1,5 +1,6 @@
 # Policy file for qcom-system-daemon
 diag_use(vendor_qcomsysd)
+get_prop(vendor_qcomsysd, diag_prop)
 set_prop(vendor_qcomsysd, powerctl_prop)
 allow vendor_qcomsysd self:socket create;
 allow vendor_qcomsysd sysfs_qdss_dev:dir r_dir_perms;
