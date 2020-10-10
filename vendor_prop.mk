@@ -108,10 +108,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.vc_call_vol_steps=11 \
     ro.af.client_heap_size_kbyte=7168
 
-# Battery
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cutoff_voltage_mv=3200
-
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac \
@@ -121,10 +117,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.a2dp_offload.supported=true \
     ro.vendor.bluetooth.wipower=false \
     vendor.hw.fm.init=0
-
-# Cabl
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.cabl=0
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -139,18 +131,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
 
-# Connor
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.connor.disable=1
-
-# Core control
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.core_ctl_min_cpu=2 \
-    ro.vendor.qti.core_ctl_max_cpu=4
-
 # Data
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.aosp_usr_pref_sel=true \
     persist.vendor.data.mode=concurrent \
     ro.vendor.use_data_netmgrd=true
 
@@ -190,11 +172,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.perf_hint_window=50 \
     debug.hwui.use_buffer_age=false
 
-# IOP
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.iop.enable_uxe=0 \
-    vendor.iop.enable_prefetch_ofr=0
-
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.stagefright.omx_default_rank.sw-audio=1 \
@@ -215,15 +192,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.fw.bg_apps_limit=60 \
-    ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.am.reschedule_service=true \
-    sched.colocate.enable=1 \
-    sys.games.gt.prof=1
-
-# QSEE
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.qsee=yes
+    ro.vendor.extension_library=libqti-perfd-client.so
 
 # QCOM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -320,13 +289,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sys.usb.rndis.func.name=gsi \
     sys.usb.rmnet.func.name=gsi
 
-# VNDK
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.vndk.version=28
-
 # Wi-Fi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
 
 # Zygote
-persist.device_config.runtime_native.usap_pool_enabled=true
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.device_config.runtime_native.usap_pool_enabled=true
