@@ -1,2 +1,4 @@
 allow location self:capability { net_raw };
 set_prop(location, diag_prop)
+
+allow location hal_cacert_hwservice:hwservice_manager { find };

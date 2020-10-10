@@ -1,11 +1,15 @@
 persist.sys.diag.max.size              u:object_r:diag_prop:s0
 persist.vendor.diag.max.size           u:object_r:diag_prop:s0
 persist.vendor.oem.dump                u:object_r:diag_prop:s0
+ro.adb.enable                          u:object_r:diag_prop:s0
+sdm.disable_hdr_lut_gen                u:object_r:diag_prop:s0
 
 vendor.oem.device.imeicache0           u:object_r:radio_prop:s0
 vendor.oem.device.imeicache1           u:object_r:radio_prop:s0
 
 # Bluetooth
+persist.service.bdroid.bdaddr          u:object_r:vendor_bluetooth_prop:s0
+ro.bt.bdaddr_path                      u:object_r:vendor_bluetooth_prop:s0
 ro.vendor.bt.bdaddr_path               u:object_r:vendor_bluetooth_prop:s0
 
 # Camera
@@ -41,11 +45,12 @@ ro.vendor.nfc.notify_tp                u:object_r:vendor_nfc_prop:s0
 vendor.oem.nfc.                        u:object_r:vendor_nfc_prop:s0
 
 # QTI
-persist.vendor.qmi_log_on              u:object_r:cnd_vendor_prop:s0
+persist.vendor.qmi_log_on              u:object_r:exported_default_prop:s0
 
 # RIL
 persist.sys.oem.region                 u:object_r:exported3_radio_prop:s0
 persist.sys.assert.panic               u:object_r:exported3_radio_prop:s0
+ro.wandrfmode                          u:object_r:exported3_radio_prop:s0
 
 # Thermal
 persist.sys.thermal.                   u:object_r:thermal_engine_prop:s0

@@ -1,1 +1,2 @@
+get_prop(dpmd, diag_prop)
 set_prop(dpmd, ctl_stop_prop)

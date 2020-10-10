@@ -6,3 +6,4 @@ allow rild vendor_data_file:file create_file_perms;
 allow rild wifi_nv_data_file:dir rw_dir_perms;
 allow rild wifi_nv_data_file:file create_file_perms;
 
+get_prop(rild, diag_prop);
