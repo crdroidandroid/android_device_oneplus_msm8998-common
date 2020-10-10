@@ -102,7 +102,6 @@ on boot
     chmod 0666 /dev/goodix_fp
 
     # NFC, ruanbanmao add for 15801 nfc. 2015/10/19
-    setprop ro.nfc.port "I2C"
     chmod 0666 /dev/nq-nci
     chown nfc nfc /dev/nq-nci
 
@@ -142,10 +141,6 @@ on boot
 
     # shankai@bsp , 2017/12/29, Modify for rf_cable support
     chown system system /proc/rf_cable_config
-
-    # camera. enable mobicat
-    setprop persist.camera.mobicat 2
-    setprop persist.camera.stats.debugexif 3080192
 
     chown system system /sys/class/leds/led:torch_0/brightness
     chmod 666 /sys/class/leds/led:torch_0/brightness
