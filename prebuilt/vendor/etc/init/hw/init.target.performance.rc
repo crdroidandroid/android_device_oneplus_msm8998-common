@@ -205,8 +205,5 @@ on property:sys.boot_completed=1
     # Set BFQ I/O scheduler
     setprop sys.io.scheduler "bfq"
 
-    # Is IOP even still a thing?
-    start vendor.iop
-
     # QCOM post boot
     start vendor.qcom-post-boot
