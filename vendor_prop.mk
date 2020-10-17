@@ -139,15 +139,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
 
-# Connor
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.connor.disable=1
-
-# Core control
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.core_ctl_min_cpu=2 \
-    ro.vendor.qti.core_ctl_max_cpu=4
-
 # Data
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.aosp_usr_pref_sel=true \
@@ -212,14 +203,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vidc.enc.dcvs.extra-buff-count=2 \
     vendor.vidc.enc.disable.pq=true \
     persist.media.treble_omx=true
-
-# Perf
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.fw.bg_apps_limit=60 \
-    ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.am.reschedule_service=true \
-    sched.colocate.enable=1 \
-    sys.games.gt.prof=1
 
 # QSEE
 PRODUCT_PROPERTY_OVERRIDES += \
