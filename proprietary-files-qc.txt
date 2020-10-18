@@ -884,10 +884,8 @@ vendor/lib/libkeymasterdeviceutils.so
 vendor/lib/libqtikeymaster4.so
 
 # Listen
-lib64/liblistensoundmodel2.so:vendor/lib64/liblistensoundmodel2.so
+lib/liblistenjni.so:vendor/lib/liblistenjni.so
 lib/liblistensoundmodel2.so:vendor/lib/liblistensoundmodel2.so
-vendor/lib64/hw/sound_trigger.primary.msm8998.so
-vendor/lib64/libmulawdec.so
 vendor/lib/hw/sound_trigger.primary.msm8998.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libmulawdec.so
