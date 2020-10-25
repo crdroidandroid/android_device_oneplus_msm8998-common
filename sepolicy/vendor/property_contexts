@@ -33,6 +33,7 @@ ro.hardware.fp                         u:object_r:vendor_fp_prop:s0
 vendor.fps_hal.                        u:object_r:vendor_fp_prop:s0
 
 # NFC
+persist.factoryota.reboot              u:object_r:vendor_nfc_prop:s0
 persist.vendor.nfc.                    u:object_r:vendor_nfc_prop:s0
 persist.vendor.oem.nfc.                u:object_r:vendor_nfc_prop:s0
 ro.vendor.nfc.notify_tp                u:object_r:vendor_nfc_prop:s0
