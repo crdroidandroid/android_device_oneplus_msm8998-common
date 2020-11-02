@@ -368,10 +368,7 @@ PRODUCT_PACKAGES += \
     nqnfcee_access.xml \
     nqnfcse_access.xml \
     Tag \
-    vendor.nxp.hardware.nfc@1.2-service
-
-PRODUCT_BOOT_JARS += \
-    com.nxp.nfc.nq
+    vendor.nxp.hardware.nfc@2.0-service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libese-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libese-nxp.conf \
