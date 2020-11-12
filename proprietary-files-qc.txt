@@ -270,7 +270,6 @@ vendor/lib/libSTDualCamCaptureBokeh.so
 vendor/lib/libSTDualCamPreviewBokeh.so
 vendor/lib/libSTdisp.so
 vendor/lib/libvideoutils.so
-vendor/lib/libvidhance.so
 
 # Camera actuators
 vendor/lib/libactuator_lc898217xc_imx350.so
@@ -727,6 +726,7 @@ vendor/bin/xtwifi-client
 vendor/bin/xtwifi-inet-agent
 vendor/etc/init/init.qdmastats.rc
 vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml
+vendor/etc/xtra_root_cert.pem
 vendor/lib64/hw/vendor.qti.gnss@3.0-impl.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libdataitems.so
@@ -761,6 +761,8 @@ vendor/lib/libizat_core.so
 -vendor/lib/libloc_api_v02.so
 vendor/lib/liblocationservice_glue.so
 vendor/lib/liblocationservice.so
+vendor/lib/liblowi_client.so
+vendor/lib/liblowi_wifihal.so
 vendor/lib/libqdma_file_agent.so
 vendor/lib/libslimclient.so
 vendor/lib/libxtadapter.so
