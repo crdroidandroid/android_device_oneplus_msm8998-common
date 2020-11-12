@@ -40,6 +40,12 @@ persist.vendor.oem.nfc.                u:object_r:vendor_nfc_prop:s0
 ro.vendor.nfc.notify_tp                u:object_r:vendor_nfc_prop:s0
 vendor.oem.nfc.                        u:object_r:vendor_nfc_prop:s0
 
+# Power
+vendor.powerhal.audio                  u:object_r:vendor_power_prop:s0
+vendor.powerhal.init                   u:object_r:vendor_power_prop:s0
+vendor.powerhal.rendering              u:object_r:vendor_power_prop:s0
+vendor.powerhal.state                  u:object_r:vendor_power_prop:s0
+
 # QTI
 persist.vendor.qmi_log_on              u:object_r:cnd_vendor_prop:s0
 

@@ -71,6 +71,14 @@ on late-fs
     write /sys/block/sde/queue/nr_requests 256
     write /sys/block/sde/queue/read_ahead_kb 2048
 
+    # Setup permission for powerHAL
+    chown system system /dev/stune/top-app/schedtune.boost
+    chown system system /dev/cpu_dma_latency
+    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+    chown system system /sys/class/devfreq/soc:qcom,gpubw/min_freq
+    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/min_freq
+
 on property:sys.boot_completed=1
     # Disable boot time fs tuning
     write /sys/block/sda/queue/read_ahead_kb 128
@@ -132,10 +140,6 @@ on property:sys.boot_completed=1
     # CPU is configured, re-enable thermal core control
     write /sys/module/msm_thermal/core_control/enabled 1
 
-    # Enable input boost configuration
-    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1036800 4:1056000"
-    write /sys/module/cpu_boost/parameters/input_boost_ms 450
-
     # Enable bus-dcvs
     write /sys/class/devfreq/soc:qcom,cpubw/governor "bw_hwmon"
     write /sys/class/devfreq/soc:qcom,cpubw/polling_interval 50
@@ -162,6 +166,11 @@ on property:sys.boot_completed=1
     write /sys/class/devfreq/soc:qcom,memlat-cpu4/mem_latency/ratio_ceil 400
 
     write /sys/class/devfreq/soc:qcom,mincpubw/governor "cpufreq"
+
+    # Setup permission for powerHAL
+    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
+    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory
+    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length
 
     # Setup power retention
     write /sys/module/lpm_levels/system/pwr/cpu0/ret/idle_enabled N
@@ -207,3 +216,8 @@ on property:sys.boot_completed=1
 
     # QCOM post boot
     start vendor.qcom-post-boot
+
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
+
+    write /dev/kmsg "Boot completed"

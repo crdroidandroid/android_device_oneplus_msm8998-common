@@ -2,6 +2,9 @@ genfscon debugfs /p2p0/power_stats     u:object_r:debugfs_power_stats:s0
 genfscon debugfs /wlan0/power_stats    u:object_r:debugfs_power_stats:s0
 genfscon debugfs /rmt_storage/rmts     u:object_r:qti_debugfs:s0
 genfscon debugfs /msm_core             u:object_r:qti_debugfs:s0
+genfscon debugfs /rpm_stats            u:object_r:debugfs_rpm:s0
+genfscon debugfs /rpm_master_stats     u:object_r:debugfs_rpm:s0
+genfscon debugfs /system_stats         u:object_r:debugfs_rpm:s0
 
 genfscon proc /touchpanel              u:object_r:proc_touchpanel:s0
 genfscon proc /s1302                   u:object_r:proc_touchpanel:s0
