@@ -32,6 +32,8 @@
 /* RPM runs at 19.2Mhz. Divide by 19200 for msec */
 #define RPM_CLK 19200
 
+#define TAP_TO_WAKE_NODE "/proc/touchpanel/double_tap_enable"
+
 extern struct stat_pair rpm_stat_map[];
 
 namespace android {
@@ -249,8 +251,14 @@ Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
     return Void();
 }
 
-Return<void> Power::setFeature(Feature /*feature*/, bool /*activate*/)  {
-    //Nothing to do
+Return<void> Power::setFeature(Feature feature, bool activate) {
+    switch (feature) {
+        case Feature::POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
+            ::android::base::WriteStringToFile(activate ? "1" : "0", TAP_TO_WAKE_NODE, true);
+            break;
+        default:
+            break;
+    }
     return Void();
 }
 
