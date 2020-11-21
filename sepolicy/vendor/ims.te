@@ -1,2 +1,3 @@
 diag_use(ims)
 get_prop(ims, diag_prop)
+get_prop(ims, exported3_radio_prop)
