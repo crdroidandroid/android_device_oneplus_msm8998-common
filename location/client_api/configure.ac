@@ -40,19 +40,6 @@ AC_ARG_WITH([external_ap],
     [],
     with_external_ap=no)
 
-if test "x$with_external_ap" != "xno"; then
-    CPPFLAGS="${CPPFLAGS} -DFEATURE_EXTERNAL_AP"
-else
-    # Checks for libraries.
-    PKG_CHECK_MODULES([DIAGIFACE], [loc-diag-iface])
-    AC_SUBST([DIAGIFACE_CFLAGS])
-    AC_SUBST([DIAGIFACE_LIBS])
-
-    PKG_CHECK_MODULES([DIAG], [diag])
-    AC_SUBST([DIAG_CFLAGS])
-    AC_SUBST([DIAG_LIBS])
-fi
-
 AM_CONDITIONAL(USE_EXTERNAL_AP, test "x${with_external_ap}" = "xyes")
 
 AC_ARG_WITH([glib],
