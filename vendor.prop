@@ -105,6 +105,7 @@ vendor.hw.fm.init=0
 vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
+camera.disable_zsl_mode=1
 persist.camera.gyro.disable=0
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.oneplus.camera,com.android.camera,org.lineageos.snap
 persist.camera.mobicat=2
