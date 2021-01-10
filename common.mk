@@ -363,15 +363,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service \
     com.android.nfc_extras \
-    com.nxp.nfc.nq \
-    com.nxp.nfc.nq.xml \
-    libnqnfc-nci \
-    libnqnfc_nci_jni \
-    NQNfcNci \
+    SecureElement \
+    NfcNci \
     nqnfcee_access.xml \
     nqnfcse_access.xml \
-    Tag \
-    vendor.nxp.hardware.nfc@2.0-service
+    Tag
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libese-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libese-nxp.conf \
@@ -474,8 +470,7 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    vendor/nxp/opensource/pn5xx
+    $(LOCAL_PATH)
 
 # Tetheroffload
 PRODUCT_PACKAGES += \
