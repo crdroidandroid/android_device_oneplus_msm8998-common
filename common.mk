@@ -209,17 +209,15 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8998 \
     memtrack.msm8998 \
     libdisplayconfig \
+    libdisplayconfig.qti \
     libhwc2on1adapter \
-    libgenlock \
-    liboverlay \
-    libtinyxml \
     libqdMetaData \
-    libqdMetaData.system \
+    libtinyxml \
     libvulkan
 
 PRODUCT_PACKAGES += \
-    vendor.display.config@1.9 \
-    vendor.display.config@1.9_vendor
+    vendor.display.config@2.0.vendor \
+    vendor.display.config@2.0 \
 
 # Doze
 PRODUCT_PACKAGES += \
