@@ -216,7 +216,10 @@ TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 TARGET_USES_INTERACTION_BOOST := true
 
 # Properties
-TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
+TARGET_ODM_PROP += $(PLATFORM_PATH)/odm.prop
+TARGET_PRODUCT_PROP += $(PLATFORM_PATH)/product.prop
+TARGET_SYSTEM_EXT_PROP += $(PLATFORM_PATH)/system_ext.prop
+TARGET_VENDOR_PROP += $(PLATFORM_PATH)/vendor.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/recovery.fstab
