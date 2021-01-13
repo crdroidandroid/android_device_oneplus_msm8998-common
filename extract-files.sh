@@ -60,24 +60,25 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-    product/lib64/libdpmframework.so | product/lib/libdpmframework.so )
-        sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
-    ;;
-    lib64/libwfdnative.so | lib/libwfdnative.so )
-        "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
-    ;;
-    product/etc/permissions/qcnvitems.xml | product/etc/permissions/vendor.qti.hardware.factory.xml | product/etc/permissions/vendor-qti-hardware-sensorscalibrate.xml )
-        sed -i 's/\/system\/framework\//\/system\/product\/framework\//g' "${2}"
-    ;;
-    product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml | product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml )
-        sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
-    ;;
-    vendor/etc/permissions/com.fingerprints.extension.xml )
-        sed -i 's/\/system\/framework\//\/vendor\/framework\//g' "${2}"
-    ;;
-    vendor/lib64/hw/fingerprint.goodix.so | vendor/lib/hw/fingerprint.goodix.so )
-        sed -i 's|\x00goodix.fingerprint\x00|\x00fingerprint\x00\x00\x00\x00\x00\x00\x00\x00|' "${2}"
-    ;;
+        lib64/libwfdnative.so | lib/libwfdnative.so )
+            "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
+            ;;
+        system_ext/etc/init/dpmd.rc)
+            sed -i "s/\/system\/product\/bin\//\/system\/system_ext\/bin\//g" "${2}"
+            ;;
+        system_ext/etc/permissions/com.qti.dpmframework.xml | system_ext/etc/permissions/dpmapi.xml | \
+        system_ext/etc/permissions/qcrilhook.xml | system_ext/etc/permissions/telephonyservice.xml )
+            sed -i "s/\/product\/framework\//\/system_ext\/framework\//g" "${2}"
+            ;;
+        system_ext/lib64/libdpmframework.so )
+            sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
+            ;;
+        vendor/etc/permissions/com.fingerprints.extension.xml )
+            sed -i 's/\/system\/framework\//\/vendor\/framework\//g' "${2}"
+            ;;
+        vendor/lib64/hw/fingerprint.goodix.so | vendor/lib/hw/fingerprint.goodix.so )
+            sed -i 's|\x00goodix.fingerprint\x00|\x00fingerprint\x00\x00\x00\x00\x00\x00\x00\x00|' "${2}"
+            ;;
     esac
 }
 
