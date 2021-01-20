@@ -26,3 +26,7 @@ allow hal_livedisplay_oneplus_msm8998 display_vendor_data_file:file { create_fil
 
 # Allow LiveDisplay to set vendor display props
 set_prop(hal_livedisplay_oneplus_msm8998, vendor_display_prop);
+
+# Allow LiveDisplay to write to AntiFlicker nodes
+allow hal_livedisplay_oneplus_msm8998 proc_graphics:dir { r_dir_perms };
+allow hal_livedisplay_oneplus_msm8998 proc_graphics:file rw_file_perms;

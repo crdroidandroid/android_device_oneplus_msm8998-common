@@ -14,3 +14,5 @@ genfscon sysfs /devices/soc/soc:fingerprint_detect/sensor_version    u:object_r:
 genfscon sysfs /project_info/project_name                            u:object_r:sysfs_project_info:s0
 
 genfscon sysfs /bus/msm_subsys                                       u:object_r:sysfs_ssr:s0
+
+genfscon proc /flicker_free                                          u:object_r:proc_graphics:s0
