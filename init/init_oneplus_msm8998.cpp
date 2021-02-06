@@ -46,12 +46,17 @@
 
 #include "vendor_init.h"
 
-#define DEVINFO_FILE "/sys/project_info/project_name"
-#define SENSOR_VERSION_FILE "/sys/devices/soc/soc:fingerprint_detect/sensor_version"
+static constexpr const char* kDcDimmingBrightnessPath =
+        "/proc/flicker_free/min_brightness";
+static constexpr const char* kProjectNamePath =
+        "/sys/project_info/project_name";
+static constexpr const char* kSensorVersionPath =
+        "/sys/devices/soc/soc:fingerprint_detect/sensor_version";
 
 using android::base::Trim;
 using android::base::GetProperty;
 using android::base::ReadFileToString;
+using android::base::WriteStringToFile;
 
 void property_override(char const prop[], char const value[])
 {
@@ -69,24 +74,26 @@ void init_target_properties()
     std::string device;
     bool unknownDevice = true;
 
-    if (ReadFileToString(DEVINFO_FILE, &device)) {
+    if (ReadFileToString(kProjectNamePath, &device)) {
         LOG(INFO) << "Device info: " << device;
 
         if (!strncmp(device.c_str(), "16859", 5)) {
             // Oneplus 5
             property_override("ro.display.series", "OnePlus 5");
+            WriteStringToFile("66", kDcDimmingBrightnessPath);
             unknownDevice = false;
         }
         else if (!strncmp(device.c_str(), "17801", 5)) {
             // Oneplus 5T
             property_override("ro.display.series", "OnePlus 5T");
+            WriteStringToFile("370", kDcDimmingBrightnessPath);
             unknownDevice = false;
         }
 
         property_override("vendor.boot.project_name", device.c_str());
     }
     else {
-        LOG(ERROR) << "Unable to read device info from " << DEVINFO_FILE;
+        LOG(ERROR) << "Unable to read device info from " << kProjectNamePath;
     }
 
     if (unknownDevice) {
@@ -98,7 +105,7 @@ void init_fingerprint_properties()
 {
     std::string sensor_version;
 
-    if (ReadFileToString(SENSOR_VERSION_FILE, &sensor_version)) {
+    if (ReadFileToString(kSensorVersionPath, &sensor_version)) {
         LOG(INFO) << "Loading Fingerprint HAL for sensor version " << sensor_version;
         if (Trim(sensor_version) == "1" || Trim(sensor_version) == "2") {
             property_override("ro.hardware.fingerprint", "fpc");
