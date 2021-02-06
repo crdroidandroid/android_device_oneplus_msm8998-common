@@ -3,4 +3,6 @@ set_prop(location, diag_prop)
 
 allow location hal_cacert_hwservice:hwservice_manager { find };
 
+hal_client_domain(location, vendor_qccsyshal);
+
 binder_call(location, qtidataservices_app);
