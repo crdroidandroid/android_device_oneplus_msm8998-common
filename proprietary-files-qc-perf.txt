@@ -3,10 +3,6 @@ lib64/libqti-perfd-client_system.so
 lib64/libqti_performance.so
 lib/libqti-perfd-client_system.so
 lib/libqti_performance.so
-product/lib64/vendor.qti.hardware.perf@1.0.so
-product/lib64/vendor.qti.hardware.perf@2.0.so
-product/lib/vendor.qti.hardware.perf@1.0.so
-product/lib/vendor.qti.hardware.perf@2.0.so
 vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
 vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc
 vendor/etc/perf/commonresourceconfigs.xml
@@ -35,16 +31,12 @@ vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-util.so
 vendor/lib64/libqti-utils.so
 vendor/lib64/libskewknob.so
-vendor/lib64/vendor.qti.hardware.perf@1.0.so
-vendor/lib64/vendor.qti.hardware.perf@2.0.so
 vendor/lib/libperfconfig.so
 vendor/lib/libperfgluelayer.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-perfd.so
 vendor/lib/libqti-util.so
 vendor/lib/libqti-utils.so
-vendor/lib/vendor.qti.hardware.perf@1.0.so
-vendor/lib/vendor.qti.hardware.perf@2.0.so
 
 # IOP
 lib/libqti-iopd-client_system.so
