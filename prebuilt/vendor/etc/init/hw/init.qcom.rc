@@ -670,6 +670,7 @@ on charger
     setprop sys.usb.config mass_storage
     setprop sys.usb.configfs 1
     start dashd
+    start vendor.power_off_alarm
 
 on property:init.svc.surfaceflinger=restarting
     stop  vendor.hwcomposer-2-1
