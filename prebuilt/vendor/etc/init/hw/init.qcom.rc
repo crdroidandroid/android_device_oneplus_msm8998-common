@@ -669,6 +669,7 @@ on charger
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
     setprop sys.usb.config mass_storage
     setprop sys.usb.configfs 1
+    start dashd
 
 on property:init.svc.surfaceflinger=restarting
     stop  vendor.hwcomposer-2-1
