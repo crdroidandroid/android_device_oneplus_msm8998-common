@@ -28,12 +28,8 @@ namespace livedisplay {
 namespace V2_0 {
 namespace implementation {
 
-static constexpr const char* kProjectNamePath =
-        "/sys/project_info/project_name";
 static constexpr const char* kDcDimmingStatusPath =
         "/proc/flicker_free/flicker_free";
-static constexpr const char* kDcDimmingBrightnessPath =
-        "/proc/flicker_free/min_brightness";
 
 Return<bool> AntiFlicker::isEnabled() {
     std::string buf;
@@ -47,28 +43,11 @@ Return<bool> AntiFlicker::isEnabled() {
 Return<bool> AntiFlicker::showWarning() {
     return false;
 }
-
-void set_min_brightness()
-{
-    std::string device;
-    if (android::base::ReadFileToString(kProjectNamePath, &device)) {
-        if (!strncmp(device.c_str(), "16859", 5)) {
-            // Oneplus 5
-            android::base::WriteStringToFile("66", kDcDimmingBrightnessPath);
-        }
-        else if (!strncmp(device.c_str(), "17801", 5)) {
-            // Oneplus 5T
-            android::base::WriteStringToFile("380", kDcDimmingBrightnessPath);
-        }
-    }
-}
-
 Return<bool> AntiFlicker::setEnabled(bool enabled) {
     if (!android::base::WriteStringToFile((enabled ? "1" : "0"), kDcDimmingStatusPath)) {
         LOG(ERROR) << "Failed to write " << kDcDimmingStatusPath;
         return false;
     }
-    set_min_brightness();
     return true;
 }
 
