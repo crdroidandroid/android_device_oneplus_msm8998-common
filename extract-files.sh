@@ -60,7 +60,7 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        lib64/libwfdnative.so | lib/libwfdnative.so )
+        lib64/libwfdnative.so )
             "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
             ;;
         system_ext/etc/init/dpmd.rc)
