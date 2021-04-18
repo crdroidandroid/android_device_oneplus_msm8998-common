@@ -1,4 +1,4 @@
-on post-fs-data
+on init
     chown system graphics /sys/devices/virtual/graphics/fb0/adobe_rgb
     chown system graphics /sys/devices/virtual/graphics/fb0/srgb
     chown system graphics /sys/devices/virtual/graphics/fb0/dci_p3
@@ -17,7 +17,7 @@ on post-fs-data
     chmod 0666 /sys/devices/virtual/graphics/fb0/adaption_mode
 
 service vendor.livedisplay-hal-2-0 /vendor/bin/hw/vendor.lineage.livedisplay@2.0-service.oneplus_msm8998
-    class late_start
+    class hal
     user system
     group system
 

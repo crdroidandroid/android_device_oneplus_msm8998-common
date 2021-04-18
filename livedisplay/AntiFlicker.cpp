@@ -16,11 +16,9 @@
 
 #define LOG_TAG "AntiFlickerService"
 
-#include <android-base/file.h>
-#include <android-base/logging.h>
-#include <android-base/strings.h>
-
 #include "AntiFlicker.h"
+#include <android-base/logging.h>
+#include <fstream>
 
 namespace vendor {
 namespace lineage {
@@ -28,24 +26,22 @@ namespace livedisplay {
 namespace V2_0 {
 namespace implementation {
 
-static constexpr const char* kDcDimmingStatusPath =
-        "/proc/flicker_free/flicker_free";
+static constexpr const char* kDcDimmingPath =
+    "/proc/flicker_free/flicker_free";
 
 Return<bool> AntiFlicker::isEnabled() {
-    std::string buf;
-    if (!android::base::ReadFileToString(kDcDimmingStatusPath, &buf)) {
-        LOG(ERROR) << "Failed to read " << kDcDimmingStatusPath;
-        return false;
-    }
-    return std::stoi(android::base::Trim(buf)) == 1;
+    std::ifstream file(kDcDimmingPath);
+    int result = -1;
+    file >> result;
+    LOG(DEBUG) << "Got result " << result << " fail " << file.fail();
+    return !file.fail() && result > 0;
 }
 
 Return<bool> AntiFlicker::setEnabled(bool enabled) {
-    if (!android::base::WriteStringToFile((enabled ? "1" : "0"), kDcDimmingStatusPath)) {
-        LOG(ERROR) << "Failed to write " << kDcDimmingStatusPath;
-        return false;
-    }
-    return true;
+    std::ofstream file(kDcDimmingPath);
+    file << (enabled ? "1" : "0");
+    LOG(DEBUG) << "setEnabled fail " << file.fail();
+    return !file.fail();
 }
 
 }  // namespace implementation

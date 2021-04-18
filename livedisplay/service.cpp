@@ -56,7 +56,6 @@ int main() {
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);
 
-    // AntiFlicker service
     status = antiFlicker->registerAsService();
     if (status != OK) {
         LOG(ERROR) << "Could not register service for LiveDisplay HAL AntiFlicker Iface ("
@@ -64,7 +63,6 @@ int main() {
         goto shutdown;
     }
 
-    // DisplayModes service
     status = dm->registerAsService();
     if (status != OK) {
         LOG(ERROR) << "Could not register service for LiveDisplay HAL DisplayModes Iface ("
@@ -72,7 +70,6 @@ int main() {
         goto shutdown;
     }
 
-    // PictureAdjustment service
     status = pa->registerAsService();
     if (status != OK) {
         LOG(ERROR) << "Could not register service for LiveDisplay HAL PictureAdjustment Iface ("
@@ -80,7 +77,6 @@ int main() {
         goto shutdown;
     }
 
-    // SunlightEnhancement service
     status = se->registerAsService();
     if (status != OK) {
         LOG(ERROR) << "Could not register service for LiveDisplay HAL SunlightEnhancement Iface ("
