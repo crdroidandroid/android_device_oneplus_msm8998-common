@@ -730,21 +730,32 @@ vendor/lib/libsdedrm.so|178b29259af7f1a72f33325cedca18987e161f7d
 vendor/lib64/libhdr_tm.so|cfd5f03dd37b5b6fb46d288bed619b780ec7343e
 vendor/lib/libhdr_tm.so|7a07d329f2413e9240856aef4cefcc88010d6b3c
 
-# Graphics - SDM
-vendor/bin/hw/vendor.display.color@1.0-service
-vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
-vendor/etc/init/vendor.display.color@1.0-service.rc
-vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
-vendor/lib64/vendor.display.color@1.0.so
-vendor/lib64/vendor.display.color@1.1.so
-vendor/lib64/vendor.display.color@1.2.so
-vendor/lib64/vendor.display.postproc@1.0.so
-vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
-vendor/lib/vendor.display.color@1.0.so
-vendor/lib/vendor.display.color@1.1.so
-vendor/lib/vendor.display.color@1.2.so
-vendor/lib/vendor.display.postproc@1.0.so
-vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
+# Graphics (Postprocessing) - from phoenix_sprout - RKQ1.201123.002
+system_ext/lib64/vendor.display.color@1.0.so|515269a2a284b3cf37c6e11c9565e69beccac0e0
+system_ext/lib64/vendor.display.color@1.1.so|fd8fa7d309faf47fdd3f2d85ae3ee57d2ef5111c
+system_ext/lib64/vendor.display.color@1.2.so|9eea9db8e783ff167a46698f43b3e79daa109e73
+system_ext/lib64/vendor.display.postproc@1.0.so|a2fa5e56919aa06bc9855b7b74f5c961c27c79ff
+system_ext/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|664e05fe82b84a5bbf6bc9b768b6435acda1b33c
+system_ext/lib/vendor.display.color@1.0.so|8c93924d63bf1fded34485ed48f294ff223f3f75
+system_ext/lib/vendor.display.color@1.1.so|8ce4503bb4c773be8fa20774f74b153242540ac1
+system_ext/lib/vendor.display.color@1.2.so|3ad94268b5c7b7af0f333e3c041b8fc6f3e000cd
+system_ext/lib/vendor.display.postproc@1.0.so|9ecc2e69edefcc110a162adce0270902a006e72a
+system_ext/lib/vendor.qti.hardware.qdutils_disp@1.0.so|1bf485825187cbd22b5c38d40311a3ea1a94e544
+vendor/bin/hw/vendor.display.color@1.0-service|fe8aebf4caa5d3d5ae8f6a8ceef0f5718e89f8ec
+vendor/bin/mm-pp-dpps|e3cf21eebec2e3bea78930a9929d1396dd9d934c
+vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
+vendor/lib64/libdisp-aba.so|c5c0f5f3d053e1663379d152fdc84ac66bb0ea1d
+vendor/lib64/vendor.display.color@1.0.so|b630ac4c0ce54d13515003742060ccfd3b1c6999
+vendor/lib64/vendor.display.color@1.1.so|93b4cdddb281780c9c8e24a8ac1e8680c8e336e6
+vendor/lib64/vendor.display.color@1.2.so|c86a3015156374c4b5c2476ed80e4fcc337deb4a
+vendor/lib64/vendor.display.postproc@1.0.so|91b4c3c1857bec34f493259982067b2d2acb068a
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|fe2b9e9b6df7c4c75dab54d120ebfe92b94cca23
+vendor/lib/libdisp-aba.so|b19ebd56b8a7b196626e1ac929bdfde0dccf7500
+vendor/lib/vendor.display.color@1.0.so|199da79235b81fe13dac635d848ce0c83d08e3a7
+vendor/lib/vendor.display.color@1.1.so|6071d123291cff488ae9159925a5b4ea1d8b8707
+vendor/lib/vendor.display.color@1.2.so|6e458f49e6f81de2dba845419aff378bc8d3c864
+vendor/lib/vendor.display.postproc@1.0.so|d486750ab3ac64ea75857d7841de65e21b7ebaa9
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|d117bb02fdf964f86cef9991b709f8c9726762f4
 
 # Graphics (SDM) - from phoenix_sprout - RKQ1.201123.002
 lib64/libsdm-disp-apis.so|752de98fed59c7d161a113b62d46e20a2c939789
@@ -869,13 +880,6 @@ vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 vendor/lib/libperipheral_client.so
-
-# Postprocessing
-etc/permissions/com.qti.snapdragon.sdk.display.xml
-framework/com.qti.snapdragon.sdk.display.jar
-vendor/bin/mm-pp-dpps
-vendor/lib64/libdisp-aba.so
-vendor/lib/libdisp-aba.so
 
 # PowerOffAlarm
 -product/app/PowerOffAlarm/PowerOffAlarm.apk|0f62d301fee30e5ae8baf33566c0839f46865649
