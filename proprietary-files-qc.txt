@@ -722,13 +722,13 @@ vendor/lib/libllvm-qcom.so|a50a339647cf789f86aa7d493e0118dd16bd75e1
 vendor/lib/libpvr.so|97316346abd3c6378e05f136cd4ada7e9d144db1
 vendor/lib/librs_adreno.so|fa635cf7d145bb75632f117a3c5b938c029e3b11
 
-# Graphics - DRM
-vendor/lib64/libsdedrm.so
-vendor/lib/libsdedrm.so
+# Graphics - DRM - from phoenix_sprout - RKQ1.201123.002
+vendor/lib64/libsdedrm.so|f519714ad5a655507c1617be3dc5a85a8ee2f61c
+vendor/lib/libsdedrm.so|178b29259af7f1a72f33325cedca18987e161f7d
 
-# Graphics - HDR
-vendor/lib64/libhdr_tm.so
-vendor/lib/libhdr_tm.so
+# Graphics - HDR - from phoenix_sprout - RKQ1.201123.002
+vendor/lib64/libhdr_tm.so|cfd5f03dd37b5b6fb46d288bed619b780ec7343e
+vendor/lib/libhdr_tm.so|7a07d329f2413e9240856aef4cefcc88010d6b3c
 
 # Graphics - SDM
 vendor/bin/hw/vendor.display.color@1.0-service
