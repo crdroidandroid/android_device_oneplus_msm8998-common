@@ -45,6 +45,7 @@
 #include <sys/_system_properties.h>
 
 #include "vendor_init.h"
+#include "property_service.h"
 
 static constexpr const char* kDcDimmingBrightnessPath =
         "/proc/flicker_free/min_brightness";
@@ -122,8 +123,73 @@ void init_fingerprint_properties()
     }
 }
 
+void init_alarm_boot_properties()
+{
+    char const *boot_reason_file = "/proc/sys/kernel/boot_reason";
+    std::string boot_reason;
+
+    if (ReadFileToString(boot_reason_file, &boot_reason)) {
+        /*
+         * Setup ro.vendor.alarm_boot value to true when it is RTC triggered boot up
+         * For existing PMIC chips, the following mapping applies
+         * for the value of boot_reason:
+         *
+         * 0 -> unknown
+         * 1 -> hard reset
+         * 2 -> sudden momentary power loss (SMPL)
+         * 3 -> real time clock (RTC)
+         * 4 -> DC charger inserted
+         * 5 -> USB charger inserted
+         * 6 -> PON1 pin toggled (for secondary PMICs)
+         * 7 -> CBLPWR_N pin toggled (for external power supply)
+         * 8 -> KPDPWR_N pin toggled (power key pressed)
+         */
+        if (Trim(boot_reason) == "0") {
+            property_override("ro.boot.bootreason", "invalid");
+            property_override("ro.vendor.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "1") {
+            property_override("ro.boot.bootreason", "hard_reset");
+            property_override("ro.vendor.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "2") {
+            property_override("ro.boot.bootreason", "smpl");
+            property_override("ro.vendor.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "3") {
+            property_override("ro.vendor.alarm_boot", "true");
+            // disable boot animation for RTC wakeup
+            property_override("debug.sf.nobootanimation", "1");
+        }
+        else if (Trim(boot_reason) == "4") {
+            property_override("ro.boot.bootreason", "dc_chg");
+            property_override("ro.vendor.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "5") {
+            property_override("ro.boot.bootreason", "usb_chg");
+            property_override("ro.vendor.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "6") {
+            property_override("ro.boot.bootreason", "pon1");
+            property_override("ro.vendor.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "7") {
+            property_override("ro.boot.bootreason", "cblpwr");
+            property_override("ro.vendor.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "8") {
+            property_override("ro.boot.bootreason", "kpdpwr");
+            property_override("ro.vendor.alarm_boot", "false");
+        }
+    }
+    else {
+        LOG(ERROR) << "Unable to read bootreason from " << boot_reason_file;
+    }
+}
+
 void vendor_load_properties() {
     LOG(INFO) << "Loading vendor specific properties";
     init_target_properties();
     init_fingerprint_properties();
+    init_alarm_boot_properties();
 }
