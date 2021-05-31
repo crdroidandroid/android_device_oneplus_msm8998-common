@@ -775,6 +775,10 @@ vendor/lib/libsdm-diag.so|d5dc905efd50f08449f426a42d092e7947ac607a
 vendor/lib/libsdmextension.so|eea3dca5bcf481a73ca167b72d951dc0ea576e52
 vendor/lib/libtinyxml2_1.so|78a92dd74248531bccd5c5d31fe0fa2984cad85c
 
+# Graphics - QSEED3 - from phoenix_sprout - RKQ1.201123.002
+vendor/lib64/libqseed3.so|592d58e891055f40491234abc8dc2b82a21d1f62
+vendor/lib/libqseed3.so|c7b6f89511b46d7f52a98a1ade6fd3df4196dd06
+
 # Improvetouch
 vendor/bin/hbtp_daemon
 vendor/etc/hbtp/hbtpcfg2.dat
