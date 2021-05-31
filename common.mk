@@ -217,12 +217,16 @@ PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
     libhwc2on1adapter \
     libqdMetaData \
+    libqdMetaData.system \
+    libqdMetaData.vendor \
     libtinyxml \
     libvulkan
 
 PRODUCT_PACKAGES += \
+    vendor.display.config@1.0.vendor \
+    vendor.display.config@1.0 \
     vendor.display.config@2.0.vendor \
-    vendor.display.config@2.0 \
+    vendor.display.config@2.0
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -389,6 +393,7 @@ PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libextmedia_jni \
     libhypv_intercept \
+    libminijail \
     libmm-omxcore \
     libOmxAacEnc \
     libOmxAmrEnc \
