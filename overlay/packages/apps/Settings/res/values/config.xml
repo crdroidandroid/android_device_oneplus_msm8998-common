@@ -24,4 +24,7 @@
        3 = right side
   -->
   <integer name="config_fingerprintSensorLocation">1</integer>
+
+    <!-- Custom pickup sensor for doze customization -->
+    <string name="pickup_sensor" translatable="false">com.oneplus.sensor.pickup</string>
 </resources>
