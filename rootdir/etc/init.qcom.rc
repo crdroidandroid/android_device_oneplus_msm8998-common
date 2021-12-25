@@ -313,6 +313,12 @@ on boot
     # Set TCP MTU probing to automatic
     write /proc/sys/net/ipv4/tcp_mtu_probing 1
 
+    # Fast charge
+    chown system system /sys/class/power_supply/battery/fastchg_status
+    chmod 0664 /sys/class/power_supply/battery/fastchg_status
+    chown system system /sys/kernel/fast_charge/force_fast_charge
+    chmod 0664 /sys/kernel/fast_charge/force_fast_charge
+
     start vendor.qcrild
     start vendor.qcrild2
     start vendor.dataqti
@@ -373,6 +379,14 @@ on property:sys.boot_completed=1
 
     # WDSP FW boot sysfs node used by STHAL
     chown media audio /sys/kernel/wcd_cpe0/fw_name
+
+    # Sound control: various audio gain controls
+    chown system system /sys/kernel/sound_control/earpiece_gain
+    chown system system /sys/kernel/sound_control/headphone_gain
+    chown system system /sys/kernel/sound_control/mic_gain
+    chmod 664 /sys/kernel/sound_control/earpiece_gain
+    chmod 664 /sys/kernel/sound_control/headphone_gain
+    chmod 664 /sys/kernel/sound_control/mic_gain
 
     # Let kernel know our image version/variant/crm_version
     write /sys/devices/soc0/select_image 10
