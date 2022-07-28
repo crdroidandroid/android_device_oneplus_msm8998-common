@@ -12,3 +12,9 @@ allow system_app sysfs_livedisplay_tuneable:file rw_file_perms;
 
 allow system_app sysfs_leds:dir search;
 allow system_app sysfs_vibrator:file rw_file_perms;
+
+allow system_app sysfs_fastcharge:dir { search };
+allow system_app sysfs_fastcharge:file { rw_file_perms };
+
+allow system_app sysfs_audiogain:dir { search };
+allow system_app sysfs_audiogain:file { rw_file_perms };
