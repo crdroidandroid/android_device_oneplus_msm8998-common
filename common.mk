@@ -361,6 +361,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libjson
 
+# Quick Tap
+TARGET_SUPPORTS_QUICK_TAP := true
+
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_oneplus
