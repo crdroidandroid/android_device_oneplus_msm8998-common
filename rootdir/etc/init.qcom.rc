@@ -428,12 +428,6 @@ service vendor.adsprpcd /vendor/bin/adsprpcd
     group media
     task_profiles ServiceCapacityLow
 
-service vendor.atfwd /vendor/bin/ATFWD-daemon
-    class main
-    user system
-    group system radio
-    task_profiles ServiceCapacityLow
-
 service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     override
     class hal
