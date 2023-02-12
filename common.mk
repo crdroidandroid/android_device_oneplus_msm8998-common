@@ -139,9 +139,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
-# Configstore
+# Device Settings
 PRODUCT_PACKAGES += \
-    disable_configstore
+    DeviceSettings
 
 # Display
 PRODUCT_PACKAGES += \
@@ -231,6 +231,7 @@ PRODUCT_PACKAGES += \
     init.devstart.sh \
     init.qcom.rc \
     init.qcom.usb.rc \
+    init.target.displaymodes.rc \
     init.radio.sh \
     ueventd.qcom.rc
 
@@ -426,6 +427,10 @@ PRODUCT_PACKAGES += \
 # Tri-state-key
 PRODUCT_PACKAGES += \
     KeyHandler
+
+# Trust HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
