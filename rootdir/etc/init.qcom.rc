@@ -27,6 +27,7 @@
 
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
+import /vendor/etc/init/hw/init.target.displaymodes.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -322,6 +323,10 @@ on boot
     start vendor.qcrild
     start vendor.qcrild2
     start vendor.dataqti
+    
+    # Vibrator permissions
+    chown system system /sys/class/leds/vibrator/vmax_mv
+    chmod 0660 /sys/class/leds/vibrator/vmax_mv
 
 on charger
     start vendor.dashd

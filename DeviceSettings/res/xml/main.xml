@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2014-2016 The OmniROM Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@strings/device_title">
+
+        <SwitchPreference
+            android:key="dc"
+            android:summary="@string/dc_mode_summary"
+            android:title="@string/dc_mode_title" />
+
+        <SwitchPreference
+            android:key="hbm"
+            android:summary="@string/hbm_mode_summary"
+            android:title="@string/hbm_mode_title"
+            android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="fps_info"
+            android:title="@string/fps_info_title"
+            android:summary="@string/fps_info_summary"
+            android:persistent="true" />
+
+        <Preference
+            android:key="panel_category"
+            android:title="@string/panel_category_title"
+            android:summary="@string/panel_category_summary"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.aurora.device.DeviceSettings"
+                    android:targetClass="com.aurora.device.DeviceSettings.PanelSettingsActivity" />
+        </Preference>
+
+        <Preference
+            android:key="touchscreen_gesture_category"
+            android:title="@string/touchscreen_gesture_settings_title"
+            android:summary="@string/touchscreen_gesture_settings_summary"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.aurora.device.DeviceSettings"
+                    android:targetClass="com.aurora.device.DeviceSettings.TouchscreenGestureSettings" />
+        </Preference>
+
+    <PreferenceCategory
+        android:key="slider"
+        android:title="@string/alert_slider_category_title">
+
+        <SwitchPreference
+            android:key="config_mute_media"
+            android:title="@string/alert_slider_mute_media_title"
+            android:summary="@string/alert_slider_mute_media_summary"
+            android:defaultValue="0" />
+
+        <ListPreference
+            android:key="config_top_position"
+            android:dialogTitle="@string/alert_slider_selection_dialog_title"
+            android:title="@string/alert_slider_top_position"
+            android:summary="%s"
+            android:entries="@array/alert_slider_action_entries"
+            android:entryValues="@array/alert_slider_action_entry_values"
+            android:defaultValue="0" />
+
+        <ListPreference
+            android:key="config_middle_position"
+            android:dialogTitle="@string/alert_slider_selection_dialog_title"
+            android:title="@string/alert_slider_middle_position"
+            android:summary="%s"
+            android:entries="@array/alert_slider_action_entries"
+            android:entryValues="@array/alert_slider_action_entry_values"
+            android:defaultValue="1" />
+
+        <ListPreference
+            android:key="config_bottom_position"
+            android:dialogTitle="@string/alert_slider_selection_dialog_title"
+            android:title="@string/alert_slider_bottom_position"
+            android:summary="%s"
+            android:entries="@array/alert_slider_action_entries"
+            android:entryValues="@array/alert_slider_action_entry_values"
+            android:defaultValue="2" />
+    </PreferenceCategory>
+
+    <PreferenceCategory 
+        android:title="@string/button_dashboard_summary">
+
+        <SwitchPreference
+            android:key="button_swap"
+            android:title="@string/button_swap_title"
+            android:summary="@string/button_swap_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="vibrator"
+        android:title="@string/category_vibrator">
+
+        <com.aurora.device.DeviceSettings.VibratorStrengthPreference
+            android:key="vib_strength"
+            android:title="@string/vib_strength_title_head"
+            android:summary="@string/vib_strength_summary_head" />
+        <Preference
+            android:icon="@drawable/ic_info_outline_24dp"
+            android:persistent="false"
+            android:summary="@string/vibration_warning" />
+    </PreferenceCategory>
+</PreferenceScreen>

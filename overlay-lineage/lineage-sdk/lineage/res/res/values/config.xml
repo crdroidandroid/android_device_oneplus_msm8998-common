@@ -18,6 +18,19 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
+     
+     <!-- Paths to the libraries that contain device specific key handlers -->
+    <string-array name="config_deviceKeyHandlerLibs" translatable="false">
+        <item>/system/system_ext/priv-app/DeviceSettings/DeviceSettings.apk</item>
+        <item>/system/system_ext/priv-app/DeviceSettings/DeviceSettings.apk</item>
+    </string-array>
+
+    <!-- Names of the key handler classes -->
+    <string-array name="config_deviceKeyHandlerClasses" translatable="false">
+        <item>com.aurora.device.DeviceSettings.KeyHandler</item>
+        <item>com.aurora.device.DeviceSettings.TouchKeyHandler</item>
+    </string-array>
+
     <integer name="config_deviceHardwareWakeKeys">64</integer>
 
     <!-- Default value for proximity check on screen wake
