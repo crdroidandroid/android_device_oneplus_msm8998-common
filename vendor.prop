@@ -140,7 +140,7 @@ ro.vendor.sensors.multishake=true
 persist.vendor.sensors.direct_channel=true
 
 # Soc
-ro.soc.manufacturer=Qualcomm
+ro.soc.manufacturer=QTI
 ro.soc.model=MSM8998
 
 # Timeservice
