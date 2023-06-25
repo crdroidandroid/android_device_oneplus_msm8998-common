@@ -104,17 +104,6 @@
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
-        <service
-            android:name="com.aurora.device.DeviceSettings.HBMModeTileService"
-            android:icon="@drawable/ic_hbm_tile"
-            android:label="@string/tile_hbm_mode"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action
-                    android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
-
         <service android:name="com.aurora.device.DeviceSettings.FPSInfoService"
                 android:exported="false">
         </service>
@@ -129,9 +118,6 @@
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
-
-        <service android:name="com.aurora.device.DeviceSettings.HBMModeService"
-            android:exported="false" />
 
         <!-- Search indexing -->
         <provider
