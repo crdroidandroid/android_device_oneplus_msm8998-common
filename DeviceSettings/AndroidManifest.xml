@@ -59,13 +59,7 @@
         <activity android:name=".DeviceSettings" />
         <activity android:name=".KeyHandler" />
 
-       <activity
-            android:name=".TouchscreenGestureSettings"
-            android:label="@string/touchscreen_gesture_settings_title"
-            android:theme="@style/Theme.SubSettingsBase">
-        </activity>
-
-        <receiver android:name="com.aurora.device.DeviceSettings.Startup" >
+       <receiver android:name="com.aurora.device.DeviceSettings.Startup" >
             <intent-filter android:priority="100" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
