@@ -25,16 +25,6 @@
             android:summary="@string/fps_info_summary"
             android:persistent="true" />
 
-       <Preference
-            android:key="touchscreen_gesture_category"
-            android:title="@string/touchscreen_gesture_settings_title"
-            android:summary="@string/touchscreen_gesture_settings_summary"
-            android:persistent="false" >
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.aurora.device.DeviceSettings"
-                    android:targetClass="com.aurora.device.DeviceSettings.TouchscreenGestureSettings" />
-        </Preference>
-
     <PreferenceCategory
         android:key="slider"
         android:title="@string/alert_slider_category_title">
