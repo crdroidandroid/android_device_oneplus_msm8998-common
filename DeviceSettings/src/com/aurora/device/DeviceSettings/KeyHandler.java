@@ -34,7 +34,6 @@ import android.provider.Settings;
 import android.util.Log;
 import androidx.preference.PreferenceManager;
 
-import com.aurora.device.DeviceSettings.Constants;
 import com.aurora.device.DeviceSettings.DeviceSettings;
 
 public class KeyHandler extends Service {
