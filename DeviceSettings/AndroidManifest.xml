@@ -15,7 +15,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           android:sharedUserId="android.uid.system"
-          package="com.aurora.device.DeviceSettings"
+          package="com.lineageos.device.DeviceSettings"
           android:versionCode="1"
           android:versionName="1.0" >
 
@@ -25,7 +25,7 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <protected-broadcast android:name="com.aurora.device.DeviceSettings.UPDATE_SETTINGS" />
+    <protected-broadcast android:name="com.lineageos.device.DeviceSettings.UPDATE_SETTINGS" />
 
     <uses-sdk
         android:minSdkVersion="28"
@@ -59,7 +59,7 @@
         <activity android:name=".DeviceSettings" />
         <activity android:name=".KeyHandler" />
 
-       <receiver android:name="com.aurora.device.DeviceSettings.Startup" >
+       <receiver android:name="com.lineageos.device.DeviceSettings.Startup" >
             <intent-filter android:priority="100" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
@@ -67,7 +67,7 @@
 
         <!-- Quick Settings Tiles -->
         <service
-            android:name="com.aurora.device.DeviceSettings.DCModeTileService"
+            android:name="com.lineageos.device.DeviceSettings.DCModeTileService"
             android:icon="@drawable/ic_dimming_off"
             android:label="@string/tile_dc_mode"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -76,7 +76,7 @@
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
-        <service android:name="com.aurora.device.DeviceSettings.FPSInfoService"
+        <service android:name="com.lineageos.device.DeviceSettings.FPSInfoService"
                 android:exported="false">
         </service>
 
@@ -94,7 +94,7 @@
         <!-- Search indexing -->
         <provider
             android:name=".ConfigPanelSearchIndexablesProvider"
-            android:authorities="com.aurora.device"
+            android:authorities="com.lineageos.device"
             android:multiprocess="false"
             android:grantUriPermissions="true"
             android:permission="android.permission.READ_SEARCH_INDEXABLES"

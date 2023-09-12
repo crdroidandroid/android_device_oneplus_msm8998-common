@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.aurora.device.DeviceSettings;
+package com.lineageos.device.DeviceSettings;
 
 import android.app.Service;
 import android.content.BroadcastReceiver;

@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.aurora.device.DeviceSettings;
+package com.lineageos.device.DeviceSettings;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -15,19 +15,16 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.aurora.device.DeviceSettings;
+package com.lineageos.device.DeviceSettings.ModeSwitch;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.PreferenceManager;
 
-import com.aurora.device.DeviceSettings.DeviceSettings;
+import com.lineageos.device.DeviceSettings.Utils;
 
-public class ButtonSwap implements OnPreferenceChangeListener {
+public class DCModeSwitch implements OnPreferenceChangeListener {
 
-    private static final String FILE = "/proc/s1302/key_rep";
+    private static final String FILE = "/proc/flicker_free/flicker_free";
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
@@ -40,7 +37,7 @@ public class ButtonSwap implements OnPreferenceChangeListener {
         return Utils.fileWritable(getFile());
     }
 
-    public static boolean isCurrentlyEnabled(Context context) {
+    public static boolean isCurrentlyEnabled() {
         return Utils.getFileValueAsBoolean(getFile(), false);
     }
 

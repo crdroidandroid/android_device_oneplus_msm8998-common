@@ -3,6 +3,6 @@
     public <init>(android.content.Context);
 }
 
--keep class com.aurora.device.DeviceSettings.* {
+-keep class com.lineageos.device.DeviceSettings.* {
   *;
 }
