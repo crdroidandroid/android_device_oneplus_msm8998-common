@@ -42,12 +42,14 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_VIBSTRENGTH = "vib_strength";
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
     public static final String KEY_BUTTON_SWAP = "button_swap";
+    public static final String KEY_BUTTON_CATEGORY = "button_category";
 
     private static final boolean sIsOnePlus5t = android.os.Build.DEVICE.equals("OnePlus5T");
     private TwoStatePreference mButtonSwap;
 
     private SwitchPreference mFpsInfo;
     private VibratorStrengthPreference mVibratorStrength;
+    private PreferenceCategory mButtonCategory;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -68,12 +70,14 @@ public class DeviceSettings extends PreferenceFragment
         mFpsInfo.setOnPreferenceChangeListener(this);
 
         mButtonSwap = (TwoStatePreference) findPreference(KEY_BUTTON_SWAP);
+        mButtonCategory = (PreferenceCategory) findPreference(KEY_BUTTON_CATEGORY)
+
         if (!sIsOnePlus5t) {
             mButtonSwap.setEnabled(ButtonSwap.isSupported());
             mButtonSwap.setChecked(ButtonSwap.isCurrentlyEnabled(this.getContext()));
             mButtonSwap.setOnPreferenceChangeListener(new ButtonSwap());
         } else {
-            mButtonSwap.setVisible(false);
+            mButtonSwap.getParent().removePreference(mButtonCategory);
         }
     }
 
