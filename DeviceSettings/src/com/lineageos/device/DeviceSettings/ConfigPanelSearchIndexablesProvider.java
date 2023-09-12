@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.aurora.device.DeviceSettings;
+package com.lineageos.device.DeviceSettings;
 
 import android.database.Cursor;
 import android.database.MatrixCursor;

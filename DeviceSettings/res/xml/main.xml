@@ -63,7 +63,8 @@
             android:defaultValue="2" />
     </PreferenceCategory>
 
-    <PreferenceCategory 
+    <PreferenceCategory
+        android:key="button_category"
         android:title="@string/button_dashboard_summary">
 
         <SwitchPreference
@@ -76,7 +77,7 @@
         android:key="vibrator"
         android:title="@string/category_vibrator">
 
-        <com.aurora.device.DeviceSettings.VibratorStrengthPreference
+        <com.lineageos.device.DeviceSettings.VibratorStrengthPreference
             android:key="vib_strength"
             android:title="@string/vib_strength_title_head"
             android:summary="@string/vib_strength_summary_head" />

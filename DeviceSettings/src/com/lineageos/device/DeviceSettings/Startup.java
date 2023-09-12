@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.aurora.device.DeviceSettings;
+package com.lineageos.device.DeviceSettings;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -26,7 +26,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import androidx.preference.PreferenceManager;
 
-import com.aurora.device.DeviceSettings.ModeSwitch.*;
+import com.lineageos.device.DeviceSettings.ModeSwitch.*;
 
 public class Startup extends BroadcastReceiver {
 

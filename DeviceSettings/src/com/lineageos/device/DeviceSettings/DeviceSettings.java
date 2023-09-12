@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.aurora.device.DeviceSettings;
+package com.lineageos.device.DeviceSettings;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -32,7 +32,7 @@ import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
 import androidx.preference.TwoStatePreference;
 
-import com.aurora.device.DeviceSettings.ModeSwitch.DCModeSwitch;
+import com.lineageos.device.DeviceSettings.ModeSwitch.DCModeSwitch;
 
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {

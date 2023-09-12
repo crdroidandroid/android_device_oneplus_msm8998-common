@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.aurora.device.DeviceSettings;
+package com.lineageos.device.DeviceSettings;
 
 import android.app.NotificationManager;
 import android.app.Service;
@@ -34,7 +34,7 @@ import android.provider.Settings;
 import android.util.Log;
 import androidx.preference.PreferenceManager;
 
-import com.aurora.device.DeviceSettings.DeviceSettings;
+import com.lineageos.device.DeviceSettings.DeviceSettings;
 
 public class KeyHandler extends Service {
     private AudioManager mAudioManager;
