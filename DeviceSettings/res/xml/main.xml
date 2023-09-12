@@ -14,16 +14,45 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@strings/device_title">
 
-        <SwitchPreference
-            android:key="dc"
-            android:summary="@string/dc_mode_summary"
-            android:title="@string/dc_mode_title" />
+    <SwitchPreference
+        android:key="dc"
+        android:summary="@string/dc_mode_summary"
+        android:title="@string/dc_mode_title" />
 
-        <SwitchPreference
-            android:key="fps_info"
-            android:title="@string/fps_info_title"
-            android:summary="@string/fps_info_summary"
-            android:persistent="true" />
+    <SwitchPreference
+        android:key="fps_info"
+        android:title="@string/fps_info_title"
+        android:summary="@string/fps_info_summary"
+        android:persistent="true" />
+
+    <PreferenceCategory
+        android:key="audio"
+        android:title="@string/category_audio">
+
+        <com.lineageos.device.DeviceSettings.audio.EarpieceGainPreference
+            android:key="earpiece_gain"
+            android:title="@string/earpiece_gain_title"
+            android:summary="@string/earpiece_gain_summary"
+            android:persistent="false" />
+
+        <com.lineageos.device.DeviceSettings.audio.HeadphoneGainPreference
+            android:key="headphone_gain"
+            android:title="@string/headphone_gain_title"
+            android:summary="@string/headphone_gain_summary"
+            android:persistent="false" />
+
+        <com.lineageos.device.DeviceSettings.audio.MicGainPreference
+            android:key="mic_gain"
+            android:title="@string/mic_gain_title"
+            android:summary="@string/mic_gain_summary"
+            android:persistent="false" />
+
+        <com.lineageos.device.DeviceSettings.audio.SpeakerGainPreference
+            android:key="speaker_gain"
+            android:title="@string/speaker_gain_title"
+            android:summary="@string/speaker_gain_summary"
+            android:persistent="false" />
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="slider"
@@ -81,6 +110,7 @@
             android:key="vib_strength"
             android:title="@string/vib_strength_title_head"
             android:summary="@string/vib_strength_summary_head" />
+
         <Preference
             android:icon="@drawable/ic_info_outline_24dp"
             android:persistent="false"

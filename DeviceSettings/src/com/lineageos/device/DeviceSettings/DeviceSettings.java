@@ -32,6 +32,7 @@ import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
 import androidx.preference.TwoStatePreference;
 
+import com.lineageos.device.DeviceSettings.audio.*;
 import com.lineageos.device.DeviceSettings.ModeSwitch.DCModeSwitch;
 
 public class DeviceSettings extends PreferenceFragment
@@ -44,12 +45,22 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_BUTTON_SWAP = "button_swap";
     public static final String KEY_BUTTON_CATEGORY = "button_category";
 
+    public static final String KEY_AUDIO_CATEGORY = "audio";
+    public static final String KEY_AUDIO_EAR = "earpiece_gain";
+    public static final String KEY_AUDIO_HEADPHONE = "headphone_gain";
+    public static final String KEY_AUDIO_MIC = "mic_gain";
+    public static final String KEY_AUDIO_SPEAKER = "speaker_gain";
+
     private static final boolean sIsOnePlus5t = android.os.Build.DEVICE.equals("OnePlus5T");
     private TwoStatePreference mButtonSwap;
 
     private SwitchPreference mFpsInfo;
     private VibratorStrengthPreference mVibratorStrength;
-    private PreferenceCategory mButtonCategory;
+
+    private EarpieceGainPreference mEarpieceGainPref;
+    private HeadphoneGainPreference mHeadphoneGainPref;
+    private MicGainPreference mMicGainPref;
+    private SpeakerGainPreference mSpeakerGainPref;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -70,7 +81,7 @@ public class DeviceSettings extends PreferenceFragment
         mFpsInfo.setOnPreferenceChangeListener(this);
 
         mButtonSwap = (TwoStatePreference) findPreference(KEY_BUTTON_SWAP);
-        mButtonCategory = (PreferenceCategory) findPreference(KEY_BUTTON_CATEGORY)
+        PreferenceCategory mButtonCategory = (PreferenceCategory) findPreference(KEY_BUTTON_CATEGORY);
 
         if (!sIsOnePlus5t) {
             mButtonSwap.setEnabled(ButtonSwap.isSupported());
@@ -78,6 +89,45 @@ public class DeviceSettings extends PreferenceFragment
             mButtonSwap.setOnPreferenceChangeListener(new ButtonSwap());
         } else {
             mButtonSwap.getParent().removePreference(mButtonCategory);
+        }
+
+        int audiogainsRemoved = 0;
+        PreferenceCategory mAudioCategory = (PreferenceCategory) findPreference(KEY_AUDIO_CATEGORY);
+
+        mEarpieceGainPref = (EarpieceGainPreference) findPreference(KEY_AUDIO_EAR);
+        if (mEarpieceGainPref != null && EarpieceGainPreference.isSupported()) {
+            mEarpieceGainPref.setEnabled(true);
+        } else {
+            mEarpieceGainPref.getParent().removePreference(mEarpieceGainPref);
+            audiogainsRemoved += 1;
+        }
+
+        mHeadphoneGainPref = (HeadphoneGainPreference) findPreference(KEY_AUDIO_HEADPHONE);
+        if (mHeadphoneGainPref != null && HeadphoneGainPreference.isSupported()) {
+            mHeadphoneGainPref.setEnabled(true);
+        } else {
+            mHeadphoneGainPref.getParent().removePreference(mHeadphoneGainPref);
+            audiogainsRemoved += 1;
+        }
+
+        mMicGainPref = (MicGainPreference) findPreference(KEY_AUDIO_MIC);
+        if (mMicGainPref != null && MicGainPreference.isSupported()) {
+            mMicGainPref.setEnabled(true);
+        } else {
+            mMicGainPref.getParent().removePreference(mMicGainPref);
+            audiogainsRemoved += 1;
+        }
+
+        mSpeakerGainPref = (SpeakerGainPreference) findPreference(KEY_AUDIO_SPEAKER);
+        if (mSpeakerGainPref != null && SpeakerGainPreference.isSupported()) {
+            mSpeakerGainPref.setEnabled(true);
+        } else {
+            mSpeakerGainPref.getParent().removePreference(mSpeakerGainPref);
+            audiogainsRemoved += 1;
+        }
+
+        if (audiogainsRemoved == 4) {
+            mAudioCategory.getParent().removePreference(mAudioCategory);
         }
     }
 

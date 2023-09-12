@@ -48,6 +48,32 @@ public class Utils {
     }
 
     /**
+     * Write a string value to the specified sysfs file.
+     * The format of written string has to be 2 strings with a space in between.
+     * example:
+     * "0 0"
+     * @param filename      The filename
+     * @param value         The value
+     */
+    public static void writeValueDual(String filename, String value) {
+        if (filename == null) {
+            return;
+        }
+        String Dualvalue = value + " " + value;
+
+        try {
+            FileOutputStream fos = new FileOutputStream(new File(filename));
+            fos.write(Dualvalue.getBytes());
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Check if the specified file exists.
      * @param filename      The filename
      * @return              Whether the file exists or not
@@ -100,5 +126,39 @@ public class Utils {
             return fileValue;
         }
         return defValue;
+    }
+
+    /**
+     * @param filename      file to read
+     * @param defValue      default value
+     * @return              decluttered value or default value
+     */
+    public static String getFileValueDual(String filename, String defValue) {
+        String fileValue = readLine(filename);
+        if(fileValue!=null){
+            return declutterDualValue(fileValue);
+        }
+        return defValue;
+    }
+
+    /**
+     * we need this little helper method, because api offers us values for left and right.
+     * We want to handle both values equal, so only read left value.
+     * Format in sysfs file is:
+     * 1 1
+     * BUT... for some reasons, when writing in the file a -1, the value in the file is 255,
+     * -2 is 254, so we have here to do some maths...
+     * @param RawOutput      The RawOutput
+     * @return              decluttered value
+    */
+    public static String declutterDualValue(String RawOutput) {
+        String[] seperateDual = RawOutput.split(" ", 2);
+        int declutteredValue = Integer.parseUnsignedInt(seperateDual[0]);
+        if (declutteredValue > 20) {
+            // The chosen variablename is like the thing it does ;-) ...
+            int declutteredandConvertedValue = declutteredValue - 256;
+            declutteredValue = declutteredandConvertedValue;
+        }
+        return String.valueOf(declutteredValue);
     }
 }

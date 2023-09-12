@@ -26,6 +26,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import androidx.preference.PreferenceManager;
 
+import com.lineageos.device.DeviceSettings.audio.*;
 import com.lineageos.device.DeviceSettings.ModeSwitch.*;
 
 public class Startup extends BroadcastReceiver {
@@ -49,6 +50,11 @@ public class Startup extends BroadcastReceiver {
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_BUTTON_SWAP, false);
         restore(ButtonSwap.getFile(), enabled);
 
+        EarpieceGainPreference.restore(context);
+        HeadphoneGainPreference.restore(context);
+        MicGainPreference.restore(context);
+        SpeakerGainPreference.restore(context);
+
         if (Build.DEVICE.equals("OnePlus5")) {
             restore("/proc/flicker_free/min_brightness", "66");
         } else if (Build.DEVICE.equals("OnePlus5T")) {
@@ -71,5 +77,4 @@ public class Startup extends BroadcastReceiver {
         }
         Utils.writeValue(file, value);
     }
-
 }
