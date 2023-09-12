@@ -97,4 +97,15 @@
     <string name="slider_toast_dnd">DND - No interruptions</string>
     <string name="slider_toast_priority">DND - Priority only</string>
     <string name="slider_toast_silent">Calls and notifications will be muted</string>
+
+    <!-- Audio gain -->
+    <string name="category_audio">Audio</string>
+    <string name="headphone_gain_title">Headphone</string>
+    <string name="headphone_gain_summary">Adjust for headphones</string>
+    <string name="earpiece_gain_title">Earpiece</string>
+    <string name="earpiece_gain_summary">Adjust for earpiece</string>
+    <string name="mic_gain_title">Microphone</string>
+    <string name="mic_gain_summary">Adjust for microphone</string>
+    <string name="speaker_gain_title">Speakers</string>
+    <string name="speaker_gain_summary">Adjust for speakers</string>
 </resources>
