@@ -37,14 +37,19 @@ public class Startup extends BroadcastReceiver {
     public void onReceive(final Context context, final Intent bootintent) {
         boolean enabled = false;
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DC_SWITCH, false);
         restore(DCModeSwitch.getFile(), enabled);
+
+        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_FAST_CHARGE, false);
+        restore(FastChargeSwitch.getFile(), enabled);
+        
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_FPS_INFO, false);
         if (enabled) {
             context.startService(new Intent(context, FPSInfoService.class));
         }
-        VibratorStrengthPreference.restore(context);
 
+        VibratorStrengthPreference.restore(context);
         context.startService(new Intent(context, KeyHandler.class));
 
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_BUTTON_SWAP, false);

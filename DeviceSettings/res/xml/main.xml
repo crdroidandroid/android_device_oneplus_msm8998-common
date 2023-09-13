@@ -25,6 +25,12 @@
         android:summary="@string/fps_info_summary"
         android:persistent="true" />
 
+    <SwitchPreference
+        android:key="fast_charge"
+        android:title="@string/fastcharge_title"
+        android:summary="@string/fastcharge_summary"
+        android:persistent="true" />
+
     <PreferenceCategory
         android:key="audio"
         android:title="@string/category_audio">
