@@ -328,6 +328,23 @@ on boot
     chown system system /sys/class/leds/vibrator/vmax_mv
     chmod 0660 /sys/class/leds/vibrator/vmax_mv
 
+    # sysfs permissions
+    chown system system /sys/class/power_supply/battery/fastchg_status
+    chmod 0664 /sys/class/power_supply/battery/fastchg_status
+
+    chown system system /sys/kernel/fast_charge/force_fast_charge
+    chmod 0664 /sys/kernel/fast_charge/force_fast_charge
+
+    # Audio gains
+    chown system system /sys/kernel/sound_control/earpiece_gain
+    chmod 0664 /sys/kernel/sound_control/earpiece_gain
+
+    chown system system /sys/kernel/sound_control/headphone_gain
+    chmod 0664 /sys/kernel/sound_control/headphone_gain
+
+    chown system system /sys/kernel/sound_control/mic_gain
+    chmod 0664 /sys/kernel/sound_control/mic_gain
+
 on charger
     start vendor.dashd
     start vendor.power_off_alarm
