@@ -88,7 +88,7 @@ public class DeviceSettings extends PreferenceFragment
             mButtonSwap.setChecked(ButtonSwap.isCurrentlyEnabled(this.getContext()));
             mButtonSwap.setOnPreferenceChangeListener(new ButtonSwap());
         } else {
-            mButtonSwap.getParent().removePreference(mButtonCategory);
+            mButtonCategory.getParent().removePreference(mButtonCategory);
         }
 
         int audiogainsRemoved = 0;
