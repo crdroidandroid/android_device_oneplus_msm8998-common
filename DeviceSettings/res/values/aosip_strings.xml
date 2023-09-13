@@ -108,4 +108,8 @@
     <string name="mic_gain_summary">Adjust for microphone</string>
     <string name="speaker_gain_title">Speakers</string>
     <string name="speaker_gain_summary">Adjust for speakers</string>
+
+    <!-- Fast charge -->
+    <string name="fastcharge_title">Fastcharge</string>
+    <string name="fastcharge_summary">Fastcharge up to 900mA</string>
 </resources>

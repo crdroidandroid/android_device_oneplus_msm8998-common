@@ -33,7 +33,7 @@ import androidx.preference.SwitchPreference;
 import androidx.preference.TwoStatePreference;
 
 import com.lineageos.device.DeviceSettings.audio.*;
-import com.lineageos.device.DeviceSettings.ModeSwitch.DCModeSwitch;
+import com.lineageos.device.DeviceSettings.ModeSwitch.*;
 
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -44,6 +44,7 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
     public static final String KEY_BUTTON_SWAP = "button_swap";
     public static final String KEY_BUTTON_CATEGORY = "button_category";
+    public static final String KEY_FAST_CHARGE = "fast_charge";
 
     public static final String KEY_AUDIO_CATEGORY = "audio";
     public static final String KEY_AUDIO_EAR = "earpiece_gain";
@@ -71,10 +72,15 @@ public class DeviceSettings extends PreferenceFragment
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
 
         TwoStatePreference mDCModeSwitch = findPreference(KEY_DC_SWITCH);
+        TwoStatePreference mFastCharge = findPreference(KEY_FAST_CHARGE);
 
         mDCModeSwitch.setEnabled(DCModeSwitch.isSupported());
         mDCModeSwitch.setChecked(DCModeSwitch.isCurrentlyEnabled());
         mDCModeSwitch.setOnPreferenceChangeListener(new DCModeSwitch());
+
+        mFastCharge.setEnabled(FastChargeSwitch.isSupported());
+        mFastCharge.setChecked(FastChargeSwitch.isCurrentlyEnabled());
+        mFastCharge.setOnPreferenceChangeListener(new FastChargeSwitch());
 
         mFpsInfo = findPreference(KEY_FPS_INFO);
         mFpsInfo.setChecked(isFPSOverlayRunning());
