@@ -1,13 +1,14 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2021-2022 The LineageOS Project
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#ifndef TOUCH_ONEPLUS_TOUCHSCREENGESTURECONFIG_H
-#define TOUCH_ONEPLUS_TOUCHSCREENGESTURECONFIG_H
+#pragma once
 
 #include <map>
+
+#include "TouchscreenGesture.h"
 
 namespace vendor {
 namespace lineage {
@@ -36,5 +37,3 @@ const std::map<int32_t, TouchscreenGesture::GestureInfo> kGestureInfoMap = {
 }  // namespace touch
 }  // namespace lineage
 }  // namespace vendor
-
-#endif  // TOUCH_ONEPLUS_TOUCHSCREENGESTURE_H
