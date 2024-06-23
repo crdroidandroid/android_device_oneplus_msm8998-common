@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 
 $(call inherit-product, vendor/oneplus/msm8998-common/msm8998-common-vendor.mk)
