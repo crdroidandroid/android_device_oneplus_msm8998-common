@@ -7,6 +7,7 @@
   {
     "repository": "crdroidandroid/android_kernel_oneplus_msm8998",
     "target_path": "kernel/oneplus/msm8998"
+    "branch": "14.0-f2fs"
   },
   {
     "repository": "crdroidandroid/proprietary_vendor_oneplus_msm8998-common",
