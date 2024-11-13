@@ -6,8 +6,7 @@
   },
   {
     "repository": "crdroidandroid/android_kernel_oneplus_msm8998",
-    "target_path": "kernel/oneplus/msm8998",
-    "branch": "15.0"
+    "target_path": "kernel/oneplus/msm8998"
   },
   {
     "repository": "crdroidandroid/proprietary_vendor_oneplus_msm8998-common",
