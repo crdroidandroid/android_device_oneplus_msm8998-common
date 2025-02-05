@@ -27,6 +27,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.target.displaymodes.rc",
+    src: "etc/init.target.displaymodes.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "ueventd.qcom.rc",
     filename: "ueventd.rc",
     src: "etc/ueventd.qcom.rc",
