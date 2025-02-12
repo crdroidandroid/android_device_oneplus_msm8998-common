@@ -238,7 +238,6 @@ PRODUCT_PACKAGES += \
     init.devstart.sh \
     init.qcom.rc \
     init.qcom.usb.rc \
-    init.target.displaymodes.rc \
     init.radio.sh \
     ueventd.qcom.rc
 
